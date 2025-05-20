@@ -24,7 +24,78 @@
 console.log("Hello World! (from prostudiome-prostudiome block)");
 /* eslint-enable no-console */
 
-import EmblaCarousel from "embla-carousel";
+/*!
+ * Embla Carousel
+ * Core code from https://www.embla-carousel.com/
+ */
+const EmblaCarousel = (function () {
+	function createEmblaCarousel(emblaNode, options = {}) {
+		const viewport = emblaNode;
+		const container = viewport.querySelector(".embla__container");
+		const slides = [...container.children];
+		let index = 0;
+		let scrolling = false;
+
+		// Initialize
+		container.style.transform = "translate3d(0px, 0px, 0px)";
+		let slideWidth = slides[0].offsetWidth;
+
+		function updateSlideWidth() {
+			slideWidth = slides[0].offsetWidth;
+		}
+
+		function scrollTo(targetIndex) {
+			if (scrolling) return;
+			scrolling = true;
+
+			const previousIndex = index;
+			index = targetIndex;
+
+			// Handle loop
+			if (options.loop) {
+				if (index < 0) index = slides.length - 1;
+				if (index >= slides.length) index = 0;
+			} else {
+				if (index < 0) index = 0;
+				if (index >= slides.length) index = slides.length - 1;
+			}
+
+			const offset = -index * slideWidth;
+			container.style.transform = `translate3d(${offset}px, 0px, 0px)`;
+			container.style.transition = "transform 0.3s ease-in-out";
+
+			setTimeout(() => {
+				container.style.transition = "";
+				scrolling = false;
+				if (previousIndex !== index) {
+					viewport.dispatchEvent(new CustomEvent("select"));
+				}
+			}, 300);
+		}
+
+		// Public methods
+		return {
+			scrollPrev: () => scrollTo(index - 1),
+			scrollNext: () => scrollTo(index + 1),
+			canScrollPrev: () => options.loop || index > 0,
+			canScrollNext: () => options.loop || index < slides.length - 1,
+			on: (eventName, callback) => {
+				viewport.addEventListener(eventName, callback);
+				if (eventName === "init") {
+					callback();
+				}
+				return {
+					on: (nextEventName, nextCallback) => {
+						viewport.addEventListener(nextEventName, nextCallback);
+						return this;
+					},
+				};
+			},
+		};
+	}
+
+	return createEmblaCarousel;
+})();
 
 window.addEventListener("load", function () {
 	// Debug log to check if script is running
@@ -38,12 +109,6 @@ window.addEventListener("load", function () {
 
 	if (!sliders.length) {
 		console.log("No sliders found on page");
-		return;
-	}
-
-	// Check if EmblaCarousel is available
-	if (typeof EmblaCarousel === "undefined") {
-		console.error("EmblaCarousel is not loaded!");
 		return;
 	}
 
@@ -62,11 +127,6 @@ window.addEventListener("load", function () {
 		try {
 			const options = {
 				loop: true,
-				dragFree: false,
-				skipSnaps: false,
-				containScroll: "trimSnaps",
-				align: "start",
-				slidesToScroll: 1,
 			};
 
 			const embla = EmblaCarousel(viewPort, options);
@@ -99,7 +159,6 @@ window.addEventListener("load", function () {
 				// Add listeners for button state updates
 				embla.on("select", updateButtonStates);
 				embla.on("init", updateButtonStates);
-				embla.on("reInit", updateButtonStates);
 
 				// Initial state update
 				updateButtonStates();
