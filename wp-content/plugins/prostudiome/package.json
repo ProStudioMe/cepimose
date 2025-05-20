@@ -1,20 +1,19 @@
 {
 	"name": "prostudiome",
-	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"version": "1.0.0",
+	"description": "ProStudio.me WordPress plugin",
+	"author": "ProStudio.me",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
+	"main": "index.js",
 	"scripts": {
-		"build": "wp-scripts build --webpack-copy-php --blocks-manifest",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php --blocks-manifest"
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"packages-update": "wp-scripts packages-update"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.16.0"
+		"@wordpress/scripts": "^26.19.0"
+	},
+	"dependencies": {
+		"embla-carousel": "^8.0.0"
 	}
 }
