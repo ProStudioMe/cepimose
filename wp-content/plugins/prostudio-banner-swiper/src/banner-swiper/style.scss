@@ -1,0 +1,153 @@
+.wp-block-prostudio-banner-swiper {
+  .swiper {
+    width: 100%;
+    height: auto;
+
+    &-wrapper {
+      width: 100%;
+    }
+
+    &-slide {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+    background: linear-gradient(to right, #f0f8ff, #e6f3ff);
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+
+  .banner-text-content {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 4rem;
+  }
+
+  .banner-heading {
+    color: #0072ce;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    font-weight: bold;
+  }
+
+  .banner-subheading {
+    color: #0072ce;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+    font-weight: 500;
+  }
+
+  .banner-text {
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+  }
+
+  .banner-link {
+    display: inline-block;
+    background-color: #0072ce;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #005ba3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .banner-image {
+    flex: 1;
+    max-width: 50%;
+    text-align: center;
+    position: relative;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  // Swiper navigation styles
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+
+    &::after {
+      font-size: 1.5rem;
+      color: #0072ce;
+    }
+
+    &:hover {
+      background-color: white;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // Swiper pagination styles
+  .swiper-pagination {
+    bottom: 1.5rem !important;
+
+    &-bullet {
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      opacity: 1;
+
+      &-active {
+        background-color: #0072ce;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .banner-content {
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .banner-text-content,
+    .banner-image {
+      max-width: 100%;
+      padding-right: 0;
+    }
+
+    .banner-image {
+      margin-top: 2rem;
+    }
+
+    .banner-heading {
+      font-size: 2rem;
+    }
+
+    .banner-subheading {
+      font-size: 1.5rem;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
+    }
+  }
+}
