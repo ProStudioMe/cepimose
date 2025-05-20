@@ -14,10 +14,10 @@
 	},
 	"textdomain": "prostudiome",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": ["swiper", "file:./style-index.css"],
-	"viewScript": "file:./frontend.js",
-	"script": ["swiper"],
+	"editorStyle": ["file:./editor.css"],
+	"style": ["swiper", "file:./style.css"],
+	"viewScript": ["swiper", "file:./frontend.js"],
+	"render": "file:./render.php",
 	"attributes": {
 		"align": {
 			"type": "string",
