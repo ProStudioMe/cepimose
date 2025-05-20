@@ -47,25 +47,12 @@ function prostudiome_blocks_init() {
 add_action('init', 'prostudiome_blocks_init');
 
 /**
- * Enqueue scripts and styles
+ * Enqueue scripts and styles for the frontend
  */
 function prostudiome_enqueue_scripts() {
-	// Enqueue Embla Carousel from NPM package
-	wp_enqueue_script(
-		'embla-carousel',
-		plugins_url('node_modules/embla-carousel/embla-carousel.umd.js', __FILE__),
-		array(),
-		'8.0.0',
-		true
-	);
-
-	// Enqueue our initialization script
-	wp_enqueue_script(
-		'prostudiome-banner-slider-init',
-		plugins_url('build/prostudiome-banner-slider/view.js', __FILE__),
-		array('embla-carousel'),
-		filemtime(plugin_dir_path(__FILE__) . 'build/prostudiome-banner-slider/view.js'),
-		true
-	);
+	if (has_block('prostudiome/banner-swiper')) {
+		wp_enqueue_style('swiper');
+		wp_enqueue_script('swiper');
+	}
 }
 add_action('wp_enqueue_scripts', 'prostudiome_enqueue_scripts');
