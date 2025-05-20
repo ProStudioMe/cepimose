@@ -22,6 +22,12 @@ import { useBlockProps } from "@wordpress/block-editor";
 import "./editor.scss";
 
 /**
+ * WordPress dependencies
+ */
+import { Placeholder } from "@wordpress/components";
+import { megaphone } from "@wordpress/icons";
+
+/**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
@@ -30,9 +36,37 @@ import "./editor.scss";
  * @return {Element} Element to render.
  */
 export default function Edit() {
+	const blockProps = useBlockProps();
+
 	return (
-		<p {...useBlockProps()}>
-			{__("prostudiome-banner-slider!", "prostudiome-banner-slider")}
-		</p>
+		<div {...blockProps}>
+			<Placeholder
+				icon={megaphone}
+				label={__("Banner Slider", "prostudiome")}
+				instructions={__(
+					"This block displays a slider with banners from posts in the banner-front-page category. The content will be visible on the frontend.",
+					"prostudiome",
+				)}
+			>
+				<div className="banner-preview-message">
+					{__("Make sure you have:", "prostudiome")}
+					<ul>
+						<li>
+							{__('• Posts in the "banner-front-page" category', "prostudiome")}
+						</li>
+						<li>
+							{__("• ACF fields set up for those posts:", "prostudiome")}
+							<ul>
+								<li>{__("- banner_-_main_heading", "prostudiome")}</li>
+								<li>{__("- banner_main_image", "prostudiome")}</li>
+								<li>{__("- banner_subheading", "prostudiome")}</li>
+								<li>{__("- banner_text", "prostudiome")}</li>
+								<li>{__("- banner_link", "prostudiome")}</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</Placeholder>
+		</div>
 	);
 }
