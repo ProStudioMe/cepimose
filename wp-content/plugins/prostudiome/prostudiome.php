@@ -25,7 +25,24 @@ if (!defined('ABSPATH')) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function prostudiome_blocks_init() {
-	register_block_type(__DIR__ . '/build/prostudiome-banner-slider');
+	// Register Swiper scripts and styles
+	wp_register_style(
+		'swiper',
+		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+		array(),
+		'11.0.5'
+	);
+
+	wp_register_script(
+		'swiper',
+		'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+		array(),
+		'11.0.5',
+		true
+	);
+
+	// Register blocks
+	register_block_type(__DIR__ . '/build/prostudiome-banner-swiper');
 }
 add_action('init', 'prostudiome_blocks_init');
 
