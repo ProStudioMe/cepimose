@@ -17,8 +17,11 @@
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"render": "file:./render.php",
-	"viewScript": ["embla-carousel", "file:./view.js"],
-	"dependencies": {
-		"embla-carousel": "^8.0.0"
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		}
 	}
 }
