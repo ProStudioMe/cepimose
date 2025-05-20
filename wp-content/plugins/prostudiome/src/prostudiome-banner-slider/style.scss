@@ -19,6 +19,7 @@
 
 		&__viewport {
 			overflow: hidden;
+			width: 100%;
 		}
 
 		&__container {
@@ -27,11 +28,13 @@
 			-webkit-touch-callout: none;
 			-khtml-user-select: none;
 			-webkit-tap-highlight-color: transparent;
+			margin-left: -1rem;
 		}
 
 		&__slide {
-			flex: 0 0 100%;
-			min-width: 0;
+			position: relative;
+			min-width: 100%;
+			padding-left: 1rem;
 		}
 	}
 
@@ -39,34 +42,38 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 2rem 4rem;
+		padding: 4rem;
 		background: linear-gradient(to right, #f0f8ff, #e6f3ff);
+		border-radius: 1rem;
+		overflow: hidden;
 	}
 
 	.banner-text-content {
 		flex: 1;
 		max-width: 50%;
-		padding-right: 2rem;
+		padding-right: 4rem;
 	}
 
 	.banner-heading {
 		color: #0072ce;
 		font-size: 3rem;
 		line-height: 1.2;
-		margin-bottom: 1rem;
+		margin: 0 0 1rem;
+		font-weight: bold;
 	}
 
 	.banner-subheading {
 		color: #0072ce;
 		font-size: 2rem;
-		margin-bottom: 1rem;
+		margin: 0 0 1rem;
+		font-weight: 500;
 	}
 
 	.banner-text {
 		color: #333;
 		font-size: 1.1rem;
 		line-height: 1.6;
-		margin-bottom: 2rem;
+		margin: 0 0 2rem;
 	}
 
 	.banner-link {
@@ -77,10 +84,12 @@
 		border-radius: 2rem;
 		text-decoration: none;
 		font-weight: bold;
-		transition: background-color 0.3s;
+		transition: all 0.3s ease;
 
 		&:hover {
-			background-color: darken(#0072ce, 10%);
+			background-color: #005ba3;
+			transform: translateY(-2px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		}
 	}
 
@@ -88,11 +97,14 @@
 		flex: 1;
 		max-width: 50%;
 		text-align: center;
+		position: relative;
 
 		img {
 			max-width: 100%;
 			height: auto;
 			border-radius: 1rem;
+			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease;
 		}
 	}
 
@@ -105,19 +117,21 @@
 		top: 50%;
 		transform: translateY(-50%);
 		pointer-events: none;
+		z-index: 1;
 	}
 
 	.embla__prev,
 	.embla__next {
-		width: 3rem;
-		height: 3rem;
+		width: 3.5rem;
+		height: 3.5rem;
 		border-radius: 50%;
 		background-color: rgba(255, 255, 255, 0.9);
 		border: none;
 		cursor: pointer;
 		pointer-events: auto;
-		transition: background-color 0.3s;
+		transition: all 0.3s ease;
 		position: relative;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
 		&::before {
 			content: "";
@@ -132,11 +146,15 @@
 
 		&:hover {
 			background-color: white;
+			transform: scale(1.1);
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 		}
 
 		&:disabled {
 			opacity: 0.5;
 			cursor: not-allowed;
+			transform: none;
+			box-shadow: none;
 		}
 	}
 
@@ -170,6 +188,12 @@
 
 		.banner-subheading {
 			font-size: 1.5rem;
+		}
+
+		.embla__buttons {
+			bottom: 1rem;
+			top: auto;
+			transform: none;
 		}
 	}
 }
