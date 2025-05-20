@@ -30,14 +30,24 @@ function prostudiome_blocks_init() {
 add_action('init', 'prostudiome_blocks_init');
 
 /**
- * Enqueue the embla-carousel script
+ * Enqueue the embla-carousel script and styles
  */
 function prostudiome_enqueue_scripts() {
+	// Enqueue Embla Carousel core script
 	wp_enqueue_script(
 		'embla-carousel',
 		'https://unpkg.com/embla-carousel/embla-carousel.umd.js',
 		array(),
 		'8.0.0',
+		true
+	);
+
+	// Register and enqueue our custom script that initializes the slider
+	wp_enqueue_script(
+		'prostudiome-banner-slider',
+		plugins_url('build/prostudiome-banner-slider/view.js', __FILE__),
+		array('embla-carousel'),
+		'1.0.0',
 		true
 	);
 }
