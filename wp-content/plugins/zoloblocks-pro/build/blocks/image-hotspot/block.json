@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Image Hotspot",
+  "name": "zolo/image-hotspot",
+  "category": "zoloblocks",
+  "keywords": [
+    "image",
+    "hotspot",
+    "interactive",
+    "details",
+    "tooltip",
+    "popover"
+  ],
+  "description": "Add interactive hotspots to images for enhanced details.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks-pro",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": [
+    "tippy",
+    "file:./style-index.css"
+  ],
+  "viewScript": [
+    "file:./frontend.js"
+  ],
+  "script": [
+    "popper",
+    "tippy"
+  ]
+}

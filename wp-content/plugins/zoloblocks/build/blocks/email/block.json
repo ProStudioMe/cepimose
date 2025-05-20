@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Email",
+  "name": "zolo/email",
+  "category": "zoloblocks",
+  "keywords": [
+    "zolo",
+    "email",
+    "mail",
+    "contact",
+    "newsletter"
+  ],
+  "description": "Email input field for newsletter sign-ups or contacts.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "ancestor": [
+    "zolo/form"
+  ],
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "usesContext": [
+    "zolo/showFieldIcon"
+  ],
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js"
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Message",
+  "name": "zolo/textarea",
+  "category": "zoloblocks",
+  "keywords": [
+    "zolo",
+    "message",
+    "textarea",
+    "form",
+    "input",
+    "survey"
+  ],
+  "description": "Capture messages seamlessly within the Form block.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "ancestor": [
+    "zolo/form"
+  ],
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "usesContext": [
+    "zolo/showFieldIcon"
+  ],
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js"
+}

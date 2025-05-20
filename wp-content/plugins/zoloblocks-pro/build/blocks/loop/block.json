@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "title": "Loop Items",
+  "name": "zolo/loop",
+  "category": "zoloblocks",
+  "keywords": [
+    "query",
+    "post",
+    "repeater",
+    "loop",
+    "loop builder"
+  ],
+  "description": "Loop your content",
+  "textdomain": "zoloblocks",
+  "parent": [
+    "zolo/loop-builder"
+  ],
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 400
+  },
+  "usesContext": [
+    "posts",
+    "queryId"
+  ],
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

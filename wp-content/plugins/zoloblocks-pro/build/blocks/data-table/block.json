@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Data Table",
+  "name": "zolo/data-table",
+  "category": "zoloblocks",
+  "keywords": [
+    "data",
+    "table",
+    "sortable",
+    "filter",
+    "responsive",
+    "CSV",
+    "excel",
+    "spreadsheet",
+    "grid",
+    "list",
+    "chart",
+    "graph",
+    "dynamic",
+    "customizable",
+    "interactive"
+  ],
+  "description": "Display structured data in customizable table formats.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks-pro",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}

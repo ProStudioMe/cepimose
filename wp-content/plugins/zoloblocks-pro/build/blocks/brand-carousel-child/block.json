@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Brand Carousel Child",
+  "name": "zolo/brand-carousel-child",
+  "category": "zoloblocks",
+  "keywords": [
+    "child",
+    "brand",
+    "partner",
+    "logo",
+    "sponsor",
+    "client"
+  ],
+  "description": "Showcase individual brands within the Brand Grid.",
+  "parent": [
+    "zolo/brand-carousel"
+  ],
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "supports": {
+    "anchor": false,
+    "customClassName": false
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

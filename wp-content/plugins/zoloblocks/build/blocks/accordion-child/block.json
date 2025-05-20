@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Single Accordion",
+  "name": "zolo/accordion-child",
+  "category": "zoloblocks",
+  "keywords": [
+    "Accordion",
+    "Collapse",
+    "Expand",
+    "faq",
+    "toggle"
+  ],
+  "description": "Add accordion items for collapsible content sections.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "parent": [
+    "zolo/accordion"
+  ],
+  "supports": {
+    "anchor": false,
+    "customClassName": false
+  },
+  "editorScript": "file:./index.js"
+}

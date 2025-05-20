@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Post Tab",
+  "name": "zolo/post-tab",
+  "category": "zoloblocks",
+  "keywords": [
+    "post",
+    "tab",
+    "content",
+    "organize",
+    "filter",
+    "sort",
+    "category",
+    "tag",
+    "archive",
+    "list",
+    "grid",
+    "carousel",
+    "slider"
+  ],
+  "description": "Organize posts into tabs for streamlined content access.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks-pro",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}

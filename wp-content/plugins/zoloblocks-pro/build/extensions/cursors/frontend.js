@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelectorAll(".zolo-block");e&&e.length>0&&e.forEach((e=>{const o=e.dataset.cursors;if(!o)return;const t=JSON.parse(o);if(!t.active)return;const{cursorId:n,speed:c}=t;n&&new Cotton(".cursors-"+n,{speed:c,scene:`.zolo-block.${n}`})}))}));

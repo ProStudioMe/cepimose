@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Flipbox",
+  "name": "zolo/flipbox",
+  "category": "zoloblocks",
+  "keywords": [
+    "flip",
+    "box",
+    "card",
+    "feature",
+    "service",
+    "list"
+  ],
+  "description": "Design engaging flipbox layouts with interactive displays.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}

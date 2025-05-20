@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Post Comments",
+  "name": "zolo/post-comments",
+  "category": "zoloblocks",
+  "keywords": [
+    "post",
+    "comments",
+    "comments",
+    "discussion",
+    "engagement",
+    "interaction"
+  ],
+  "description": "Enable custom comments for increased engagement on posts.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
