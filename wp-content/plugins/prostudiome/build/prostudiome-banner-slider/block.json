@@ -5,16 +5,26 @@
   "version": "0.1.0",
   "title": "Pro banner slider",
   "category": "widgets",
-  "icon": "smiley",
+  "icon": "slides",
   "description": "Custom made slider by prostudio.me.",
   "example": {},
   "supports": {
-    "html": false
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
   },
   "textdomain": "prostudiome",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "viewScript": [
+    "embla-carousel",
+    "file:./view.js"
+  ],
+  "dependencies": {
+    "embla-carousel": "^8.0.0"
+  }
 }
