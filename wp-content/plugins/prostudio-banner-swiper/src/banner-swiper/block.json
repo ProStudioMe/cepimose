@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "prostudio/banner-swiper",
+  "version": "1.0.0",
+  "title": "Banner Swiper",
+  "category": "widgets",
+  "icon": "slides",
+  "description": "Banner slider using Swiper for smooth transitions.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "prostudio-banner-swiper",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": ["swiper", "file:./style-index.css"],
+  "viewScript": "file:./frontend.js",
+  "script": ["swiper"],
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "swiperOptions": {
+      "type": "object",
+      "default": {
+        "speed": 800,
+        "autoplay": true,
+        "autoplayDelay": 5000,
+        "pauseOnMouseEnter": true,
+        "loop": true,
+        "navigation": true,
+        "effect": "fade",
+        "pagination": true,
+        "paginationType": "bullets"
+      }
+    }
+  }
+}
