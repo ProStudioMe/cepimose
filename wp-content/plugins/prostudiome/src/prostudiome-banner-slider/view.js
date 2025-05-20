@@ -26,59 +26,86 @@ console.log("Hello World! (from prostudiome-prostudiome block)");
 
 import EmblaCarousel from "embla-carousel";
 
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
+	// Debug log to check if script is running
+	console.log("Banner slider initialization starting...");
+
 	// Find all slider instances on the page
 	const sliders = document.querySelectorAll(
 		".wp-block-prostudiome-banner-slider .embla",
 	);
+	console.log("Found sliders:", sliders.length);
 
-	if (!sliders.length) return;
+	if (!sliders.length) {
+		console.log("No sliders found on page");
+		return;
+	}
 
-	sliders.forEach((slider) => {
+	// Check if EmblaCarousel is available
+	if (typeof EmblaCarousel === "undefined") {
+		console.error("EmblaCarousel is not loaded!");
+		return;
+	}
+
+	sliders.forEach((slider, index) => {
+		console.log(`Initializing slider ${index + 1}`);
+
 		const viewPort = slider.querySelector(".embla__viewport");
 		const prevBtn = slider.querySelector(".embla__prev");
 		const nextBtn = slider.querySelector(".embla__next");
 
-		if (!viewPort) return;
+		if (!viewPort) {
+			console.error(`Viewport not found in slider ${index + 1}`);
+			return;
+		}
 
-		const options = {
-			loop: true,
-			dragFree: false,
-			skipSnaps: false,
-			containScroll: "trimSnaps",
-			align: "start",
-			slidesToScroll: 1,
-		};
-
-		const embla = EmblaCarousel(viewPort, options);
-
-		if (prevBtn && nextBtn) {
-			// Add click handlers
-			prevBtn.addEventListener("click", () => embla.scrollPrev());
-			nextBtn.addEventListener("click", () => embla.scrollNext());
-
-			// Update button states
-			const updateButtonStates = () => {
-				if (embla.canScrollPrev()) {
-					prevBtn.removeAttribute("disabled");
-				} else {
-					prevBtn.setAttribute("disabled", "disabled");
-				}
-
-				if (embla.canScrollNext()) {
-					nextBtn.removeAttribute("disabled");
-				} else {
-					nextBtn.setAttribute("disabled", "disabled");
-				}
+		try {
+			const options = {
+				loop: true,
+				dragFree: false,
+				skipSnaps: false,
+				containScroll: "trimSnaps",
+				align: "start",
+				slidesToScroll: 1,
 			};
 
-			// Add listeners for button state updates
-			embla.on("select", updateButtonStates);
-			embla.on("init", updateButtonStates);
-			embla.on("reInit", updateButtonStates);
+			const embla = EmblaCarousel(viewPort, options);
+			console.log(`Slider ${index + 1} initialized successfully`);
 
-			// Initial state update
-			updateButtonStates();
+			if (prevBtn && nextBtn) {
+				// Add click handlers
+				prevBtn.addEventListener("click", () => {
+					console.log("Previous button clicked");
+					embla.scrollPrev();
+				});
+
+				nextBtn.addEventListener("click", () => {
+					console.log("Next button clicked");
+					embla.scrollNext();
+				});
+
+				// Update button states
+				const updateButtonStates = () => {
+					const canScrollPrev = embla.canScrollPrev();
+					const canScrollNext = embla.canScrollNext();
+
+					prevBtn.disabled = !canScrollPrev;
+					nextBtn.disabled = !canScrollNext;
+
+					prevBtn.style.display = canScrollPrev ? "block" : "none";
+					nextBtn.style.display = canScrollNext ? "block" : "none";
+				};
+
+				// Add listeners for button state updates
+				embla.on("select", updateButtonStates);
+				embla.on("init", updateButtonStates);
+				embla.on("reInit", updateButtonStates);
+
+				// Initial state update
+				updateButtonStates();
+			}
+		} catch (error) {
+			console.error(`Error initializing slider ${index + 1}:`, error);
 		}
 	});
 });
