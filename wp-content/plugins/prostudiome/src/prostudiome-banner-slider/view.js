@@ -27,45 +27,58 @@ console.log("Hello World! (from prostudiome-prostudiome block)");
 import EmblaCarousel from "embla-carousel";
 
 document.addEventListener("DOMContentLoaded", function () {
-	const emblaNode = document.querySelector(".embla");
-	if (!emblaNode) return;
+	// Find all slider instances on the page
+	const sliders = document.querySelectorAll(
+		".wp-block-prostudiome-banner-slider .embla",
+	);
 
-	const viewPort = emblaNode.querySelector(".embla__viewport");
-	const prevBtn = emblaNode.querySelector(".embla__prev");
-	const nextBtn = emblaNode.querySelector(".embla__next");
+	if (!sliders.length) return;
 
-	const options = {
-		loop: true,
-		dragFree: true,
-		skipSnaps: false,
-		containScroll: "trimSnaps",
-	};
+	sliders.forEach((slider) => {
+		const viewPort = slider.querySelector(".embla__viewport");
+		const prevBtn = slider.querySelector(".embla__prev");
+		const nextBtn = slider.querySelector(".embla__next");
 
-	const embla = EmblaCarousel(viewPort, options);
+		if (!viewPort) return;
 
-	prevBtn.addEventListener("click", () => embla.scrollPrev());
-	nextBtn.addEventListener("click", () => embla.scrollNext());
-
-	// Optional: Add button states
-	const addToggleBtnStates = (emblaApi, prevBtn, nextBtn) => {
-		const toggleBtnState = () => {
-			if (emblaApi.canScrollPrev()) prevBtn.removeAttribute("disabled");
-			else prevBtn.setAttribute("disabled", "disabled");
-
-			if (emblaApi.canScrollNext()) nextBtn.removeAttribute("disabled");
-			else nextBtn.setAttribute("disabled", "disabled");
+		const options = {
+			loop: true,
+			dragFree: false,
+			skipSnaps: false,
+			containScroll: "trimSnaps",
+			align: "start",
+			slidesToScroll: 1,
 		};
 
-		emblaApi
-			.on("select", toggleBtnState)
-			.on("init", toggleBtnState)
-			.on("reInit", toggleBtnState);
+		const embla = EmblaCarousel(viewPort, options);
 
-		return () => {
-			prevBtn.removeAttribute("disabled");
-			nextBtn.removeAttribute("disabled");
-		};
-	};
+		if (prevBtn && nextBtn) {
+			// Add click handlers
+			prevBtn.addEventListener("click", () => embla.scrollPrev());
+			nextBtn.addEventListener("click", () => embla.scrollNext());
 
-	const toggleBtnState = addToggleBtnStates(embla, prevBtn, nextBtn);
+			// Update button states
+			const updateButtonStates = () => {
+				if (embla.canScrollPrev()) {
+					prevBtn.removeAttribute("disabled");
+				} else {
+					prevBtn.setAttribute("disabled", "disabled");
+				}
+
+				if (embla.canScrollNext()) {
+					nextBtn.removeAttribute("disabled");
+				} else {
+					nextBtn.setAttribute("disabled", "disabled");
+				}
+			};
+
+			// Add listeners for button state updates
+			embla.on("select", updateButtonStates);
+			embla.on("init", updateButtonStates);
+			embla.on("reInit", updateButtonStates);
+
+			// Initial state update
+			updateButtonStates();
+		}
+	});
 });
