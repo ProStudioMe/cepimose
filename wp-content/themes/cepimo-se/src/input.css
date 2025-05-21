@@ -3,4 +3,23 @@
 @tailwind utilities;
 
 @layer components {
+  #home-swiper {
+    @apply pt-14 -mt-5;
+  }
+}
+
+#home-swiper .zolo-post-content {
+  @apply bg-blue-lighter rounded-b-[20px] p-8 pt-10 -mt-[15px];
+}
+
+#home-swiper .swiper-navigation-position-center {
+  @apply left-1/2 min-w-48 absolute top-0 flex items-center justify-center gap-5 -translate-x-1/2;
+}
+
+#home-swiper .zolo-post-link-btn {
+  @apply w-max absolute right-[2%] bottom-[40%];
+}
+
+#home-swiper .zolo__display-icon svg {
+  @apply -rotate-45;
 }

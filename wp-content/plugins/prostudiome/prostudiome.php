@@ -43,6 +43,7 @@ function prostudiome_blocks_init() {
 
 	// Register blocks
 	register_block_type(__DIR__ . '/build/prostudiome-banner-swiper');
+	register_block_type(__DIR__ . '/build/prostudiome-timeline');
 }
 add_action('init', 'prostudiome_blocks_init');
 
@@ -50,7 +51,7 @@ add_action('init', 'prostudiome_blocks_init');
  * Enqueue scripts and styles for the frontend
  */
 function prostudiome_enqueue_scripts() {
-	if (has_block('prostudiome/banner-swiper')) {
+	if (has_block('prostudiome/banner-swiper') || has_block('prostudiome/timeline')) {
 		wp_enqueue_style('swiper');
 		wp_enqueue_script('swiper');
 	}

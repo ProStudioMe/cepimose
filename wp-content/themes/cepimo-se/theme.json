@@ -22,6 +22,11 @@
           "slug": "blue-light"
         },
         {
+          "color": "#E9F7FF",
+          "name": "blue-lighter",
+          "slug": "blue-lighter"
+        },
+        {
           "color": "#ffffff",
           "name": "white",
           "slug": "white"
@@ -34,8 +39,8 @@
       ]
     },
     "layout": {
-      "contentSize": "1024px",
-      "wideSize": "1280px"
+      "contentSize": "1280px",
+      "wideSize": "1536px"
     },
     "spacing": {
       "units": ["%", "px", "em", "rem", "vh", "vw"]

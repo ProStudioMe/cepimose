@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "prostudiome/timeline",
+  "version": "1.0.0",
+  "title": "ProStudioMe Timeline",
+  "category": "widgets",
+  "icon": "clock",
+  "description": "Horizontal timeline using Swiper for smooth transitions.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "prostudiome",
+  "editorScript": "file:./index.js",
+  "editorStyle": [
+    "file:./editor.css"
+  ],
+  "style": [
+    "swiper",
+    "file:./style.css"
+  ],
+  "viewScript": [
+    "swiper",
+    "file:./frontend.js"
+  ],
+  "render": "file:./render.php",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "swiperOptions": {
+      "type": "object",
+      "default": {
+        "speed": 800,
+        "autoplay": false,
+        "loop": false,
+        "navigation": true,
+        "effect": "slide",
+        "pagination": true,
+        "paginationType": "bullets",
+        "slidesPerView": 6,
+        "spaceBetween": 20,
+        "centeredSlides": false,
+        "grabCursor": true,
+        "breakpoints": {
+          "320": {
+            "slidesPerView": 1,
+            "spaceBetween": 10
+          },
+          "480": {
+            "slidesPerView": 2,
+            "spaceBetween": 15
+          },
+          "768": {
+            "slidesPerView": 3,
+            "spaceBetween": 15
+          },
+          "1024": {
+            "slidesPerView": 4,
+            "spaceBetween": 20
+          },
+          "1280": {
+            "slidesPerView": 5,
+            "spaceBetween": 20
+          },
+          "1440": {
+            "slidesPerView": 6,
+            "spaceBetween": 20
+          }
+        }
+      }
+    }
+  }
+}

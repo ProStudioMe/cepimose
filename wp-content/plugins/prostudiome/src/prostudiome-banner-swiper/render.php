@@ -131,7 +131,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
                     <?php endif; ?>
 
                     <?php if ($link) : ?>
-                    <a href="<?php echo esc_url($link['url']); ?>" class="banner-link"
+                    <a href="<?php echo esc_url($link['url']); ?>" class="±banner-link"
                         <?php echo $link['target'] ? 'target="' . esc_attr($link['target']) . '"' : ''; ?>>
                         <?php echo esc_html($link['title']); ?>
                     </a>

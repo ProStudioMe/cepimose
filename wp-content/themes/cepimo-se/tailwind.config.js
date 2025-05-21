@@ -1,6 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**/*.php", "./**/*.html", "./parts/**/*.html", "./src/**/*.css"],
+  content: [
+    "./functions.php",
+    "./inc/**/*.php",
+    "./template-parts/**/*.php",
+    "./templates/**/*.php",
+    "./parts/**/*.html",
+    "./templates/**/*.html",
+    "../../plugins/*/*.php",
+    "../../plugins/*/templates/**/*.php",
+    "../../plugins/*/includes/**/*.php",
+    "../../plugins/prostudiome/*.php",
+    "../../plugins/prostudiome/templates/**/*.php",
+    "../../plugins/prostudiome/includes/**/*.php",
+    "../../plugins/prostudiome/src/**/*.{js,jsx}",
+    "../../plugins/prostudiome/blocks/**/*.{php,js,jsx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  safelist: ["aspect-[1920/640]"],
   theme: {
     extend: {
       colors: {
@@ -9,6 +26,7 @@ module.exports = {
           dark: "#0a76bd",
           middle: "#19ace4",
           light: "#9adaef",
+          lighter: "#E9F7FF",
         },
         white: "#ffffff",
         black: "#000000",
