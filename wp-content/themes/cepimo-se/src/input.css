@@ -23,3 +23,7 @@
 #home-swiper .zolo__display-icon svg {
   @apply -rotate-45;
 }
+
+.home-hero {
+  @apply bg-white/70 backdrop-blur-md backdrop-filter rounded-lg shadow-md;
+}

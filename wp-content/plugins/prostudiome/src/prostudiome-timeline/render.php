@@ -97,24 +97,30 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 $age = get_field('vaccination_age', $item->ID);
                 $image = get_field('vaccination_image', $item->ID);
                 $text = get_field('vaccination_text', $item->ID);
+                $permalink = get_permalink($item->ID);
             ?>
             <div class="swiper-slide">
-                <?php if ($age) : ?>
-                <div class="timeline-age"><?php echo esc_html($age); ?></div>
-                <?php endif; ?>
-                <div class="timeline-content">
-                    <?php if ($image) : 
-                        // If image is returned as array (ACF image field)
-                        $image_url = is_array($image) ? $image['url'] : $image;
-                        $image_alt = is_array($image) ? $image['alt'] : '';
-                    ?>
-                    <img class="timeline-image" src="<?php echo esc_url($image_url); ?>"
-                        alt="<?php echo esc_attr($image_alt); ?>">
+                <a href="<?php echo esc_url($permalink); ?>" class="timeline-link">
+                    <?php if ($age) : ?>
+                    <div class="timeline-age"><?php echo esc_html($age); ?></div>
                     <?php endif; ?>
-                    <?php if ($text) : ?>
-                    <div class="timeline-description"><?php echo wp_kses_post($text); ?></div>
-                    <?php endif; ?>
-                </div>
+                    <div class="timeline-content">
+                        <?php if ($image) : 
+                            // If image is returned as array (ACF image field)
+                            $image_url = is_array($image) ? $image['url'] : $image;
+                            $image_alt = is_array($image) ? $image['alt'] : '';
+                        ?>
+                        <img class="timeline-image" src="<?php echo esc_url($image_url); ?>"
+                            alt="<?php echo esc_attr($image_alt); ?>">
+                        <?php endif; ?>
+                        <?php if ($text) : ?>
+                        <div class="timeline-description"><?php echo wp_kses_post($text); ?></div>
+                        <?php endif; ?>
+                        <div class="timeline-button">
+                            <span class="dashicons dashicons-arrow-right-alt"></span>
+                        </div>
+                    </div>
+                </a>
             </div>
             <?php endforeach; ?>
         </div>

@@ -18,6 +18,7 @@
   "textdomain": "prostudiome",
   "editorScript": "file:./index.js",
   "editorStyle": [
+    "swiper",
     "file:./editor.css"
   ],
   "style": [
@@ -34,6 +35,9 @@
       "type": "string",
       "default": "full"
     },
+    "className": {
+      "type": "string"
+    },
     "swiperOptions": {
       "type": "object",
       "default": {
@@ -44,34 +48,25 @@
         "effect": "slide",
         "pagination": true,
         "paginationType": "bullets",
-        "slidesPerView": 6,
-        "spaceBetween": 20,
+        "slidesPerView": 1,
+        "spaceBetween": 0,
         "centeredSlides": false,
         "grabCursor": true,
         "breakpoints": {
-          "320": {
-            "slidesPerView": 1,
-            "spaceBetween": 10
+          "0": {
+            "slidesPerView": 1
           },
           "480": {
-            "slidesPerView": 2,
-            "spaceBetween": 15
+            "slidesPerView": 2
           },
           "768": {
-            "slidesPerView": 3,
-            "spaceBetween": 15
+            "slidesPerView": 3
           },
           "1024": {
-            "slidesPerView": 4,
-            "spaceBetween": 20
+            "slidesPerView": 4
           },
           "1280": {
-            "slidesPerView": 5,
-            "spaceBetween": 20
-          },
-          "1440": {
-            "slidesPerView": 6,
-            "spaceBetween": 20
+            "slidesPerView": 4
           }
         }
       }
