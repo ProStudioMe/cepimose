@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "prostudiome/home-info",
+  "title": "Home Info",
+  "category": "widgets",
+  "icon": "admin-home",
+  "description": "A block for displaying home information",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "prostudiome",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css"
+}

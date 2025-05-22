@@ -26,16 +26,20 @@ function prostudiome_register_acf_blocks() {
 		acf_register_block_type(array(
 			'name'              => 'home-info',
 			'title'             => __('Home Page Info Block'),
-			'description'       => __('A custom block for the home page with title, subtitle, info box, text, and background image'),
+			'description'       => __('Displays content from the home page custom fields'),
 			'render_template'   => plugin_dir_path(__FILE__) . 'src/prostudiome-home-info/render.php',
 			'category'          => 'formatting',
 			'icon'              => 'admin-comments',
 			'keywords'          => array('home', 'info', 'content'),
-			'mode'              => 'edit',
 			'supports'          => array(
-				'align' => true
+				'align' => true,
+				'mode' => false,
+				'jsx' => false
 			),
-			'enqueue_style'     => plugins_url('src/prostudiome-home-info/style.css', __FILE__),
+			'enqueue_style'     => plugins_url('build/prostudiome-home-info/style-index.css', __FILE__) . '?v=' . time(),
+			'enqueue_assets'    => function(){
+				wp_enqueue_style('prostudiome-home-info-style', plugins_url('build/prostudiome-home-info/style-index.css', __FILE__), array(), time());
+			},
 		));
 	}
 }
@@ -48,12 +52,12 @@ function prostudiome_register_acf_fields() {
 	if (function_exists('acf_add_local_field_group')) {
 		acf_add_local_field_group(array(
 			'key' => 'group_home_info',
-			'title' => 'Home Info Block',
+			'title' => 'Home Info Fields',
 			'fields' => array(
 				array(
-					'key' => 'field_title',
+					'key' => 'field_titel',
 					'label' => 'Title',
-					'name' => 'title',
+					'name' => 'titel',
 					'type' => 'text',
 					'required' => 1,
 				),
@@ -98,9 +102,9 @@ function prostudiome_register_acf_fields() {
 			'location' => array(
 				array(
 					array(
-						'param' => 'block',
+						'param' => 'post_slug',
 						'operator' => '==',
-						'value' => 'acf/home-info',
+						'value' => 'home-page-cepimose',
 					),
 				),
 			),
@@ -144,20 +148,15 @@ function prostudiome_blocks_init() {
 	// Register blocks
 	register_block_type(__DIR__ . '/build/prostudiome-banner-swiper');
 	register_block_type(__DIR__ . '/build/prostudiome-timeline');
+	// Note: The home-info block is registered via ACF in prostudiome_register_acf_blocks()
 
 	// Register block styles
+	$timeline_css_path = plugin_dir_path(__FILE__) . 'build/prostudiome-timeline/style-index.css';
 	wp_register_style(
 		'prostudiome-timeline-style',
 		plugins_url('build/prostudiome-timeline/style-index.css', __FILE__),
 		array('swiper'),
-		filemtime(plugin_dir_path(__FILE__) . 'build/prostudiome-timeline/style-index.css')
-	);
-
-	wp_register_style(
-		'prostudiome-home-info-style',
-		plugins_url('src/prostudiome-home-info/style.css', __FILE__),
-		array(),
-		filemtime(plugin_dir_path(__FILE__) . 'src/prostudiome-home-info/style.css')
+		file_exists($timeline_css_path) ? filemtime($timeline_css_path) : '1.0.0'
 	);
 }
 add_action('init', 'prostudiome_blocks_init');
@@ -172,8 +171,12 @@ function prostudiome_enqueue_scripts() {
 		wp_enqueue_style('prostudiome-timeline-style');
 	}
 
-	if (has_block('acf/home-info')) {
-		wp_enqueue_style('prostudiome-home-info-style');
-	}
+	// Always enqueue home-info styles to ensure they're available
+	wp_enqueue_style(
+		'prostudiome-home-info-style',
+		plugins_url('src/prostudiome-home-info/style.css', __FILE__),
+		array(),
+		time() // Using current timestamp to force refresh
+	);
 }
 add_action('wp_enqueue_scripts', 'prostudiome_enqueue_scripts');

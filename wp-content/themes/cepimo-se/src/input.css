@@ -24,6 +24,190 @@
   @apply -rotate-45;
 }
 
-.home-hero {
-  @apply bg-white/70 backdrop-blur-md backdrop-filter rounded-lg shadow-md;
+/* HOME INFO BOX */
+
+.wp-block-acf-home-info {
+  @apply relative p-10 py-20;
+}
+.home-info-background-image {
+  @apply -z-10 absolute inset-0 object-cover w-full h-full;
+}
+.home-info-content {
+  @apply bg-white/70 backdrop-blur-md backdrop-filter relative z-10 grid grid-cols-2 max-w-6xl mx-auto rounded-2xl shadow-2xl border-[1px] border-white overflow-hidden;
+}
+
+.home-info-content-left {
+  @apply p-14 flex flex-col items-center justify-center gap-10;
+}
+
+.home-info-icon {
+  @apply w-16 h-16;
+}
+.home-info-titles-container {
+  @apply flex flex-col items-center gap-5;
+}
+
+.home-info-title {
+  @apply text-blue-dark text-5xl font-bold text-center;
+}
+
+.home-info-subtitle {
+  @apply text-primary text-2xl text-center;
+}
+
+.home-info-box {
+  @apply text-primary border-blue-light p-5 text-xs border-[1px] rounded-lg;
+}
+.home-info-link {
+  @apply bg-primary hover:bg-blue-light p-5 text-xl font-bold text-white transition-all duration-300 ease-in-out rounded-full;
+}
+
+.home-info-text {
+  @apply text-blue-dark p-20 text-sm bg-white;
+}
+.home-info-text ul {
+  @apply grid gap-3 pl-5 text-gray-600 list-disc;
+}
+
+/* HOME TIMELINE  */
+
+/* Timeline Component */
+.wp-block-prostudiome-timeline {
+  @apply relative w-full py-8 overflow-hidden;
+}
+
+.wp-block-prostudiome-timeline .swiper {
+  @apply w-full py-5 overflow-visible;
+}
+
+.wp-block-prostudiome-timeline .swiper-wrapper {
+  @apply flex w-full gap-0;
+}
+
+.wp-block-prostudiome-timeline .swiper-slide {
+  @apply p-0 m-0 overflow-hidden transition-transform duration-300 ease-in-out;
+}
+
+.wp-block-prostudiome-timeline a.timeline-link {
+  @apply block no-underline;
+}
+
+.wp-block-prostudiome-timeline .timeline-age {
+  @apply relative block pb-16 text-sm font-medium text-center text-blue-500;
+}
+
+.wp-block-prostudiome-timeline .timeline-age::before {
+  @apply content-[""] absolute top-8 left-1/2 w-[15px] h-[15px] bg-blue-500 rounded-full -translate-x-1/2;
+}
+
+.wp-block-prostudiome-timeline .timeline-age::after {
+  @apply content-[""] absolute top-[38px] left-0 right-0 h-[1px] w-full border-t border-dashed border-blue-500 z-0;
+}
+
+.wp-block-prostudiome-timeline .timeline-content {
+  @apply rounded-3xl relative p-12 mx-4 bg-gray-100;
+}
+
+.wp-block-prostudiome-timeline .timeline-image {
+  @apply object-cover w-48 h-48 mx-auto mb-3 rounded-full;
+}
+
+.wp-block-prostudiome-timeline .timeline-description {
+  @apply mx-6 mt-6 text-sm leading-relaxed text-gray-600;
+}
+
+.wp-block-prostudiome-timeline .timeline-description ul {
+  @apply list-disc;
+}
+
+.wp-block-prostudiome-timeline .timeline-description li:not(:first-child) {
+  @apply mt-2;
+}
+
+.wp-block-prostudiome-timeline .swiper-button-next,
+.wp-block-prostudiome-timeline .swiper-button-prev {
+  @apply text-blue-500 transition-all duration-300 ease-in-out;
+}
+
+.wp-block-prostudiome-timeline .swiper-button-next:hover,
+.wp-block-prostudiome-timeline .swiper-button-prev:hover {
+  @apply scale-110;
+}
+
+.wp-block-prostudiome-timeline .swiper-button-next::after,
+.wp-block-prostudiome-timeline .swiper-button-prev::after {
+  @apply text-2xl;
+}
+
+.wp-block-prostudiome-timeline .swiper-pagination {
+  @apply relative flex items-center justify-center w-full mt-4;
+}
+
+.wp-block-prostudiome-timeline .swiper-pagination-bullet {
+  @apply mx-1 transition-all duration-300 ease-in-out bg-blue-500 opacity-50;
+}
+
+.wp-block-prostudiome-timeline .swiper-pagination-bullet-active {
+  @apply scale-110 opacity-100;
+}
+
+/* Media queries */
+@media (max-width: 1440px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-lg;
+  }
+  .wp-block-prostudiome-timeline .timeline-description {
+    @apply text-sm;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-base;
+  }
+  .wp-block-prostudiome-timeline .timeline-description {
+    @apply text-xs;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-base;
+  }
+}
+
+@media (max-width: 768px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-sm;
+  }
+  .wp-block-prostudiome-timeline .timeline-description {
+    @apply text-xs;
+  }
+}
+
+@media (max-width: 480px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-sm;
+  }
+}
+
+/* Timeline Button */
+.timeline-button {
+  @apply right-4 bottom-4 absolute flex items-center justify-center w-10 h-10 mt-4 text-blue-500 transition-colors duration-300 -rotate-45 bg-white rounded-full;
+}
+
+.timeline-button .button-text {
+  @apply mr-2 text-sm font-medium;
+}
+
+.timeline-button .dashicons {
+  @apply text-lg w-[18px] h-[18px] transition-transform duration-300;
+}
+
+.timeline-button:hover {
+  @apply text-white bg-blue-700;
+}
+
+.timeline-button:hover .dashicons {
+  @apply translate-x-1;
 }
