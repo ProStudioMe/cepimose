@@ -27,6 +27,11 @@
           "slug": "blue-lighter"
         },
         {
+          "color": "#F0F0F0",
+          "name": "gray-lighter",
+          "slug": "gray-lighter"
+        },
+        {
           "color": "#ffffff",
           "name": "white",
           "slug": "white"
