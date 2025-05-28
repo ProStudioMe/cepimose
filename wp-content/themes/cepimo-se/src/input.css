@@ -211,3 +211,89 @@
 .timeline-button:hover .dashicons {
   @apply translate-x-1;
 }
+
+/* Title archive */
+
+.title-bar {
+  @apply aspect-[1/0.22] overflow-hidden relative mb-16;
+}
+.title-bar-deco {
+  @apply -z-0 absolute inset-0 object-contain max-w-full max-h-full;
+}
+.title-bar h1 {
+  @apply text-blue-dark;
+}
+.title-bar-deco img {
+  @apply block ml-auto;
+}
+
+.title-bar-breadcrumb {
+  @apply absolute left-0 z-10;
+}
+
+.title-bar-title-container-parent {
+  @apply relative flex flex-col justify-center h-full mt-0;
+}
+
+.title-bar-title-container {
+  @apply h-max xl:w-7/12 !ml-0 my-auto z-10;
+}
+
+/* Content */
+.wp-block-group a {
+  @apply text-primary;
+}
+
+.block-4-elements {
+  @apply bg-extra-dark p-14 rounded-2xl text-white;
+}
+.block-4-elements h4 {
+  @apply text-center !text-white;
+}
+.block-4-elements p {
+  @apply text-white/80;
+}
+
+.block-4-elements-element {
+  @apply bg-white/10 rounded-xl p-10;
+}
+
+.paragraph-image-1 {
+  @apply max-w-[65em] mx-auto bg-extra-dark overflow-hidden p-14 rounded-2xl text-white relative after:absolute after:right-0 after:top-0 after:h-full after:w-[15%] after:bg-blue-middle after:content-[''] after:[content:''!important] after:z-0;
+}
+.paragraph-image-1 h4 {
+  @apply text-3xl !font-semibold !text-white;
+}
+.paragraph-image-1 img {
+  @apply relative z-10 block;
+}
+
+.paragraph-image-2 {
+  @apply paragraph-image-1 after:right-[unset] after:left-0 after:bg-blue-light !bg-blue-lighter border-[1px] border-solid !border-blue-light;
+}
+
+.paragraph-image-2 h4 {
+  @apply !text-extra-dark;
+}
+.paragraph-image-2 p {
+  @apply !text-blue-middle;
+}
+
+/* Table */
+
+.c-table {
+  @apply border-[1px] border-solid border-neutral-400 rounded-xl overflow-hidden;
+}
+.c-table th {
+  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0 text-sm text-neutral-500 font-semibold;
+}
+
+.c-table thead {
+  @apply border-b-neutral-400;
+}
+.c-table td {
+  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0;
+}
+.c-table tfoot {
+  @apply border-t-[3px] border-neutral-400;
+}

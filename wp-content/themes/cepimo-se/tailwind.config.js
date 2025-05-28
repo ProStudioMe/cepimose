@@ -28,6 +28,9 @@ module.exports = {
           light: "#9adaef",
           lighter: "#E9F7FF",
         },
+        extra: {
+          dark: "#1F2937",
+        },
         white: "#ffffff",
         black: "#000000",
       },
@@ -41,4 +44,7 @@ module.exports = {
     },
   },
   plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
 };
