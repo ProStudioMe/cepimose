@@ -1,0 +1,75 @@
+********************************************************************************
+DUPLICATOR-LITE PACKAGE-LOG: May 28, 2025 7:32 pm
+NOTICE: Do NOT post to public sites or forums 
+********************************************************************************
+VERSION:	1.5.12
+WORDPRESS:	6.8.1
+PHP INFO:	8.2.27 | SAPI: fpm-fcgi
+SERVER:		nginx/1.26.1 
+PHP TIME LIMIT: (0) no time limit imposed 
+PHP MAX MEMORY: 4294967296 (256M default) 
+MEMORY STACK: 6MB
+
+********************************************************************************
+DATABASE:
+********************************************************************************
+BUILD MODE:   PHP(query limit - 100)
+MYSQLTIMEOUT: 5000
+MYSQLDUMP:    Not Supported
+TABLES: total:14 | filtered:0 | create:14
+FILTERED: []
+SQL CREATED: 20250528_cepimose_09f9569fd6fdf97d3572_20250528193221_database.sql
+SQL FILE SIZE: 11.48MB (12033427)
+SQL FILE TIME: 2025-05-28 19:32:41
+SQL RUNTIME: 0.49 sec.
+
+********************************************************************************
+ARCHIVE (ZIP):
+********************************************************************************
+ARCHIVE DIR:  /Users/danilo/Local Sites/cepimose/app/public
+ARCHIVE FILE: 20250528_cepimose_09f9569fd6fdf97d3572_20250528193221_archive.zip
+FILTERS: *OFF*
+DIRS:
+	not set
+FILES:
+	not set
+EXTS:  not set
+----------------------------------------
+COMPRESSING
+SIZE:	1.29GB
+STATS:	Dirs 32,293 | Files 222,525
+SQL ADDED: 20250528_cepimose_09f9569fd6fdf97d3572_20250528193221_database.sql
+ZipArchive Object
+(
+    [lastId] => 254817
+    [status] => 0
+    [statusSys] => 0
+    [numFiles] => 254818
+    [filename] => /Users/danilo/Local Sites/cepimose/app/public/wp-content/backups-dup-lite/tmp/20250528_cepimose_09f9569fd6fdf97d3572_20250528193221_archive.zip
+    [comment] => 
+)
+
+FILE ADDED TO ZIP: 254817
+COMPRESSION RESULT: '1'
+COMPRESSED SIZE: 524.2MB
+ARCHIVE RUNTIME: 94.49 sec.
+MEMORY STACK: 100.01MB
+building installer
+ARCHIVE CONSISTENCY TEST: PASS
+
+********************************************************************************
+INTEGRITY CHECKS:
+********************************************************************************
+SQL FILE: 11.48MB
+INSTALLER FILE: 73.49KB
+ARCHIVE FILE: 529.47MB 
+EXPECTED FILE/DIRECTORY COUNT: 254,818
+ACTUAL FILE/DIRECTORY COUNT: 254,817
+ARCHIVE CONSISTENCY TEST: Pass
+
+********************************************************************************
+RECORD ID:[1]
+TOTAL PROCESS RUNTIME: 98.20 sec.
+PEAK PHP MEMORY USED: 148.02MB
+DONE PROCESSING => 20250528_cepimose May 28, 2025 7:34 pm
+

@@ -20,7 +20,7 @@ foreach ($all_categories as $cat) {
 if (!$category) {
     error_log('Banner Swiper: Category "banner-front-page" not found');
     ?>
-<div <?php echo get_block_wrapper_attributes(); ?>>
+<div <?php echo get_block_wrapper_attributes(); ?> class="banner-swiper">
     <div style="padding: 20px; background: #f0f0f0; text-align: center;">
         <?php echo esc_html__('Error: Category "banner-front-page" not found. Please create this category and add posts to it.', 'prostudiome'); ?>
     </div>
@@ -100,6 +100,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 $subheading = get_field('banner_subheading', $banner->ID);
                 $text = get_field('banner_text', $banner->ID);
                 $link = get_field('banner_link', $banner->ID);
+                $link_text = get_field('banner_link_text', $banner->ID);
 
                 error_log('Banner Swiper: Fields for post ' . $banner->ID . ':');
                 error_log('- Main heading: ' . ($main_heading ? $main_heading : 'not set'));
@@ -115,25 +116,26 @@ $wrapper_attributes = get_block_wrapper_attributes([
 
                 $valid_banners++;
             ?>
-            <div class="swiper-slide lazy-loaded-image object-cover w-full h-full max-h-full aspect-[1920/640]"
+            <div class="swiper-slide banner-swiper-slide lazy-loaded-image object-cover w-full h-full max-h-full aspect-[1920/640]"
                 style="background-image: url('<?php echo esc_url($main_image['url']); ?>');">
-                <div class="banner-content">
+                <div class="banner-swiper-content">
                     <?php if ($main_heading) : ?>
-                    <h2 class="banner-title"><?php echo esc_html($main_heading); ?></h2>
+                    <h2 class="banner-swiper-title"><?php echo esc_html($main_heading); ?></h2>
                     <?php endif; ?>
 
                     <?php if ($subheading) : ?>
-                    <div class="banner-subtitle"><?php echo esc_html($subheading); ?></div>
+                    <div class="banner-swiper-subtitle"><?php echo esc_html($subheading); ?></div>
                     <?php endif; ?>
 
                     <?php if ($text) : ?>
-                    <div class="banner-text"><?php echo esc_html($text); ?></div>
+                    <div class="banner-swiper-text"><?php echo esc_html($text); ?></div>
                     <?php endif; ?>
 
                     <?php if ($link) : ?>
-                    <a href="<?php echo esc_url($link['url']); ?>" class="±banner-link"
+                    <a href="<?php echo esc_url($link['url']); ?>" class="banner-swiper-link"
                         <?php echo $link['target'] ? 'target="' . esc_attr($link['target']) . '"' : ''; ?>>
-                        <?php echo esc_html($link['title']); ?>
+                        <?php echo esc_html($link_text); ?>
+                        <img src="wp-content/themes/cepimo-se/assets/icon-arrow-right-circle.svg" alt='<?php echo esc_html($link_text); ?>'>
                     </a>
                     <?php endif; ?>
                 </div>
