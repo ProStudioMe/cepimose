@@ -6,12 +6,35 @@
   #home-swiper {
     @apply pt-14 -mt-5;
   }
+
+  /* Helper functions */
+  .widthFullMinus {
+    @apply lg:-mx-3 -mx-2;
+  }
+  .widthFull {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  .centerTransform {
+    @apply left-1/2 top-1/2 absolute -translate-x-1/2 -translate-y-1/2;
+  }
+  .centerTransform--ver {
+    @apply top-1/2 absolute -translate-y-1/2;
+  }
+  .centerTransform--hor {
+    @apply left-1/2 absolute -translate-x-1/2;
+  }
+
+  .afterFull {
+    @apply after:z-0 after:inset-0 after:absolute after:left-0 after:widthFull;
+  }
 }
 
 /* Banner swiper */
 
 .banner-swiper-slide {
-  @apply flex items-center justify-start;
+  @apply flex items-center justify-start bg-right;
 }
 
 .banner-swiper-content {
@@ -19,7 +42,7 @@
 }
 
 .banner-swiper-title {
-  @apply text-blue-dark outline-dotted outline-2 outline-blue-middle mt-0 mb-4 text-6xl font-bold;
+  @apply text-blue-dark mt-0 mb-4 text-6xl font-bold;
 }
 .test-class {
   @apply bg-inherit;
@@ -39,6 +62,10 @@
 
 .banner-swiper-link img {
   @apply h-5;
+}
+
+.banner-swiper-image {
+  @apply -z-10 absolute inset-0 bottom-0 right-0 object-cover w-full h-full;
 }
 
 /* Card swiper */

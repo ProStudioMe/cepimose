@@ -117,7 +117,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 $valid_banners++;
             ?>
             <div class="swiper-slide banner-swiper-slide lazy-loaded-image object-cover w-full h-full max-h-full aspect-[1920/640]"
-                style="background-image: url('<?php echo esc_url($main_image['url']); ?>');">
+                >
                 <div class="banner-swiper-content">
                     <?php if ($main_heading) : ?>
                     <h2 class="banner-swiper-title"><?php echo esc_html($main_heading); ?></h2>
@@ -139,6 +139,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
                     </a>
                     <?php endif; ?>
                 </div>
+                <img class="banner-swiper-image" src="<?php echo esc_url($main_image['url']); ?>" />
             </div>
             <?php endforeach; 
             
