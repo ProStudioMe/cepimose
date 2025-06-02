@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){const t=document.querySelectorAll(".wp-block-zolo-accordion");t&&t.length>0&&t.forEach((t=>{const n=t.dataset.initialOpen?parseInt(t.dataset.initialOpen):0,e=!!t.dataset.allowinitialopen,o="true"===t.dataset.multiple;new Accordion(t,{duration:400,...e&&{openOnInit:n?[n-1]:[0]},showMultiple:!!o})}))}));

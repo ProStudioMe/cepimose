@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Review Child",
+  "name": "zolo/review-child",
+  "category": "zoloblocks",
+  "parent": [
+    "zolo/review-grid"
+  ],
+  "keywords": [
+    "Rating",
+    "Review",
+    "Feedback",
+    "Testimonial",
+    "Stars"
+  ],
+  "description": "Display individual reviews within the Review block.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "supports": {
+    "anchor": false,
+    "customClassName": false
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}
