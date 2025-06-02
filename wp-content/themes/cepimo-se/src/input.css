@@ -19,7 +19,10 @@
 }
 
 .banner-swiper-title {
-  @apply text-blue-dark mt-0 mb-4 text-6xl font-bold;
+  @apply text-blue-dark outline-dotted outline-2 outline-blue-middle mt-0 mb-4 text-6xl font-bold;
+}
+.test-class {
+  @apply bg-inherit;
 }
 
 .banner-swiper-subtitle {

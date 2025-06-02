@@ -9,7 +9,12 @@ function cepimo_se_scripts() {
     wp_dequeue_style('wp-block-library-theme');
     
     // Enqueue Tailwind styles
-    wp_enqueue_style('cepimo-se-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version'));
+    wp_enqueue_style(
+        'cepimo-se-style', // Handle
+        get_template_directory_uri() . '/style.css', // Source
+        array(), // Dependencies
+        filemtime( get_stylesheet_directory() . '/style.css' ) // Version - USES FILE MODIFICATION TIME
+    );
 }
 add_action('wp_enqueue_scripts', 'cepimo_se_scripts');
 

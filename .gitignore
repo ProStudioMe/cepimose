@@ -1,0 +1,78 @@
+# WordPress
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/debug.log
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+*.log
+
+# Thumbs.db and .DS_Store
+Thumbs.db
+.DS_Store
+
+# WordPress Core
+# If you are managing WordPress core files with Git, you might want to comment this section out.
+# However, it's generally recommended to manage WordPress core via its own update mechanism or Composer.
+wp-admin/
+wp-includes/
+index.php
+license.txt
+readme.html
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+
+# IDE and editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# Node.js / npm / yarn
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Composer
+vendor/
+composer.lock
+
+# Build files
+dist/
+build/
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Sass cache
+.sass-cache/
+
+# Log files from various plugins/themes
+debug.log
+error_log
+
+# WP-CLI
+.wp-cli/
+
+# Local development environment specific files (e.g., Local by Flywheel, VVV)
+local-site/
+logs/
