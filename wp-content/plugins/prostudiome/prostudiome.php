@@ -148,6 +148,7 @@ function prostudiome_blocks_init() {
 	// Register blocks
 	register_block_type(__DIR__ . '/build/prostudiome-banner-swiper');
 	register_block_type(__DIR__ . '/build/prostudiome-timeline');
+	register_block_type(__DIR__ . '/build/prostudio-same-category-posts');
 	// Note: The home-info block is registered via ACF in prostudiome_register_acf_blocks()
 
 	// Register block styles

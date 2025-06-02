@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "prostudiome/same-category-posts",
+	"version": "1.0.0",
+	"title": "Same Category Posts",
+	"category": "widgets",
+	"icon": "category",
+	"description": "Displays posts from the same category as the current post.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"textdomain": "prostudiome",
+	"editorScript": "file:./index.js",
+	"editorStyle": ["file:./editor.css"],
+	"style": ["file:./style.css"],
+	"render": "file:./render.php",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"numberOfPosts": {
+			"type": "number",
+			"default": 3
+		},
+		"displayFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"title": {
+			"type": "string",
+			"default": "Related Posts"
+		}
+	}
+}

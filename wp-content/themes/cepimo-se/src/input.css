@@ -364,3 +364,20 @@
 .c-table tfoot {
   @apply border-t-[3px] border-neutral-400;
 }
+
+/* Aside */
+
+.aside-categories {
+  @apply rounded-xl grid gap-2 p-10;
+}
+.aside-categories ul {
+  @apply list-none;
+}
+
+.aside-categories li {
+  @apply border-b-neutral-300 marker:!content-[""]  marker:hidden w-full  list-none border-b-[1px] border-solid border-t-0 border-l-0 border-r-0;
+}
+
+.aside-categories a {
+  @apply text-neutral-700 w-full  py-3 no-underline text-lg cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-6 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:bg-no-repeat after:content-[""] block hover:text-primary transition-all hover:after:pr-2 after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
+}
