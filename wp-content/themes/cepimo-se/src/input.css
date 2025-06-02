@@ -1,0 +1,336 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  #home-swiper {
+    @apply pt-14 -mt-5;
+  }
+}
+
+/* Banner swiper */
+
+.banner-swiper-slide {
+  @apply flex items-center justify-start;
+}
+
+.banner-swiper-content {
+  @apply xl:w-[1280px] mx-auto;
+}
+
+.banner-swiper-title {
+  @apply text-blue-dark mt-0 mb-4 text-6xl font-bold;
+}
+
+.banner-swiper-subtitle {
+  @apply text-blue-middle mt-4 text-4xl font-semibold;
+}
+
+.banner-swiper-text {
+  @apply xl:max-w-[40%] mt-10 text-neutral-800;
+}
+
+.banner-swiper-link {
+  @apply bg-blue-middle flex items-center justify-center gap-2 px-5 py-3 mt-10 pr-3 text-sm w-max !text-white rounded-full;
+}
+
+.banner-swiper-link img {
+  @apply h-5;
+}
+
+/* Card swiper */
+
+#home-swiper .zolo-post-content {
+  @apply bg-blue-lighter rounded-b-[20px] p-8 pt-10 -mt-[15px];
+}
+
+#home-swiper .swiper-navigation-position-center {
+  @apply left-1/2 min-w-48 absolute top-0 flex items-center justify-center gap-5 -translate-x-1/2;
+}
+
+#home-swiper .zolo-post-link-btn {
+  @apply w-max absolute right-[2%] bottom-[40%];
+}
+
+#home-swiper .zolo__display-icon svg {
+  @apply -rotate-45;
+}
+
+/* HOME INFO BOX */
+
+.wp-block-acf-home-info {
+  @apply relative p-10 py-20;
+}
+.home-info-background-image {
+  @apply -z-10 absolute inset-0 object-cover w-full h-full;
+}
+.home-info-content {
+  @apply bg-white/70 backdrop-blur-md backdrop-filter relative z-10 grid grid-cols-2 max-w-6xl mx-auto rounded-2xl shadow-2xl border-[1px] border-white overflow-hidden;
+}
+
+.home-info-content-left {
+  @apply p-14 flex flex-col items-center justify-center gap-10;
+}
+
+.home-info-icon {
+  @apply w-16 h-16;
+}
+.home-info-titles-container {
+  @apply flex flex-col items-center gap-5;
+}
+
+.home-info-title {
+  @apply text-blue-dark text-5xl font-bold text-center;
+}
+
+.home-info-subtitle {
+  @apply text-primary text-2xl text-center;
+}
+
+.home-info-box {
+  @apply text-primary border-blue-light p-5 text-xs border-[1px] rounded-lg;
+}
+.home-info-link {
+  @apply bg-primary hover:bg-blue-light p-5 text-xl font-bold text-white transition-all duration-300 ease-in-out rounded-full;
+}
+
+.home-info-text {
+  @apply text-blue-dark p-20 text-sm bg-white;
+}
+
+.home-info-text h3 {
+  @apply font-[500] text-lg leading-snug;
+}
+
+.home-info-text ul {
+  @apply grid gap-3 pl-5 text-gray-600 list-disc;
+}
+
+/* HOME TIMELINE  */
+
+/* Timeline Component */
+.wp-block-prostudiome-timeline {
+  @apply relative w-full py-8 overflow-hidden;
+}
+
+.wp-block-prostudiome-timeline .swiper {
+  @apply w-full py-5 overflow-visible;
+}
+
+.wp-block-prostudiome-timeline .swiper-wrapper {
+  @apply flex w-full gap-0;
+}
+
+.wp-block-prostudiome-timeline .swiper-slide {
+  @apply p-0 m-0 overflow-hidden transition-transform duration-300 ease-in-out;
+}
+
+.wp-block-prostudiome-timeline a.timeline-link {
+  @apply block no-underline;
+}
+
+.wp-block-prostudiome-timeline .timeline-age {
+  @apply relative block pb-16 text-sm font-medium text-center text-blue-500;
+}
+
+.wp-block-prostudiome-timeline .timeline-age::before {
+  @apply content-[""] absolute top-8 left-1/2 w-[15px] h-[15px] bg-blue-500 rounded-full -translate-x-1/2;
+}
+
+.wp-block-prostudiome-timeline .timeline-age::after {
+  @apply content-[""] absolute top-[39px] left-0 right-0 h-[1px] w-full border-t border-b-0 border-dashed border-blue-500 z-0;
+}
+
+.wp-block-prostudiome-timeline .timeline-content {
+  @apply rounded-3xl relative p-12 mx-4 mb-8 bg-gray-100 shadow-lg;
+}
+
+.wp-block-prostudiome-timeline .timeline-image {
+  @apply object-cover w-48 h-48 mx-auto mb-3 rounded-full;
+}
+
+.wp-block-prostudiome-timeline .timeline-description {
+  @apply mx-6 mt-6 text-sm leading-relaxed text-gray-600;
+}
+
+.wp-block-prostudiome-timeline .timeline-description ul {
+  @apply list-disc;
+}
+
+.wp-block-prostudiome-timeline .timeline-description li:not(:first-child) {
+  @apply mt-2;
+}
+
+.wp-block-prostudiome-timeline .swiper-button-next,
+.wp-block-prostudiome-timeline .swiper-button-prev {
+  @apply text-blue-500 transition-all duration-300 ease-in-out;
+}
+
+.wp-block-prostudiome-timeline .swiper-button-next:hover,
+.wp-block-prostudiome-timeline .swiper-button-prev:hover {
+  @apply scale-110;
+}
+
+.wp-block-prostudiome-timeline .swiper-button-next::after,
+.wp-block-prostudiome-timeline .swiper-button-prev::after {
+  @apply text-2xl;
+}
+
+.wp-block-prostudiome-timeline .swiper-pagination {
+  @apply relative flex items-center justify-center w-full mt-4;
+}
+
+.wp-block-prostudiome-timeline .swiper-pagination-bullet {
+  @apply mx-1 transition-all duration-300 ease-in-out bg-blue-500 opacity-50;
+}
+
+.wp-block-prostudiome-timeline .swiper-pagination-bullet-active {
+  @apply scale-110 opacity-100;
+}
+
+/* Media queries */
+@media (max-width: 1440px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-lg;
+  }
+  .wp-block-prostudiome-timeline .timeline-description {
+    @apply text-sm;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-base;
+  }
+  .wp-block-prostudiome-timeline .timeline-description {
+    @apply text-xs;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-base;
+  }
+}
+
+@media (max-width: 768px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-sm;
+  }
+  .wp-block-prostudiome-timeline .timeline-description {
+    @apply text-xs;
+  }
+}
+
+@media (max-width: 480px) {
+  .wp-block-prostudiome-timeline .timeline-age {
+    @apply text-sm;
+  }
+}
+
+/* Timeline Button */
+.timeline-button {
+  @apply right-4 bottom-4 absolute flex items-center justify-center w-10 h-10 mt-4 text-blue-500 transition-colors duration-300 -rotate-45 bg-white rounded-full;
+}
+
+.timeline-button .button-text {
+  @apply mr-2 text-sm font-medium;
+}
+
+.timeline-button .dashicons {
+  @apply text-lg w-[18px] h-[18px] transition-transform duration-300 grid place-content-center;
+}
+
+.timeline-button:hover {
+  @apply text-white bg-blue-700;
+}
+
+.timeline-button:hover .dashicons {
+  @apply translate-x-1;
+}
+
+/* Title archive */
+
+.title-bar {
+  @apply aspect-[1/0.22] overflow-hidden relative mb-16;
+}
+.title-bar-deco {
+  @apply -z-0 absolute inset-0 object-contain max-w-full max-h-full;
+}
+.title-bar h1 {
+  @apply text-blue-dark;
+}
+.title-bar-deco img {
+  @apply block ml-auto;
+}
+
+.title-bar-breadcrumb {
+  @apply absolute left-0 z-10;
+}
+
+.title-bar-title-container-parent {
+  @apply relative flex flex-col justify-center h-full mt-0;
+}
+
+.title-bar-title-container {
+  @apply h-max xl:w-7/12 !ml-0 my-auto z-10;
+}
+
+/* Content */
+.wp-block-group a {
+  @apply text-primary;
+}
+
+.block-4-elements {
+  @apply bg-extra-dark p-14 rounded-2xl text-white;
+}
+.block-4-elements h4 {
+  @apply text-center !text-white;
+}
+.block-4-elements p {
+  @apply text-white/80;
+}
+
+.block-4-elements-element {
+  @apply bg-white/10 rounded-xl p-10;
+}
+
+.paragraph-image-1 {
+  @apply max-w-[65em] mx-auto bg-extra-dark overflow-hidden p-14 rounded-2xl text-white relative after:absolute after:right-0 after:top-0 after:h-full after:w-[15%] after:bg-blue-middle after:content-[''] after:[content:''!important] after:z-0;
+}
+.paragraph-image-1 h4 {
+  @apply text-3xl !font-semibold !text-white;
+}
+.paragraph-image-1 img {
+  @apply relative z-10 block;
+}
+
+.paragraph-image-2 {
+  @apply paragraph-image-1 after:right-[unset] after:left-0 after:bg-blue-light !bg-blue-lighter border-[1px] border-solid !border-blue-light;
+}
+
+.paragraph-image-2 h4 {
+  @apply !text-extra-dark;
+}
+.paragraph-image-2 p {
+  @apply !text-blue-middle;
+}
+
+/* Table */
+
+.c-table {
+  @apply border-[1px] border-solid border-neutral-400 rounded-xl overflow-hidden;
+}
+.c-table th {
+  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0 text-sm text-neutral-500 font-semibold;
+}
+
+.c-table thead {
+  @apply border-b-neutral-400;
+}
+.c-table td {
+  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0;
+}
+.c-table tfoot {
+  @apply border-t-[3px] border-neutral-400;
+}

@@ -1,0 +1,97 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/prostudiome-banner-swiper/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-prostudiome-banner-swiper {
+  position: relative;
+}
+.wp-block-prostudiome-banner-swiper .swiper {
+  width: 100%;
+  height: 100%;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  min-height: 600px;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide .banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide .banner-content .banner-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide .banner-content .banner-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide .banner-content .banner-text {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide .banner-content .banner-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide .banner-content .banner-link:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.wp-block-prostudiome-banner-swiper .swiper-button-next,
+.wp-block-prostudiome-banner-swiper .swiper-button-prev {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.wp-block-prostudiome-banner-swiper .swiper-button-next:hover,
+.wp-block-prostudiome-banner-swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+}
+.wp-block-prostudiome-banner-swiper .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.5;
+}
+.wp-block-prostudiome-banner-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .wp-block-prostudiome-banner-swiper .swiper-slide {
+    min-height: 400px !important;
+  }
+  .wp-block-prostudiome-banner-swiper .swiper-slide .banner-content .banner-title {
+    font-size: 2rem !important;
+  }
+  .wp-block-prostudiome-banner-swiper .swiper-slide .banner-content .banner-subtitle {
+    font-size: 1.2rem !important;
+  }
+  .wp-block-prostudiome-banner-swiper .swiper-slide .banner-content .banner-text {
+    font-size: 1rem !important;
+  }
+}

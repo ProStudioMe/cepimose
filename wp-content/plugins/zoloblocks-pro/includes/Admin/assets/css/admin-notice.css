@@ -1,0 +1,103 @@
+.zolo-admin-notice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    position: relative;
+}
+
+.zolo-notice-logo img {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.zolo-notice-title {
+    margin: 0 0 10px;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.zolo-notice-desc {
+    margin: 0;
+    color: #5f6169;
+    max-width: 750px;
+}
+
+.zolo-notice-btn-wrap {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.zolo-notice-btn {
+    padding: 12px 16px;
+    border-radius: 3px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.zolo-notice-btn-allow {
+    color: #fff;
+}
+
+.zolo-notice-btn-skip {
+    border: 0;
+    color: #212225;
+}
+
+.zolo-admin-notice.zoloblocks {
+    border-left: 4px solid #2b63fc;
+}
+
+.zolo-admin-notice.zoloblocks .zolo-notice-btn-allow {
+    --primaryColor: #2667ff;
+    --secondaryColor: #0043df;
+    background: linear-gradient(313deg, var(--primaryColor), var(--secondaryColor) 100%);
+}
+
+.zolo-admin-notice.zoloblocks .zolo-notice-btn-allow:hover {
+    --primaryColor: #0043df;
+    --secondaryColor: #2667ff;
+    color: #fff;
+}
+
+.zolo-admin-notice.zoloblocks .zolo-notice-btn-skip {
+    background-color: rgba(41, 93, 246, 0.271);
+}
+
+.zolo-admin-notice.zoloblocks .zolo-notice-btn-skip:hover {
+    background-color: rgba(41, 92, 246, 0.419);
+}
+
+.zolo-notice-close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+.zolo-notice-close-btn svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    color: #b2aeae;
+}
+
+.zolo-notice-close-btn:hover svg {
+    color: #333;
+}
+
+@media (min-width: 768px) {
+    .zolo-admin-notice {
+        flex-direction: row;
+    }
+}

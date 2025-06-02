@@ -1,0 +1,2379 @@
+# Copyright (C) 2025 BdThemes
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ZoloBlocks Pro 2.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/zoloblocks-pro\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-04-21T10:08:15+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: zoloblocks-pro\n"
+
+#. Plugin Name of the plugin
+#: zoloblocks-pro.php
+#: includes/Admin/Admin.php:245
+#: includes/Admin/Notices/Notices.php:36
+#: includes/Admin/Notices/Notices.php:75
+#: includes/Admin/Notices/Notices.php:104
+msgid "ZoloBlocks Pro"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: zoloblocks-pro.php
+msgid "https://bdthemes.com/"
+msgstr ""
+
+#. Description of the plugin
+#: zoloblocks-pro.php
+msgid "A collection of custom Gutenberg blocks to design your webpages with ease."
+msgstr ""
+
+#. Author of the plugin
+#: zoloblocks-pro.php
+msgid "BdThemes"
+msgstr ""
+
+#: includes/Admin/Admin.php:115
+msgid "License"
+msgstr ""
+
+#: includes/Admin/Admin.php:246
+msgid "Thank you for purchase ZoloBlocks. Please activate your license to get feature updates, premium support. Don't have ZoloBlocks license? Purchase and download your license copy from here."
+msgstr ""
+
+#: includes/Admin/Admin.php:305
+msgid "Activate License"
+msgstr ""
+
+#: includes/Admin/Admin.php:308
+msgid "Purchase License"
+msgstr ""
+
+#: includes/Admin/Admin.php:330
+msgid "ZoloBlocks License Information"
+msgstr ""
+
+#: includes/Admin/Admin.php:337
+msgid "Status"
+msgstr ""
+
+#: includes/Admin/Admin.php:351
+msgid "License Type"
+msgstr ""
+
+#: includes/Admin/Admin.php:360
+msgid "License Expired on"
+msgstr ""
+
+#: includes/Admin/Admin.php:369
+msgid "Support Expired on"
+msgstr ""
+
+#: includes/Admin/Admin.php:378
+msgid "License Email"
+msgstr ""
+
+#: includes/Admin/Admin.php:389
+msgid "Your License Key"
+msgstr ""
+
+#: includes/Admin/Admin.php:434
+msgid "Enter your license key here, to activate ZoloBlocks Pro, and get full feature updates and premium support."
+msgstr ""
+
+#: includes/Admin/Admin.php:446
+msgid "Copy the license key from your account and paste it below for work ZoloBlocks properly."
+msgstr ""
+
+#: includes/Admin/Notices/Notices.php:39
+msgid "ZoloBlocks Pro depends on the activation of ZoloBlocks for complete functionality. Activate ZoloBlocks to access all features of ZoloBlocks Pro."
+msgstr ""
+
+#: includes/Admin/Notices/Notices.php:43
+msgid "Activate ZoloBlocks"
+msgstr ""
+
+#: includes/Admin/Notices/Notices.php:46
+msgid "Install ZoloBlocks"
+msgstr ""
+
+#: includes/Admin/Notices/Notices.php:79
+msgid "ZoloBlocks Pro requires PHP verion %1$s. Your current PHP version is %2$s."
+msgstr ""
+
+#: includes/Admin/Notices/Notices.php:108
+msgid "ZoloBlocks Pro requires WordPress version %1$s. Your current WordPress version is %2$s."
+msgstr ""
+
+#: includes/Classes/ZoloAjax.php:33
+msgid "Session Expired!!"
+msgstr ""
+
+#: views/post-tab.php:49
+msgid "All"
+msgstr ""
+
+#: src/blocks/data-table/datatable.js:10
+#: src/extensions/blocks/post-tab/inspector.js:36
+msgid "Search..."
+msgstr ""
+
+#: src/blocks/data-table/edit.js:61
+msgid "Data Table Preview"
+msgstr ""
+
+#: src/blocks/data-table/edit.js:134
+msgid "Upload CSV File"
+msgstr ""
+
+#: src/blocks/data-table/edit.js:135
+msgid "custom instruction message"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:168
+#: src/blocks/image-hotspot/inspector.js:123
+#: src/blocks/post-tab/inspector.js:169
+msgid "General"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:170
+msgid "Show Table Title"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:177
+msgid "Show Pagination"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:184
+msgid "Show Search Option"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:191
+msgid "Enable Sortable Columns"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:199
+msgid "Sortable Columns"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:212
+msgid "Hidden Columns on Mobile"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:224
+msgid "Data Source"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:243
+msgid "Change CSV File"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:244
+msgid "Select CSV File"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:255
+msgid "Api Key"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:260
+msgid "Sheet Id"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:265
+msgid "Range"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:273
+#: src/blocks/data-table/inspector.js:286
+msgid "Table Title"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:275
+#: src/blocks/post-tab/inspector.js:207
+#: src/blocks/post-tab/inspector.js:303
+#: src/blocks/post-tab/inspector.js:902
+#: src/extensions/dynamic-content/components/text/post/post-featured-image.js:19
+#: src/global/constants.js:1073
+msgid "Title"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:278
+msgid "Table title.."
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:288
+#: src/blocks/data-table/inspector.js:307
+#: src/blocks/data-table/inspector.js:407
+#: src/blocks/data-table/inspector.js:434
+#: src/blocks/data-table/inspector.js:507
+#: src/blocks/data-table/inspector.js:523
+#: src/blocks/data-table/inspector.js:653
+#: src/blocks/image-hotspot/inspector.js:450
+#: src/blocks/post-tab/inspector.js:347
+#: src/blocks/post-tab/inspector.js:416
+#: src/blocks/post-tab/inspector.js:749
+#: src/blocks/post-tab/inspector.js:806
+#: src/blocks/post-tab/inspector.js:916
+#: src/blocks/post-tab/inspector.js:937
+#: src/blocks/post-tab/inspector.js:1027
+#: src/blocks/post-tab/inspector.js:1047
+msgid "Typography"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:295
+#: src/blocks/data-table/inspector.js:313
+#: src/blocks/data-table/inspector.js:364
+#: src/blocks/data-table/inspector.js:419
+#: src/blocks/data-table/inspector.js:447
+#: src/blocks/data-table/inspector.js:475
+#: src/blocks/data-table/inspector.js:492
+#: src/blocks/data-table/inspector.js:514
+#: src/blocks/data-table/inspector.js:619
+#: src/blocks/data-table/inspector.js:634
+#: src/blocks/data-table/inspector.js:659
+#: src/blocks/image-hotspot/inspector.js:330
+#: src/blocks/image-hotspot/inspector.js:358
+#: src/blocks/image-hotspot/inspector.js:407
+#: src/blocks/post-tab/inspector.js:342
+#: src/blocks/post-tab/inspector.js:407
+#: src/blocks/post-tab/inspector.js:464
+#: src/blocks/post-tab/inspector.js:497
+#: src/blocks/post-tab/inspector.js:740
+#: src/blocks/post-tab/inspector.js:797
+#: src/blocks/post-tab/inspector.js:859
+#: src/blocks/post-tab/inspector.js:878
+#: src/blocks/post-tab/inspector.js:907
+#: src/blocks/post-tab/inspector.js:928
+#: src/blocks/post-tab/inspector.js:960
+#: src/blocks/post-tab/inspector.js:971
+#: src/blocks/post-tab/inspector.js:1015
+#: src/blocks/post-tab/inspector.js:1037
+#: src/extensions/highlight/index.js:249
+msgid "Color"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:301
+msgid "Search"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:318
+msgid "Placeholder Color"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:323
+#: src/blocks/data-table/inspector.js:534
+msgid "Focus Color"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:405
+msgid "Head"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:413
+#: src/blocks/data-table/inspector.js:440
+#: src/blocks/data-table/inspector.js:592
+#: src/blocks/image-hotspot/inspector.js:172
+#: src/blocks/image-hotspot/inspector.js:210
+msgid "Alignment"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:432
+msgid "Body"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:468
+msgid "Background Even"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:484
+msgid "Background Odd"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:501
+msgid "Entries Per Page"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:529
+msgid "Number Color"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:550
+msgid "Hover Color"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:574
+msgid "Pagination"
+msgstr ""
+
+#: src/blocks/data-table/inspector.js:651
+msgid "Empty Text"
+msgstr ""
+
+#: src/blocks/image-hotspot/constants/index.js:49
+#: src/blocks/post-tab/inspector.js:388
+#: src/extensions/tooltip/constants.js:4
+msgid "Hover"
+msgstr ""
+
+#: src/blocks/image-hotspot/edit.js:113
+msgid "Image Hotspot Preview"
+msgstr ""
+
+#: src/blocks/image-hotspot/edit.js:240
+msgid "Upload Image"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:180
+#: src/blocks/post-tab/inspector.js:638
+msgid "Resolution"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:189
+#: src/extensions/dynamic-content/components/text/post/post-featured-image.js:7
+msgid "Alt Text"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:192
+msgid "Enter alt text"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:196
+msgid "Enable Caption"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:202
+#: src/extensions/dynamic-content/components/text/post/post-featured-image.js:11
+msgid "Caption"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:207
+msgid "Enter caption"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:218
+msgid "Add Hotspot"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:222
+msgid "Tooltip Settings"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:224
+#: src/extensions/tooltip/index.js:230
+msgid "Follow Cursor"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:229
+#: src/extensions/tooltip/constants.js:39
+#: src/extensions/tooltip/index.js:240
+msgid "Show Arrow"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:235
+#: src/extensions/tooltip/index.js:216
+msgid "Trigger On"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:246
+#: src/extensions/interactions/components/actions.js:108
+#: src/extensions/text-animation/inspector.js:128
+#: src/extensions/tooltip/index.js:268
+msgid "Animation"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:252
+#: src/global/constants.js:1105
+msgid "Icon"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:267
+#: src/blocks/post-tab/inspector.js:635
+#: src/global/constants.js:1101
+msgid "Image"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:269
+#: src/blocks/image-hotspot/inspector.js:400
+#: src/blocks/post-tab/inspector.js:662
+msgid "Width"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:275
+#: src/blocks/image-hotspot/inspector.js:298
+#: src/blocks/marquee-child/inspector.js:87
+#: src/blocks/marquee/inspector.js:261
+#: src/blocks/post-tab/inspector.js:325
+#: src/blocks/post-tab/inspector.js:361
+#: src/blocks/post-tab/inspector.js:440
+#: src/blocks/post-tab/inspector.js:562
+#: src/blocks/post-tab/inspector.js:585
+#: src/blocks/post-tab/inspector.js:684
+#: src/blocks/post-tab/inspector.js:718
+#: src/blocks/post-tab/inspector.js:776
+#: src/blocks/post-tab/inspector.js:835
+msgid "Border"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:280
+#: src/blocks/image-hotspot/inspector.js:314
+#: src/blocks/image-hotspot/inspector.js:422
+#: src/blocks/marquee-child/inspector.js:98
+#: src/blocks/marquee/inspector.js:271
+#: src/blocks/post-tab/inspector.js:330
+#: src/blocks/post-tab/inspector.js:367
+#: src/blocks/post-tab/inspector.js:445
+#: src/blocks/post-tab/inspector.js:568
+#: src/blocks/post-tab/inspector.js:591
+#: src/blocks/post-tab/inspector.js:689
+#: src/blocks/post-tab/inspector.js:723
+#: src/blocks/post-tab/inspector.js:781
+#: src/blocks/post-tab/inspector.js:840
+msgid "Border Radius"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:286
+#: src/blocks/image-hotspot/inspector.js:434
+msgid "Box Shadow"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:291
+msgid "Hotspots"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:293
+msgid "Icon Size"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:303
+#: src/blocks/post-tab/inspector.js:484
+#: src/blocks/post-tab/inspector.js:517
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:320
+#: src/blocks/image-hotspot/inspector.js:428
+#: src/blocks/marquee-child/inspector.js:70
+#: src/blocks/marquee/inspector.js:246
+#: src/blocks/post-tab/inspector.js:314
+#: src/blocks/post-tab/inspector.js:355
+#: src/blocks/post-tab/inspector.js:432
+#: src/blocks/post-tab/inspector.js:556
+#: src/blocks/post-tab/inspector.js:579
+#: src/blocks/post-tab/inspector.js:616
+#: src/blocks/post-tab/inspector.js:625
+#: src/blocks/post-tab/inspector.js:671
+#: src/blocks/post-tab/inspector.js:705
+#: src/blocks/post-tab/inspector.js:765
+#: src/blocks/post-tab/inspector.js:823
+#: src/extensions/blocks/qrcode/inspector.js:243
+msgid "Padding"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:345
+#: src/blocks/image-hotspot/inspector.js:374
+msgid "Animation Color"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:387
+#: src/blocks/image-hotspot/sortable.js:80
+msgid "Tooltip"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:389
+#: src/extensions/tooltip/index.js:248
+msgid "Theme"
+msgstr ""
+
+#: src/blocks/image-hotspot/inspector.js:440
+msgid "Arrow Color"
+msgstr ""
+
+#: src/blocks/image-hotspot/sortable.js:16
+msgid "Add hotSpot"
+msgstr ""
+
+#: src/blocks/loop/inspector.js:752
+msgid "Advanced"
+msgstr ""
+
+#: src/blocks/loop/inspector.js:817
+#: src/blocks/post-tab/inspector.js:534
+msgid "Item Wrapper"
+msgstr ""
+
+#: src/blocks/marquee-child/inspector.js:78
+#: src/blocks/marquee/inspector.js:254
+#: src/blocks/post-tab/inspector.js:319
+#: src/blocks/post-tab/inspector.js:677
+#: src/blocks/post-tab/inspector.js:711
+#: src/blocks/post-tab/inspector.js:770
+#: src/blocks/post-tab/inspector.js:828
+#: src/blocks/post-tab/inspector.js:922
+#: src/blocks/post-tab/inspector.js:943
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/marquee/edit.js:39
+msgid "Marquee Preview"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:80
+msgid "Marquee Options"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:82
+msgid "Marquee Type"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:85
+#: src/global/constants.js:1091
+msgid "Default"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:86
+msgid "Scroll Interactivity"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:95
+msgid "show/hide elements"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:100
+msgid "Pause on Hover"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:109
+msgid "Click to Center"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:120
+msgid "Draggable"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:130
+#: src/blocks/post-tab/inspector.js:188
+#: src/extensions/blocks/post-carousel/inspector.js:11
+#: src/extensions/blocks/review-carousel/inspector.js:11
+msgid "Mask Shadow"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:140
+#: src/blocks/post-tab/inspector.js:194
+#: src/blocks/unfold/inspector.js:176
+msgid "Shadow Range"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:150
+#: src/blocks/marquee/inspector.js:170
+#: src/blocks/marquee/inspector.js:172
+#: src/extensions/motion-effects/entrance/index.js:406
+#: src/extensions/motion-effects/entrance/index.js:437
+#: src/extensions/motion-effects/floating/index.js:262
+#: src/extensions/motion-effects/parallax/index.js:432
+#: src/extensions/text-animation/inspector.js:310
+#: src/extensions/text-animation/inspector.js:312
+msgid "Rotate"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:180
+msgid "Offset Left"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:185
+msgid "Offset Right"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:196
+msgid "Auto Scroll"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:208
+msgid "Scroll Speed"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:226
+msgid "Items Gap"
+msgstr ""
+
+#: src/blocks/marquee/inspector.js:235
+msgid "Marquee Item"
+msgstr ""
+
+#: src/blocks/post-tab/constants/index.js:7
+msgid "Style 1"
+msgstr ""
+
+#: src/blocks/post-tab/constants/index.js:8
+msgid "Style 2"
+msgstr ""
+
+#: src/blocks/post-tab/edit.js:71
+msgid "Post tab Preview"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:174
+msgid "Header Title"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:181
+msgid "Header Tab"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:213
+#: src/blocks/post-tab/inspector.js:735
+msgid "Category"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:218
+#: src/global/constants.js:1072
+msgid "Author"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:223
+#: src/global/constants.js:1071
+msgid "Date"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:229
+msgid "Reading Time"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:236
+#: src/blocks/post-tab/inspector.js:601
+#: src/extensions/tooltip/index.js:208
+msgid "Content"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:243
+msgid "Text"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:248
+#: src/blocks/post-tab/inspector.js:271
+msgid "Tag"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:254
+#: src/blocks/post-tab/inspector.js:277
+#: src/extensions/display-condition/constants/index.js:5
+#: src/extensions/text-animation/constants/index.js:5
+msgid "Words"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:287
+msgid "Query"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:294
+msgid "Header"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:299
+msgid "Wrapper"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:307
+msgid "Tab"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:384
+#: src/blocks/post-tab/inspector.js:545
+#: src/blocks/post-tab/inspector.js:606
+#: src/blocks/post-tab/inspector.js:652
+#: src/blocks/post-tab/inspector.js:1005
+msgid "Normal"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:392
+msgid "Active"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:398
+msgid "Max Width"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:422
+#: src/blocks/post-tab/inspector.js:474
+#: src/blocks/post-tab/inspector.js:507
+#: src/blocks/post-tab/inspector.js:756
+#: src/blocks/post-tab/inspector.js:813
+#: src/blocks/post-tab/inspector.js:868
+#: src/blocks/post-tab/inspector.js:887
+#: src/extensions/highlight/index.js:256
+msgid "Background"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:452
+#: src/blocks/post-tab/inspector.js:536
+#: src/blocks/post-tab/inspector.js:788
+#: src/blocks/post-tab/inspector.js:847
+msgid "Gap"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:549
+#: src/blocks/post-tab/inspector.js:610
+#: src/blocks/post-tab/inspector.js:1009
+msgid "Featured"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:656
+msgid "Feaured"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:1000
+#: src/extensions/dynamic-content/components/text/post/post-author.js:31
+msgid "Meta"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:1021
+#: src/blocks/post-tab/inspector.js:1042
+msgid "Author Hover Color"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:1062
+#: src/extensions/blocks/qrcode/inspector.js:192
+msgid "Size"
+msgstr ""
+
+#: src/blocks/post-tab/inspector.js:1070
+msgid "Space"
+msgstr ""
+
+#: src/blocks/post-tab/render-view.js:156
+msgid "Min Read"
+msgstr ""
+
+#: src/blocks/post-tab/render-view.js:190
+msgid "Thumbnail Placeholder"
+msgstr ""
+
+#: src/blocks/post-tab/render-view.js:217
+msgid "No posts found."
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:20
+#: src/extensions/background-parallax/inspector.js:77
+#: src/extensions/image-parallax/inspector.js:77
+#: src/extensions/tooltip/constants.js:25
+#: src/global/constants.js:1563
+msgid "Left"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:21
+#: src/extensions/background-parallax/inspector.js:78
+#: src/extensions/image-parallax/inspector.js:78
+#: src/extensions/tooltip/constants.js:19
+#: src/global/constants.js:1575
+msgid "Right"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:25
+#: src/global/constants.js:1256
+msgid "Linear"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:26
+#: src/global/constants.js:1249
+msgid "Ease Out"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:27
+#: src/global/constants.js:1250
+msgid "Circ"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:30
+#: src/extensions/dynamic-content/components/text/richtext-popover-content.js:83
+#: src/global/constants.js:1253
+msgid "Back"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:31
+#: src/global/constants.js:1254
+msgid "Expo"
+msgstr ""
+
+#: src/blocks/unfold/constants/index.js:32
+#: src/global/constants.js:1255
+msgid "Sine"
+msgstr ""
+
+#: src/blocks/unfold/edit.js:61
+msgid "Unfold Preview"
+msgstr ""
+
+#: src/blocks/unfold/inspector.js:157
+msgid "Transition Duration"
+msgstr ""
+
+#: src/blocks/unfold/inspector.js:194
+#: src/extensions/motion-effects/entrance/index.js:825
+#: src/extensions/motion-effects/floating/index.js:570
+msgid "Easing Type"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:19
+msgid "Backdrop Filters"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:85
+#: src/extensions/css-filters/hover.js:64
+#: src/extensions/css-filters/index.js:65
+#: src/extensions/motion-effects/parallax/index.js:337
+msgid "Blur"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:110
+#: src/extensions/css-filters/hover.js:91
+#: src/extensions/css-filters/index.js:92
+msgid "Brightness"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:134
+#: src/extensions/css-filters/hover.js:116
+#: src/extensions/css-filters/index.js:118
+msgid "Contrast"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:158
+#: src/extensions/css-filters/hover.js:141
+#: src/extensions/css-filters/index.js:144
+msgid "Saturate"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:182
+#: src/extensions/css-filters/hover.js:167
+#: src/extensions/css-filters/index.js:170
+msgid "Hue Rotate"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:210
+msgid "Grayscale"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:234
+msgid "Invert"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:258
+#: src/extensions/blocks/qrcode/inspector.js:212
+#: src/extensions/motion-effects/entrance/index.js:798
+#: src/extensions/motion-effects/floating/index.js:528
+#: src/extensions/motion-effects/floating/index.js:548
+msgid "Opacity"
+msgstr ""
+
+#: src/extensions/backdrop-filters/index.js:282
+msgid "Sepia"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:28
+msgid "Background Parallax"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:71
+#: src/extensions/image-parallax/inspector.js:71
+#: src/extensions/motion-effects/parallax/index.js:260
+#: src/extensions/motion-effects/parallax/index.js:355
+#: src/extensions/motion-effects/parallax/index.js:624
+#: src/extensions/tilt/index.js:147
+msgid "Direction"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:75
+#: src/extensions/image-parallax/inspector.js:75
+msgid "Up"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:76
+#: src/extensions/image-parallax/inspector.js:76
+msgid "Down"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:79
+#: src/extensions/image-parallax/inspector.js:79
+msgid "Up Left"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:80
+#: src/extensions/image-parallax/inspector.js:80
+msgid "Up Right"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:81
+#: src/extensions/image-parallax/inspector.js:81
+msgid "Down Left"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:82
+#: src/extensions/image-parallax/inspector.js:82
+msgid "Down Right"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:104
+#: src/extensions/image-parallax/inspector.js:104
+#: src/extensions/motion-effects/entrance/index.js:567
+#: src/extensions/motion-effects/floating/index.js:360
+#: src/extensions/motion-effects/parallax/index.js:607
+#: src/extensions/text-animation/inspector.js:418
+#: src/extensions/tilt/index.js:188
+#: src/extensions/tooltip/constants.js:34
+msgid "Scale"
+msgstr ""
+
+#: src/extensions/background-parallax/inspector.js:128
+#: src/extensions/image-parallax/inspector.js:128
+msgid "Delay"
+msgstr ""
+
+#: src/extensions/blocks/post-category/inspector.js:28
+#: src/extensions/blocks/tag-cloud/inspector.js:29
+msgid "Multiple Background"
+msgstr ""
+
+#: src/extensions/blocks/post-tab/inspector.js:11
+msgid "Select Type"
+msgstr ""
+
+#: src/extensions/blocks/post-tab/inspector.js:19
+msgid "Select Taxonomy For Filter"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:46
+msgid "Enable Page Link"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:60
+msgid "Style"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:75
+msgid "Choose Logo"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:120
+msgid " Upload Logo"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:124
+msgid "Use Square Size Image"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:189
+msgid "Logo"
+msgstr ""
+
+#: src/extensions/blocks/qrcode/inspector.js:232
+msgid "Padding Style"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:6
+#: src/extensions/text-animation/constants/index.js:6
+msgid "Chars"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:7
+#: src/extensions/text-animation/constants/index.js:7
+msgid "Lines"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:11
+#: src/extensions/motion-effects/parallax/index.js:150
+#: src/extensions/text-animation/constants/index.js:11
+msgid "Horizontal"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:12
+#: src/extensions/motion-effects/parallax/index.js:58
+#: src/extensions/text-animation/constants/index.js:12
+msgid "Vertical"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:15
+#: src/extensions/text-animation/constants/index.js:15
+msgid "Masked Slide Up"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:16
+#: src/extensions/text-animation/constants/index.js:16
+msgid "Masked Rotate"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:17
+#: src/extensions/text-animation/constants/index.js:17
+msgid "Scrub Opacity"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:18
+#: src/extensions/text-animation/constants/index.js:18
+msgid "Scrub Blur"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:19
+#: src/extensions/text-animation/constants/index.js:19
+msgid "ZoomOut"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:20
+#: src/extensions/text-animation/constants/index.js:20
+msgid "ZoomIn"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:21
+#: src/extensions/text-animation/constants/index.js:21
+msgid "Bend"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:22
+#: src/extensions/text-animation/constants/index.js:22
+msgid "Drop"
+msgstr ""
+
+#: src/extensions/display-condition/constants/index.js:23
+#: src/extensions/text-animation/constants/index.js:23
+#: src/global/constants.js:840
+#: src/global/constants.js:1121
+#: src/global/constants.js:1257
+msgid "Custom"
+msgstr ""
+
+#: src/extensions/display-condition/index.js:25
+msgid "Enable Advanced Visibility"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/common-settings.js:9
+msgid "Character Limit"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/common-settings.js:24
+msgid "Fallback"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:7
+msgid "Display Name"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:11
+msgid "Bio"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:15
+msgid "Email"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:19
+msgid "First Name"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:23
+msgid "Last Name"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:27
+msgid "Nickname"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:41
+msgid "Author Data Type"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:49
+#: src/extensions/dynamic-content/components/text/post/post-meta.js:25
+msgid "Meta Key"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-author.js:52
+msgid "Enter your preferred author meta key"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:7
+msgid "Comment Count"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:11
+msgid "Comment Numbers"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:20
+msgid "Comment Data Type"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:29
+msgid "No Comment Text"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:32
+msgid "it will be displayed when there is no comment on the post"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:36
+msgid "Single Comment Text"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:39
+msgid "it will be displayed when there is only one comment on the post"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:43
+msgid "Multiple Comment Text"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-comment.js:46
+msgid "it will be displayed when there are multiple comments on the post and {number} will be replaced with the number of comments"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:27
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:44
+msgid "(No Title)"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:50
+msgid "Failed to fetch specific post details"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:69
+msgid "Post Source"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:72
+msgid "Current Post"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:73
+msgid "Specific Post"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-common-settings.js:79
+msgid "Select Post"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-date.js:12
+msgid "Date Type"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-date.js:18
+#: src/extensions/dynamic-content/components/text/site/site-date.js:12
+msgid "Date Format"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-date.js:26
+#: src/extensions/dynamic-content/components/text/site/site-date.js:21
+msgid "Custom Date Format"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-date.js:29
+#: src/extensions/dynamic-content/components/text/site/site-date.js:24
+msgid "Enter your preferred date format, e.g., Y-m-d or d/m/Y"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-featured-image.js:15
+msgid "Description"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-featured-image.js:28
+msgid "Data Type"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-meta.js:33
+msgid "Custom Meta Key"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-meta.js:36
+msgid "Use this field to enter a custom meta key for the post"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-time.js:12
+msgid "Time Type"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-time.js:19
+#: src/extensions/dynamic-content/components/text/site/site-time.js:12
+msgid "Time Format"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-time.js:28
+#: src/extensions/dynamic-content/components/text/site/site-time.js:21
+msgid "Custom Time Format"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/post/post-time.js:31
+#: src/extensions/dynamic-content/components/text/site/site-time.js:24
+msgid "Enter your preferred time format, e.g., H:i:s"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/richtext-footer.js:145
+msgid "Apply"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/site/site-date.js:16
+msgid "Enter your preferred date format, if you keep it empty, the default date format will be used"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/site/site-time.js:16
+msgid "Enter your preferred time format, if you keep it empty, the default time format will be used"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/terms/term-common-settings.js:22
+#: src/extensions/dynamic-content/components/text/terms/term-common-settings.js:30
+msgid "Select a term"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/terms/term-common-settings.js:39
+msgid "Taxonomy"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/terms/term-common-settings.js:47
+msgid "Term"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/user/user-common-settings.js:14
+msgid "Select a User"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/user/user-common-settings.js:32
+msgid "Current User"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/user/user-common-settings.js:33
+msgid "Specific User"
+msgstr ""
+
+#: src/extensions/dynamic-content/components/text/user/user-common-settings.js:39
+msgid "User"
+msgstr ""
+
+#: src/extensions/dynamic-content/rich-text/edit.js:55
+#: src/extensions/dynamic-content/rich-text/settings.js:4
+msgid "Dynamic Content"
+msgstr ""
+
+#: src/extensions/highlight/index.js:241
+#: src/extensions/highlight/index.js:418
+msgid "Zolo Highlight"
+msgstr ""
+
+#: src/extensions/highlight/index.js:241
+#: src/extensions/tooltip/index.js:184
+msgid "Close"
+msgstr ""
+
+#: src/extensions/highlight/index.js:268
+msgid "Border Radius(em)"
+msgstr ""
+
+#: src/extensions/highlight/index.js:334
+msgid "Padding(em)"
+msgstr ""
+
+#: src/extensions/highlight/index.js:408
+#: src/extensions/tooltip/index.js:284
+msgid "Clear"
+msgstr ""
+
+#: src/extensions/image-parallax/inspector.js:28
+msgid "Image Parallax"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:15
+msgid "Actions"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:32
+msgid "Key"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:39
+msgid "Value"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:61
+#: src/extensions/interactions/components/selector.js:23
+msgid "CSS Selector"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:69
+msgid "Offset(px)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:84
+msgid "From Top(px)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:94
+#: src/extensions/text-animation/inspector.js:653
+msgid "Duration(ms)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:123
+msgid "Speed(ms)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:134
+#: src/extensions/interactions/components/trigger.js:35
+#: src/extensions/text-animation/inspector.js:600
+msgid "Delay(ms)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:162
+#: src/extensions/interactions/components/actions.js:197
+#: src/extensions/motion-effects/entrance/index.js:858
+#: src/extensions/motion-effects/floating/index.js:626
+msgid "Duration (ms)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:172
+#: src/extensions/interactions/components/actions.js:207
+#: src/extensions/motion-effects/entrance/index.js:885
+#: src/extensions/motion-effects/floating/index.js:652
+msgid "Delay (ms)"
+msgstr ""
+
+#: src/extensions/interactions/components/actions.js:186
+msgid "Opacity(%)"
+msgstr ""
+
+#: src/extensions/interactions/components/inspector.js:11
+msgid "Interactions"
+msgstr ""
+
+#: src/extensions/interactions/components/inspector.js:26
+msgid "Interactions are only applied on the frontend, and any triggers or actions left empty will be gracefully ignored."
+msgstr ""
+
+#: src/extensions/interactions/components/inspector.js:29
+msgid "Added your first interaction."
+msgstr ""
+
+#: src/extensions/interactions/components/selector.js:8
+msgid "Selector"
+msgstr ""
+
+#: src/extensions/interactions/components/selector.js:26
+msgid "Type CSS Selector"
+msgstr ""
+
+#: src/extensions/interactions/components/trigger.js:8
+msgid "Trigger"
+msgstr ""
+
+#: src/extensions/interactions/components/trigger.js:22
+msgid "Scroll Offset(px)"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:192
+msgid "Entrance Animation"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:214
+#: src/extensions/text-animation/inspector.js:167
+msgid "Animation Type"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:230
+msgid "Transform Origin Custom"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:231
+msgid "Enter a custom transform origin, for example see here: https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:248
+#: src/extensions/motion-effects/floating/index.js:185
+#: src/extensions/text-animation/inspector.js:181
+msgid "Translate"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:279
+#: src/extensions/motion-effects/floating/index.js:219
+#: src/extensions/text-animation/inspector.js:183
+msgid "Translate X"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:321
+#: src/extensions/motion-effects/floating/index.js:240
+#: src/extensions/text-animation/inspector.js:225
+msgid "Translate Y"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:363
+#: src/extensions/text-animation/inspector.js:267
+msgid "Translate Z"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:467
+msgid "Rotate 3D"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:481
+#: src/extensions/motion-effects/floating/index.js:296
+#: src/extensions/text-animation/inspector.js:356
+msgid "Rotate X"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:511
+#: src/extensions/motion-effects/floating/index.js:317
+#: src/extensions/text-animation/inspector.js:386
+msgid "Rotate Y"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:541
+#: src/extensions/motion-effects/floating/index.js:600
+#: src/extensions/tilt/index.js:213
+#: src/extensions/tooltip/constants.js:35
+msgid "Perspective"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:598
+#: src/extensions/motion-effects/floating/index.js:394
+#: src/extensions/text-animation/inspector.js:420
+msgid "Scale X"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:641
+#: src/extensions/motion-effects/floating/index.js:415
+#: src/extensions/text-animation/inspector.js:463
+msgid "Scale Y"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:671
+#: src/extensions/motion-effects/floating/index.js:436
+#: src/extensions/text-animation/inspector.js:493
+msgid "Scale Z"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:702
+#: src/extensions/motion-effects/floating/index.js:458
+#: src/extensions/text-animation/inspector.js:523
+msgid "Skew"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:723
+#: src/extensions/motion-effects/floating/index.js:485
+#: src/extensions/text-animation/inspector.js:525
+msgid "Skew X"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:754
+#: src/extensions/motion-effects/floating/index.js:506
+#: src/extensions/text-animation/inspector.js:556
+msgid "Skew Y"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:841
+#: src/extensions/motion-effects/floating/index.js:585
+msgid "Custom Easing"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:842
+#: src/extensions/motion-effects/floating/index.js:586
+msgid "Example: cubic-bezier(0.42, 0, 0.58, 1)"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:910
+msgid "Repeatable"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:922
+#: src/extensions/motion-effects/entrance/index.js:929
+msgid "Reset"
+msgstr ""
+
+#: src/extensions/motion-effects/entrance/index.js:922
+#: src/extensions/motion-effects/entrance/index.js:929
+#: src/extensions/text-animation/inspector.js:719
+msgid "Preview"
+msgstr ""
+
+#: src/extensions/motion-effects/floating/index.js:161
+msgid "Floating Animation"
+msgstr ""
+
+#: src/extensions/motion-effects/floating/index.js:338
+msgid "Rotate Z"
+msgstr ""
+
+#: src/extensions/motion-effects/floating/index.js:677
+#: src/extensions/motion-effects/floating/index.js:682
+msgid "Stop"
+msgstr ""
+
+#: src/extensions/motion-effects/floating/index.js:677
+#: src/extensions/motion-effects/floating/index.js:682
+msgid "Play"
+msgstr ""
+
+#: src/extensions/motion-effects/index.js:27
+msgid "Motion Effects"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:36
+msgid "Scrolling Animation"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:93
+#: src/extensions/motion-effects/parallax/index.js:185
+#: src/extensions/motion-effects/parallax/index.js:484
+msgid "Moving Speed"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:123
+#: src/extensions/motion-effects/parallax/index.js:215
+#: src/extensions/motion-effects/parallax/index.js:310
+#: src/extensions/motion-effects/parallax/index.js:405
+#: src/extensions/motion-effects/parallax/index.js:580
+#: src/extensions/motion-effects/parallax/index.js:676
+msgid "Viewport"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:124
+#: src/extensions/motion-effects/parallax/index.js:216
+#: src/extensions/motion-effects/parallax/index.js:311
+#: src/extensions/motion-effects/parallax/index.js:406
+#: src/extensions/motion-effects/parallax/index.js:581
+#: src/extensions/motion-effects/parallax/index.js:674
+#: src/extensions/tooltip/constants.js:22
+#: src/global/constants.js:1272
+#: src/global/constants.js:1343
+#: src/global/constants.js:1549
+msgid "Bottom"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:125
+#: src/extensions/motion-effects/parallax/index.js:217
+#: src/extensions/motion-effects/parallax/index.js:312
+#: src/extensions/motion-effects/parallax/index.js:407
+#: src/extensions/motion-effects/parallax/index.js:582
+#: src/extensions/motion-effects/parallax/index.js:675
+#: src/extensions/tooltip/constants.js:16
+#: src/global/constants.js:1270
+#: src/global/constants.js:1329
+#: src/global/constants.js:1537
+msgid "Top"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:242
+msgid "Transparency"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:263
+#: src/extensions/motion-effects/parallax/index.js:358
+msgid "Fade In"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:264
+#: src/extensions/motion-effects/parallax/index.js:359
+msgid "Fade Out"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:280
+#: src/extensions/motion-effects/parallax/index.js:375
+msgid "Lavel"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:449
+msgid "Active 3D"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:518
+msgid "RotateX"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:548
+msgid "Rotate (Y)"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:627
+msgid "Scale Up"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:628
+#: src/global/constants.js:1150
+msgid "Scale Down"
+msgstr ""
+
+#: src/extensions/motion-effects/parallax/index.js:644
+msgid "Zoom Label"
+msgstr ""
+
+#: src/extensions/motion-effects/sticky/index.js:13
+msgid "Sticky Animation"
+msgstr ""
+
+#: src/extensions/motion-effects/sticky/index.js:49
+msgid "Offset"
+msgstr ""
+
+#: src/extensions/motion-effects/sticky/index.js:71
+msgid "Sticky On"
+msgstr ""
+
+#: src/extensions/text-animation/inspector.js:130
+msgid "Enable Animation"
+msgstr ""
+
+#: src/extensions/text-animation/inspector.js:154
+msgid "Spilt Type"
+msgstr ""
+
+#: src/extensions/text-animation/inspector.js:627
+msgid "Stagger"
+msgstr ""
+
+#: src/extensions/text-animation/inspector.js:693
+msgid "Repeat Delay(ms)"
+msgstr ""
+
+#: src/extensions/text-animation/inspector.js:724
+msgid "Reset Preview"
+msgstr ""
+
+#: src/extensions/text-animation/inspector.js:724
+msgid "Start Preview"
+msgstr ""
+
+#: src/extensions/tilt/index.js:117
+msgid "Tilt Effects"
+msgstr ""
+
+#: src/extensions/tilt/index.js:119
+msgid "Enable"
+msgstr ""
+
+#: src/extensions/tilt/index.js:150
+msgid "Direct"
+msgstr ""
+
+#: src/extensions/tilt/index.js:151
+msgid "Opposite"
+msgstr ""
+
+#: src/extensions/tilt/index.js:165
+msgid "Rotation (max)"
+msgstr ""
+
+#: src/extensions/tilt/index.js:236
+msgid "Gyroscope"
+msgstr ""
+
+#: src/extensions/tilt/index.js:248
+msgid "Glare"
+msgstr ""
+
+#: src/extensions/tilt/index.js:261
+msgid "Advanced Options"
+msgstr ""
+
+#: src/extensions/tilt/index.js:275
+msgid "Max Glare"
+msgstr ""
+
+#: src/extensions/tilt/index.js:304
+msgid "Selected Class"
+msgstr ""
+
+#: src/extensions/tilt/index.js:364
+msgid "Note: Advanced effects will be applied on the frontend only."
+msgstr ""
+
+#: src/extensions/tilt/index.js:370
+msgid "Stop Preview"
+msgstr ""
+
+#: src/extensions/tilt/index.js:370
+msgid "Preview Tilt"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:5
+msgid "Click"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:9
+msgid "Dark"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:10
+msgid "Light"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:11
+msgid "Gray"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:12
+#: src/global/constants.js:859
+msgid "Gradient"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:17
+msgid "Top Start"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:18
+msgid "Top End"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:20
+msgid "Right Start"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:21
+msgid "Right End"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:23
+msgid "Bottom Start"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:24
+msgid "Bottom End"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:26
+msgid "Left Start"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:27
+msgid "Left End"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:31
+msgid "Fade"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:32
+msgid "Shift Away"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:33
+msgid "Shift Toward"
+msgstr ""
+
+#: src/extensions/tooltip/constants.js:40
+msgid "Hide Arrow"
+msgstr ""
+
+#: src/extensions/tooltip/index.js:184
+#: src/extensions/tooltip/index.js:294
+msgid "Zolo Tooltip"
+msgstr ""
+
+#: src/extensions/tooltip/index.js:258
+msgid "Position"
+msgstr ""
+
+#: src/global/constants.js:822
+msgid "H1"
+msgstr ""
+
+#: src/global/constants.js:823
+msgid "H2"
+msgstr ""
+
+#: src/global/constants.js:824
+msgid "H3"
+msgstr ""
+
+#: src/global/constants.js:825
+msgid "H4"
+msgstr ""
+
+#: src/global/constants.js:826
+msgid "H5"
+msgstr ""
+
+#: src/global/constants.js:827
+msgid "H6"
+msgstr ""
+
+#: src/global/constants.js:828
+#: src/global/constants.js:833
+msgid "P"
+msgstr ""
+
+#: src/global/constants.js:829
+#: src/global/constants.js:834
+msgid "Span"
+msgstr ""
+
+#: src/global/constants.js:838
+#: src/global/constants.js:1146
+#: src/global/constants.js:1155
+msgid "None"
+msgstr ""
+
+#: src/global/constants.js:839
+msgid "Solid"
+msgstr ""
+
+#: src/global/constants.js:844
+msgid "Dashed"
+msgstr ""
+
+#: src/global/constants.js:845
+msgid "Dotted"
+msgstr ""
+
+#: src/global/constants.js:846
+msgid "Double"
+msgstr ""
+
+#: src/global/constants.js:847
+msgid "Groove"
+msgstr ""
+
+#: src/global/constants.js:848
+msgid "Outset"
+msgstr ""
+
+#: src/global/constants.js:849
+msgid "Ridge"
+msgstr ""
+
+#: src/global/constants.js:854
+msgid "Classic"
+msgstr ""
+
+#: src/global/constants.js:867
+msgid "Outer"
+msgstr ""
+
+#: src/global/constants.js:871
+msgid "Inner"
+msgstr ""
+
+#: src/global/constants.js:1035
+msgid "No Icon"
+msgstr ""
+
+#: src/global/constants.js:1045
+msgid "Icon & Text"
+msgstr ""
+
+#: src/global/constants.js:1058
+msgid "Only Icon"
+msgstr ""
+
+#: src/global/constants.js:1074
+msgid "Last modified date"
+msgstr ""
+
+#: src/global/constants.js:1075
+msgid "Post parent ID"
+msgstr ""
+
+#: src/global/constants.js:1079
+msgid "ASC"
+msgstr ""
+
+#: src/global/constants.js:1080
+msgid "DESC"
+msgstr ""
+
+#: src/global/constants.js:1092
+msgid "Thumbnail"
+msgstr ""
+
+#: src/global/constants.js:1093
+msgid "Medium"
+msgstr ""
+
+#: src/global/constants.js:1094
+msgid "Large"
+msgstr ""
+
+#: src/global/constants.js:1095
+#: src/global/constants.js:1113
+msgid "Full"
+msgstr ""
+
+#: src/global/constants.js:1117
+#: src/global/constants.js:1128
+msgid "Boxed"
+msgstr ""
+
+#: src/global/constants.js:1132
+msgid "Full Width"
+msgstr ""
+
+#: src/global/constants.js:1138
+#: src/global/constants.js:1206
+msgid "Auto"
+msgstr ""
+
+#: src/global/constants.js:1139
+msgid "Visible"
+msgstr ""
+
+#: src/global/constants.js:1140
+msgid "Hidden"
+msgstr ""
+
+#: src/global/constants.js:1141
+msgid "Scroll"
+msgstr ""
+
+#: src/global/constants.js:1142
+msgid "Clip"
+msgstr ""
+
+#: src/global/constants.js:1147
+msgid "Fill"
+msgstr ""
+
+#: src/global/constants.js:1148
+#: src/global/constants.js:1208
+msgid "Contain"
+msgstr ""
+
+#: src/global/constants.js:1149
+#: src/global/constants.js:1207
+msgid "Cover"
+msgstr ""
+
+#: src/global/constants.js:1156
+msgid "Abstract"
+msgstr ""
+
+#: src/global/constants.js:1157
+msgid "Abstract Brush 1"
+msgstr ""
+
+#: src/global/constants.js:1158
+msgid "Abstract Brush 2"
+msgstr ""
+
+#: src/global/constants.js:1159
+msgid "Aesthetic Blob"
+msgstr ""
+
+#: src/global/constants.js:1160
+msgid "Amorphous Blob"
+msgstr ""
+
+#: src/global/constants.js:1161
+msgid "Brush"
+msgstr ""
+
+#: src/global/constants.js:1162
+msgid "Comment"
+msgstr ""
+
+#: src/global/constants.js:1163
+msgid "Container"
+msgstr ""
+
+#: src/global/constants.js:1164
+msgid "Hand Drawn Blob"
+msgstr ""
+
+#: src/global/constants.js:1165
+msgid "Hexagon"
+msgstr ""
+
+#: src/global/constants.js:1166
+msgid "Hexagon Blob"
+msgstr ""
+
+#: src/global/constants.js:1167
+msgid "Irregular Blob"
+msgstr ""
+
+#: src/global/constants.js:1168
+msgid "Minimal Round"
+msgstr ""
+
+#: src/global/constants.js:1169
+msgid "Octagon"
+msgstr ""
+
+#: src/global/constants.js:1170
+msgid "Organic Blob"
+msgstr ""
+
+#: src/global/constants.js:1171
+msgid "Oval Blob"
+msgstr ""
+
+#: src/global/constants.js:1172
+msgid "Pattern"
+msgstr ""
+
+#: src/global/constants.js:1173
+msgid "Popup 1"
+msgstr ""
+
+#: src/global/constants.js:1174
+msgid "Popup 2"
+msgstr ""
+
+#: src/global/constants.js:1175
+msgid "Popup 3"
+msgstr ""
+
+#: src/global/constants.js:1176
+msgid "Round Brush"
+msgstr ""
+
+#: src/global/constants.js:1177
+msgid "Round Design"
+msgstr ""
+
+#: src/global/constants.js:1178
+msgid "Square Pattern"
+msgstr ""
+
+#: src/global/constants.js:1179
+msgid "Testimonial"
+msgstr ""
+
+#: src/global/constants.js:1180
+msgid "Triangle Blob"
+msgstr ""
+
+#: src/global/constants.js:1185
+msgid "Center Top"
+msgstr ""
+
+#: src/global/constants.js:1186
+msgid "Center Center"
+msgstr ""
+
+#: src/global/constants.js:1187
+msgid "Center Bottom"
+msgstr ""
+
+#: src/global/constants.js:1188
+msgid "Left Top"
+msgstr ""
+
+#: src/global/constants.js:1189
+msgid "Left Center"
+msgstr ""
+
+#: src/global/constants.js:1190
+msgid "Left Bottom"
+msgstr ""
+
+#: src/global/constants.js:1191
+msgid "Right Top"
+msgstr ""
+
+#: src/global/constants.js:1192
+msgid "Right Center"
+msgstr ""
+
+#: src/global/constants.js:1193
+msgid "Right Bottom"
+msgstr ""
+
+#: src/global/constants.js:1198
+msgid "No Repeat"
+msgstr ""
+
+#: src/global/constants.js:1199
+msgid "Repeat"
+msgstr ""
+
+#: src/global/constants.js:1200
+msgid "Repeat X"
+msgstr ""
+
+#: src/global/constants.js:1201
+msgid "Repeat Y"
+msgstr ""
+
+#: src/global/constants.js:1245
+msgid "Power1Out"
+msgstr ""
+
+#: src/global/constants.js:1246
+msgid "Power2Out"
+msgstr ""
+
+#: src/global/constants.js:1247
+msgid "Power3Out"
+msgstr ""
+
+#: src/global/constants.js:1248
+msgid "Power4Out"
+msgstr ""
+
+#: src/global/constants.js:1251
+msgid "Elastic"
+msgstr ""
+
+#: src/global/constants.js:1252
+msgid "Bounce"
+msgstr ""
+
+#: src/global/constants.js:1260
+msgid "Desktop"
+msgstr ""
+
+#: src/global/constants.js:1261
+msgid "Laptop"
+msgstr ""
+
+#: src/global/constants.js:1262
+msgid "Mobile"
+msgstr ""
+
+#: src/global/constants.js:1266
+msgid "Start"
+msgstr ""
+
+#: src/global/constants.js:1267
+msgid "End"
+msgstr ""
+
+#: src/global/constants.js:1271
+msgid "Center"
+msgstr ""
+
+#: src/global/constants.js:1589
+msgid "Entrance"
+msgstr ""
+
+#: src/global/constants.js:1628
+msgid "Floating"
+msgstr ""
+
+#: src/global/constants.js:1671
+msgid "Parallax"
+msgstr ""
+
+#: src/global/constants.js:1728
+msgid "Sticky"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block title"
+msgid "Data Table"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "data"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "sortable"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "filter"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "responsive"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "CSV"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "excel"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "spreadsheet"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "grid"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "chart"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "graph"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "dynamic"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block keyword"
+msgid "customizable"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+#: src/blocks/image-hotspot/block.json
+msgctxt "block keyword"
+msgid "interactive"
+msgstr ""
+
+#: src/blocks/data-table/block.json
+msgctxt "block description"
+msgid "Display structured data in customizable table formats."
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block title"
+msgid "Image Hotspot"
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block keyword"
+msgid "image"
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block keyword"
+msgid "hotspot"
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block keyword"
+msgid "popover"
+msgstr ""
+
+#: src/blocks/image-hotspot/block.json
+msgctxt "block description"
+msgid "Add interactive hotspots to images for enhanced details."
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block title"
+msgid "Post Tab"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "post"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "tab"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "content"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "organize"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "sort"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "category"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "archive"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "carousel"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block keyword"
+msgid "slider"
+msgstr ""
+
+#: src/blocks/post-tab/block.json
+msgctxt "block description"
+msgid "Organize posts into tabs for streamlined content access."
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block title"
+msgid "Unfold"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "fold"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "unfold"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "reveal"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "hidden"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "animation"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block keyword"
+msgid "transition"
+msgstr ""
+
+#: src/blocks/unfold/block.json
+msgctxt "block description"
+msgid "Add unfolding animation to reveal hidden content."
+msgstr ""

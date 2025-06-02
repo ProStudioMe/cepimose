@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Post Video Slider",
+  "name": "zolo/post-video-slider",
+  "category": "zoloblocks",
+  "keywords": [
+    "post",
+    "post slider",
+    "video slider",
+    "gallery slider"
+  ],
+  "description": "Showcase posts in this dynamic carousel slider block",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": [
+    "swiper",
+    "file:./style-index.css"
+  ],
+  "viewScript": "file:./frontend.js",
+  "script": [
+    "swiper"
+  ]
+}

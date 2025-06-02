@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "QR Code",
+  "name": "zolo/qrcode",
+  "category": "zoloblocks",
+  "keywords": [
+    "qr",
+    "code",
+    "link",
+    "text",
+    "brand",
+    "scan",
+    "barcode",
+    "url"
+  ],
+  "description": "Generate customized, branded QR codes for links or text.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 400
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}

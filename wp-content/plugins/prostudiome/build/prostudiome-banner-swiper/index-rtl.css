@@ -1,0 +1,16 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/prostudiome-banner-swiper/editor.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-prostudiome-banner-swiper .swiper .swiper-wrapper .swiper-slide {
+  opacity: 1 !important;
+  position: relative !important;
+  transform: none !important;
+}
+.wp-block-prostudiome-banner-swiper .components-placeholder {
+  min-height: 200px;
+}
+.wp-block-prostudiome-banner-swiper .components-placeholder__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
