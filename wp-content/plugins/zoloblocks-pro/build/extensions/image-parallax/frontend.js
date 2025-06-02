@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",(()=>{const a=document.querySelectorAll("[data-image-parallax]");a&&a.forEach((a=>{const e=JSON.parse(a.dataset.imageParallax);if(!e)return;const t=a.querySelector("img");t&&"function"==typeof SimpleParallax&&new SimpleParallax(t,{scale:e.scale||1.4,orientation:e.orientation||"down",delay:e.delay||.4})}))}));
