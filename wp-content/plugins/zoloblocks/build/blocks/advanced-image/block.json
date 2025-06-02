@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Advanced Image",
+  "name": "zolo/advanced-image",
+  "category": "zoloblocks",
+  "keywords": [
+    "image",
+    "photo",
+    "advanced",
+    "media",
+    "gallery"
+  ],
+  "description": "Add responsive, advanced features to enhance image presentations.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "filter": {
+      "duotone": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "title": "Progress Pie",
+  "name": "zolo/progress-pie",
+  "category": "zoloblocks",
+  "keywords": [
+    "progress",
+    "pie",
+    "milestone",
+    "stats",
+    "animated",
+    "loading",
+    "percentage",
+    "completion"
+  ],
+  "description": "Show progress with animated pies for data visualization.",
+  "apiVersion": 3,
+  "textdomain": "zoloblocks",
+  "example": {
+    "attributes": {
+      "preview": true
+    },
+    "viewportWidth": 410
+  },
+  "supports": {
+    "anchor": false,
+    "customClassName": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./frontend.js"
+}
