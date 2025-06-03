@@ -30,8 +30,8 @@ if (empty($categories)) {
     return;
 }
 
-// Get the first category (primary category)
-$category = $categories[0];
+// Get all category IDs from the current post's categories
+$category_ids = wp_list_pluck($categories, 'term_id');
 
 // Get block attributes
 $number_of_posts = isset($attributes['numberOfPosts']) ? intval($attributes['numberOfPosts']) : 3;
@@ -45,7 +45,7 @@ $related_posts = get_posts([
     'post_type' => 'post',
     'posts_per_page' => $number_of_posts,
     'post__not_in' => [$current_post_id],
-    'category__in' => [$category->term_id],
+    'category__in' => $category_ids,
     'post_status' => 'publish',
 ]);
 
@@ -53,7 +53,7 @@ if (empty($related_posts)) {
     ?>
     <div <?php echo get_block_wrapper_attributes(); ?>>
         <div style="padding: 20px; background: #f0f0f0; text-align: center;">
-            <?php echo esc_html__('No other posts found in the same category.', 'prostudiome'); ?>
+            <?php echo esc_html__('No other posts found in any of the same categories.', 'prostudiome'); ?>
         </div>
     </div>
     <?php
@@ -79,21 +79,21 @@ $wrapper_attributes = get_block_wrapper_attributes();
             $has_thumbnail = has_post_thumbnail($post->ID);
             $thumbnail = $has_thumbnail ? get_the_post_thumbnail($post->ID, 'medium') : '';
         ?>
-            <article class="same-category-post">
-                <?php if ($display_featured_image && $has_thumbnail) : ?>
+            <ul class="same-category-post">
+                <!-- <?php if ($display_featured_image && $has_thumbnail) : ?>
                     <a href="<?php echo esc_url($permalink); ?>" class="same-category-post-image">
                         <?php echo $thumbnail; ?>
                     </a>
-                <?php endif; ?>
+                <?php endif; ?> -->
                 
-                <div class="same-category-post-content">
+                <li class="same-category-post-content">
                     <h4 class="same-category-post-title">
                         <a href="<?php echo esc_url($permalink); ?>">
                             <?php echo esc_html($post_title); ?>
                         </a>
                     </h4>
                     
-                    <?php if ($display_date) : ?>
+                    <!-- <?php if ($display_date) : ?>
                         <div class="same-category-post-date">
                             <?php echo esc_html($post_date); ?>
                         </div>
@@ -107,9 +107,9 @@ $wrapper_attributes = get_block_wrapper_attributes();
                     
                     <a href="<?php echo esc_url($permalink); ?>" class="same-category-post-link">
                         <?php echo esc_html__('Read More', 'prostudiome'); ?>
-                    </a>
-                </div>
-            </article>
+                    </a> -->
+                    </li>
+            </ul>
         <?php endforeach; 
         wp_reset_postdata();
         ?>
