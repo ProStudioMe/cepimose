@@ -64,54 +64,36 @@ if (empty($related_posts)) {
 $wrapper_attributes = get_block_wrapper_attributes();
 ?>
 
-<div <?php echo $wrapper_attributes; ?>>
+<div <?php echo $wrapper_attributes; ?> >
     <?php if (!empty($title)) : ?>
-        <h3 class="same-category-posts-title"><?php echo esc_html($title); ?></h3>
+        <h3 class=""><?php echo esc_html($title); ?></h3>
     <?php endif; ?>
     
-    <div class="same-category-posts-grid">
+   
         <?php foreach ($related_posts as $post) : 
             setup_postdata($post);
             $permalink = get_permalink($post->ID);
             $post_title = get_the_title($post->ID);
-            $post_date = get_the_date('', $post->ID);
-            $excerpt = get_the_excerpt($post->ID);
-            $has_thumbnail = has_post_thumbnail($post->ID);
-            $thumbnail = $has_thumbnail ? get_the_post_thumbnail($post->ID, 'medium') : '';
         ?>
-            <ul class="same-category-post">
+            <ul >
                 <!-- <?php if ($display_featured_image && $has_thumbnail) : ?>
                     <a href="<?php echo esc_url($permalink); ?>" class="same-category-post-image">
                         <?php echo $thumbnail; ?>
                     </a>
                 <?php endif; ?> -->
                 
-                <li class="same-category-post-content">
-                    <h4 class="same-category-post-title">
+                <li >
+                    <h4 >
                         <a href="<?php echo esc_url($permalink); ?>">
                             <?php echo esc_html($post_title); ?>
                         </a>
                     </h4>
                     
-                    <!-- <?php if ($display_date) : ?>
-                        <div class="same-category-post-date">
-                            <?php echo esc_html($post_date); ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <?php if ($display_excerpt && !empty($excerpt)) : ?>
-                        <div class="same-category-post-excerpt">
-                            <?php echo wp_kses_post($excerpt); ?>
-                        </div>
-                    <?php endif; ?>
-                    
-                    <a href="<?php echo esc_url($permalink); ?>" class="same-category-post-link">
-                        <?php echo esc_html__('Read More', 'prostudiome'); ?>
-                    </a> -->
+                  
                     </li>
             </ul>
         <?php endforeach; 
         wp_reset_postdata();
         ?>
-    </div>
+  
 </div>
