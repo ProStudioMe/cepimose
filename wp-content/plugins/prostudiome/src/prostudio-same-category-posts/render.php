@@ -34,7 +34,7 @@ if (empty($categories)) {
 $category_ids = wp_list_pluck($categories, 'term_id');
 
 // Get block attributes
-$number_of_posts = isset($attributes['numberOfPosts']) ? intval($attributes['numberOfPosts']) : 3;
+$number_of_posts = isset($attributes['numberOfPosts']) ? intval($attributes['numberOfPosts']) : 5; // Default changed to 5
 $display_featured_image = isset($attributes['displayFeaturedImage']) ? $attributes['displayFeaturedImage'] : true;
 $display_excerpt = isset($attributes['displayExcerpt']) ? $attributes['displayExcerpt'] : true;
 $display_date = isset($attributes['displayDate']) ? $attributes['displayDate'] : true;

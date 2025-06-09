@@ -28,7 +28,6 @@ $wrapper_attributes = get_block_wrapper_attributes();
 // add the wp-block-prostudiome-home-info class based on the block name
 ?>
 
-<!-- Adding inline styles for testing -->
 <style>
 .wp-block-prostudiome-home-info {
     border: 10px solid red !important;
