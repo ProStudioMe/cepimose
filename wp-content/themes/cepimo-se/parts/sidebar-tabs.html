@@ -1,0 +1,92 @@
+<!-- wp:group {"tagName":"aside","className":"aside-tab-wrapper","layout":{"type":"constrained"}} -->
+<aside class="wp-block-group aside-tab-wrapper">
+    <!-- wp:html -->
+    <div class="custom-tabs">
+        <div class="tab-headers">
+            <button class="tab-header active" data-tab="tab1">Razdelki na tej strani</button>
+            <button class="tab-header" data-tab="tab2">Povezane objave</button>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-panel active" id="tab1">
+                <!-- Placeholder for prostudio-anchor-links -->
+            </div>
+
+            <div class="tab-panel" id="tab2">
+                <!-- Placeholder for prostudio-same-category-posts -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabHeaders = document.querySelectorAll('.custom-tabs .tab-header');
+            const tabPanels = document.querySelectorAll('.custom-tabs .tab-panel');
+
+            tabHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const targetTab = this.dataset.tab;
+
+                    tabHeaders.forEach(h => h.classList.remove('active'));
+                    tabPanels.forEach(p => p.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            setTimeout(() => {
+                const anchorLinks = document.querySelectorAll('.prostudio-anchor-links .anchor-link');
+                anchorLinks.forEach(link => {
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                            if (history.pushState) {
+                                history.pushState(null, null, '#' + targetId);
+                            }
+                        }
+                    });
+                });
+            }, 1000);
+        });
+    </script>
+    <!-- /wp:html -->
+
+    <!-- wp:prostudiome/anchor-links {"className":"custom-tab-content","style":{"display":{"duotone":"var:preset|duotone|default"}}} /-->
+
+    <!-- wp:prostudiome/same-category-posts {"className":"custom-tab-content","style":{"display":{"duotone":"var:preset|duotone|default"}}} /-->
+
+    <!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"24px","bottom":"8px"}}},"fontSize":"small"} -->
+    <h4 class="wp-block-heading has-small-font-size" style="margin-top:24px;margin-bottom:8px">ACF Button Field:
+        aside_button</h4>
+    <!-- /wp:heading -->
+
+    <!-- wp:group {"className":"sample-button","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group sample-button">
+        <!-- wp:paragraph -->
+        <p><a href="#" class="btn btn-primary">Replace with ACF Button</a></p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:heading {"level":4,"style":{"spacing":{"margin":{"top":"24px","bottom":"8px"}}},"fontSize":"small"} -->
+    <h4 class="wp-block-heading has-small-font-size" style="margin-top:24px;margin-bottom:8px">ACF Banner Field:
+        aside_banner</h4>
+    <!-- /wp:heading -->
+
+    <!-- wp:group {"className":"sample-banner","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group sample-banner">
+        <!-- wp:paragraph -->
+        <p>Replace with ACF Banner Content</p>
+        <!-- /wp:paragraph -->
+    </div>
+    <!-- /wp:group -->
+</aside>
+<!-- /wp:group -->

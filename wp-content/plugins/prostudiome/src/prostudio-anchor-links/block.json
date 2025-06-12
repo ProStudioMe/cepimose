@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "prostudiome/anchor-links",
+	"version": "1.0.0",
+	"title": "Anchor Links",
+	"category": "widgets",
+	"icon": "admin-links",
+	"description": "Displays a list of anchor links to all headings with IDs on the current page.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"textdomain": "prostudiome",
+	"editorScript": "file:./index.js",
+	"editorStyle": ["file:./editor.css"],
+	"style": ["file:./style.css"],
+	"render": "file:./render.php",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"title": {
+			"type": "string",
+			"default": "Razdelki na tej strani"
+		},
+		"includeH1": {
+			"type": "boolean",
+			"default": true
+		},
+		"includeH2": {
+			"type": "boolean",
+			"default": true
+		},
+		"includeH3": {
+			"type": "boolean",
+			"default": true
+		},
+		"showNumbers": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

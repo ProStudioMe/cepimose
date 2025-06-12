@@ -1,20 +1,23 @@
 <!-- wp:group {"layout":{"inherit":"true"}} -->
-<div class="wp-block-group shadow-black/10 z-40 bg-white shadow-md">
+<div class="wp-block-group shadow-black/10 relative z-40 bg-white shadow-md">
 	<div
 		class=" afterFull after:content-[''] py-1 w-full justify-between after:widthFull [&_*]:z-10 after:bg-neutral-100 wp-block-group alignfull container relative flex items-center gap-3 ">
 
 		<!-- Social -->
 		<div class=" flex items-center gap-3 mt-0">
-			<a href="/" class="h-4">
-				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-facebook.svg" alt="" />
-			</a>
-			<a href="/" class="h-4">
-				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-instagram.svg" alt="" />
-			</a>
-			<a href="/" class="h-4">
-				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-youtube.svg" alt="" />
-			</a>
+			<span class="flex items-center justify-center gap-1 mt-0 text-xs">
+				SL
+				<img class="h-4" src="/wp-content/themes/cepimo-se/assets/icon-language.svg" alt="">
+				<!-- WPML Language Switcher -->
+				<!-- wp:shortcode -->
+				<!-- [wpml_language_switcher] -->
+				<!-- /wp:shortcode -->
+			</span>
+
+
 		</div>
+
+
 
 		<!-- Custom Search Form -->
 		<form role="search" method="get" class="search-form flex items-center mt-0" action="/">
@@ -27,6 +30,16 @@
 				<img src="/wp-content/themes/cepimo-se/assets/icon-search.svg" alt="Submit search" class="w-auto h-6">
 			</button>
 		</form>
+
+		<div>
+			<a href="/" class="h-4">
+				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-facebook.svg" alt="facebook" />
+			</a>
+			<a href="/" class="h-4">
+				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-youtube.svg" alt="youtube" />
+			</a>
+		</div>
+
 	</div>
 	<!-- wp:group {"align":"full","layout":{"type":"flex","justifyContent":"space-between"}} -->
 	<div class="wp-block-group alignfull container flex items-center justify-between px-6 py-3 !mx-auto">
@@ -36,17 +49,10 @@
 				class="w-auto h-12"></a>
 
 		<!-- Navigation -->
-		<div class="text-blue-dark z-50 flex items-center gap-3">
+		<div class="text-blue-dark xl:ml-10 z-50 flex items-center gap-3 text-sm">
 			<!-- wp:navigation {"ref":784} /-->
 		</div>
-		<span class="flex items-center justify-center gap-1 mt-0">
-			SL
-			<img class="h-6" src="/wp-content/themes/cepimo-se/assets/icon-language.svg" alt="">
-			<!-- WPML Language Switcher -->
-			<!-- wp:shortcode -->
-			<!-- [wpml_language_switcher] -->
-			<!-- /wp:shortcode -->
-		</span>
+
 
 	</div>
 	<!-- /wp:group -->

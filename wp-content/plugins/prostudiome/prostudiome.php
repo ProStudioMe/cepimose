@@ -129,6 +129,9 @@ add_action('acf/init', 'prostudiome_register_acf_fields');
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function prostudiome_blocks_init() {
+	// Debug: Log that this function is being called
+	error_log('ProStudio.me: prostudiome_blocks_init() function called');
+	
 	// Register Swiper scripts and styles
 	wp_register_style(
 		'swiper',
@@ -145,11 +148,70 @@ function prostudiome_blocks_init() {
 		true
 	);
 
-	// Register blocks
-	register_block_type(__DIR__ . '/build/prostudiome-banner-swiper');
-	register_block_type(__DIR__ . '/build/prostudiome-timeline');
-	register_block_type(__DIR__ . '/build/prostudio-same-category-posts');
+	// Register blocks with error handling
+	$blocks_to_register = [
+		'prostudiome-banner-swiper',
+		'prostudiome-timeline',
+		'prostudio-same-category-posts'
+		// Temporarily removed: 'prostudio-anchor-links', 'prostudio-test-copy'
+	];
+
+	foreach ($blocks_to_register as $block_dir) {
+		$block_path = __DIR__ . '/build/' . $block_dir;
+		
+		// Debug: Always log what we're trying to register
+		error_log('ProStudio.me: Attempting to register block: ' . $block_dir . ' from path: ' . $block_path);
+		
+		if (file_exists($block_path . '/block.json')) {
+			error_log('ProStudio.me: block.json found for ' . $block_dir);
+			
+			// Try to register the block
+			$result = register_block_type($block_path);
+			
+			if (is_wp_error($result)) {
+				error_log('ProStudio.me: FAILED to register block ' . $block_dir . ': ' . $result->get_error_message());
+			} else {
+				error_log('ProStudio.me: SUCCESS - registered block ' . $block_dir . ' as ' . $result->name);
+			}
+		} else {
+			error_log('ProStudio.me: ERROR - Block directory missing or no block.json found: ' . $block_path);
+			
+			// List what files actually exist
+			if (is_dir($block_path)) {
+				$files = scandir($block_path);
+				error_log('ProStudio.me: Directory exists but files found: ' . implode(', ', $files));
+			} else {
+				error_log('ProStudio.me: Directory does not exist: ' . $block_path);
+			}
+		}
+	}
 	// Note: The home-info block is registered via ACF in prostudiome_register_acf_blocks()
+	
+	// Try direct registration of test copy block
+	$test_block_path = __DIR__ . '/build/prostudio-test-copy';
+	if (file_exists($test_block_path . '/block.json')) {
+		error_log('ProStudio.me: Trying direct registration of test-copy block');
+		$direct_result = register_block_type($test_block_path);
+		if (is_wp_error($direct_result)) {
+			error_log('ProStudio.me: DIRECT REGISTRATION FAILED: ' . $direct_result->get_error_message());
+		} else {
+			error_log('ProStudio.me: DIRECT REGISTRATION SUCCESS: ' . $direct_result->name);
+		}
+	}
+	
+	// Try direct registration of anchor-links block to see the error
+	$anchor_block_path = __DIR__ . '/build/prostudio-anchor-links';
+	if (file_exists($anchor_block_path . '/block.json')) {
+		error_log('ProStudio.me: Trying direct registration of anchor-links block');
+		$anchor_result = register_block_type($anchor_block_path);
+		if (is_wp_error($anchor_result)) {
+			error_log('ProStudio.me: ANCHOR LINKS REGISTRATION FAILED: ' . $anchor_result->get_error_message());
+		} else {
+			error_log('ProStudio.me: ANCHOR LINKS REGISTRATION SUCCESS: ' . $anchor_result->name);
+		}
+	} else {
+		error_log('ProStudio.me: Anchor links block.json not found at: ' . $anchor_block_path);
+	}
 
 	// Register block styles
 	$timeline_css_path = plugin_dir_path(__FILE__) . 'build/prostudiome-timeline/style-index.css';
@@ -180,4 +242,31 @@ function prostudiome_enqueue_scripts() {
 		time() // Using current timestamp to force refresh
 	);
 }
+
+/**
+ * Simple admin notice to show registered blocks
+ */
+function prostudiome_show_blocks_notice() {
+	$screen = get_current_screen();
+	if ($screen && $screen->base === 'post' && current_user_can('manage_options')) {
+		$registered_blocks = WP_Block_Type_Registry::get_instance()->get_all_registered();
+		$prostudio_blocks = [];
+		foreach ($registered_blocks as $name => $block) {
+			if (strpos($name, 'prostudiome') !== false) {
+				$prostudio_blocks[] = $name;
+			}
+		}
+		
+		echo '<div class="notice notice-info"><p>';
+		echo '<strong>ProStudio Blocks:</strong> ';
+		if (!empty($prostudio_blocks)) {
+			echo implode(', ', $prostudio_blocks);
+		} else {
+			echo 'NONE FOUND!';
+		}
+		echo '</p></div>';
+	}
+}
+add_action('admin_notices', 'prostudiome_show_blocks_notice');
+
 add_action('wp_enqueue_scripts', 'prostudiome_enqueue_scripts');

@@ -1,0 +1,114 @@
+.prostudio-anchor-links {
+	background: #f8f9fa;
+	border: 1px solid #e9ecef;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px 0;
+
+	.anchor-links-title {
+		margin: 0 0 15px 0;
+		font-size: 1.2em;
+		font-weight: 600;
+		color: #333;
+		border-bottom: 2px solid #007cba;
+		padding-bottom: 8px;
+	}
+
+	.anchor-links-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		&.anchor-links-numbered {
+			list-style: decimal;
+			padding-left: 20px;
+		}
+
+		&.anchor-links-bullets {
+			list-style: disc;
+			padding-left: 20px;
+		}
+	}
+
+	.anchor-link-item {
+		margin: 8px 0;
+		line-height: 1.5;
+
+		// Indent based on heading level
+		&.anchor-link-level-1 {
+			margin-left: 0;
+			font-weight: 600;
+		}
+
+		&.anchor-link-level-2 {
+			margin-left: 15px;
+			font-weight: 500;
+		}
+
+		&.anchor-link-level-3 {
+			margin-left: 30px;
+		}
+
+		&.anchor-link-level-4 {
+			margin-left: 45px;
+			font-size: 0.95em;
+		}
+
+		&.anchor-link-level-5 {
+			margin-left: 60px;
+			font-size: 0.9em;
+		}
+
+		&.anchor-link-level-6 {
+			margin-left: 75px;
+			font-size: 0.85em;
+		}
+	}
+
+	.anchor-link {
+		color: #007cba;
+		text-decoration: none;
+		transition: all 0.2s ease;
+
+		&:hover {
+			color: #005a87;
+			text-decoration: underline;
+		}
+
+		&:visited {
+			color: #7b68ee;
+		}
+
+		&:focus {
+			outline: 2px solid #007cba;
+			outline-offset: 2px;
+		}
+	}
+
+	// Responsive design
+	@media (max-width: 768px) {
+		padding: 15px;
+
+		.anchor-link-item {
+			&.anchor-link-level-2 {
+				margin-left: 10px;
+			}
+
+			&.anchor-link-level-3 {
+				margin-left: 20px;
+			}
+
+			&.anchor-link-level-4 {
+				margin-left: 30px;
+			}
+
+			&.anchor-link-level-5 {
+				margin-left: 40px;
+			}
+
+			&.anchor-link-level-6 {
+				margin-left: 50px;
+			}
+		}
+	}
+}

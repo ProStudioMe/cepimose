@@ -1,0 +1,26 @@
+// Editor specific styles for the anchor links block
+// These styles are only loaded in the block editor
+
+.wp-block-prostudiome-anchor-links {
+	.components-placeholder {
+		min-height: 120px;
+
+		.components-placeholder__label {
+			font-weight: 600;
+		}
+
+		.components-placeholder__instructions {
+			margin-bottom: 15px;
+		}
+
+		ul {
+			margin: 10px 0;
+			padding-left: 20px;
+
+			li {
+				margin: 5px 0;
+				text-align: left;
+			}
+		}
+	}
+}

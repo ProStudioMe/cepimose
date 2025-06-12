@@ -1,0 +1,71 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group ">
+    <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"margin":{"top":"2rem","bottom":"2rem"}}}} -->
+    <div class="wp-block-group" style="margin-top:2rem;margin-bottom:2rem">
+        <!-- wp:heading {"textAlign":"center","level":1,"style":{"typography":{"fontSize":"2.5rem","fontWeight":"700"}}} -->
+        <h1 class="wp-block-heading has-text-align-center" style="font-size:2.5rem;font-weight:700">Tag:
+            <!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+        </h1>
+        <!-- /wp:heading -->
+
+        <!-- wp:term-description {"textAlign":"center","style":{"spacing":{"margin":{"top":"1rem","bottom":"2rem"}}}} /-->
+    </div>
+    <!-- /wp:group -->
+
+    <!-- wp:query {"layout":{"inherit":true}} -->
+    <div class="wp-block-query">
+        <!-- wp:post-template {"layout":{"type":"default"}} -->
+        <!-- wp:group {"style":{"spacing":{"padding":{"top":"2rem","right":"2rem","bottom":"2rem","left":"2rem"},"margin":{"bottom":"2rem"}},"border":{"radius":"8px","width":"1px"}},"borderColor":"neutral-200","backgroundColor":"white","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"}} -->
+        <div class="wp-block-group has-border-color has-neutral-200-border-color has-white-background-color has-background"
+            style="border-width:1px;border-radius:8px;margin-bottom:2rem;padding-top:2rem;padding-right:2rem;padding-bottom:2rem;padding-left:2rem">
+            <!-- wp:post-featured-image {"isLink":true,"width":"200px","height":"150px","style":{"border":{"radius":"6px"},"spacing":{"margin":{"right":"2rem"}}}} /-->
+
+            <!-- wp:group {"layout":{"type":"constrained","contentSize":""},"style":{"spacing":{"blockGap":"1rem"}}} -->
+            <div class="wp-block-group">
+                <!-- wp:post-title {"isLink":true,"style":{"typography":{"fontSize":"1.5rem","fontWeight":"600","lineHeight":"1.3"},"spacing":{"margin":{"bottom":"0.5rem"}}}} /-->
+
+                <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":25,"style":{"spacing":{"margin":{"bottom":"1rem"}},"typography":{"lineHeight":"1.6"}}} /-->
+
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"flex-end"},"style":{"typography":{"fontSize":"0.875rem"},"spacing":{"margin":{"top":"1rem"}}}} -->
+                <div class="wp-block-group" style="margin-top:1rem;font-size:0.875rem">
+                    <!-- wp:post-terms {"term":"category","style":{"elements":{"link":{"color":{"text":"var:preset|color|blue-dark"}}}}} /-->
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:post-template -->
+
+        <!-- wp:query-no-results -->
+        <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"3rem","bottom":"3rem"}}}} -->
+        <div class="wp-block-group" style="padding-top:3rem;padding-bottom:3rem">
+            <!-- wp:heading {"textAlign":"center","level":3} -->
+            <h3 class="wp-block-heading has-text-align-center">No posts found with this tag</h3>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"align":"center"} -->
+            <p class="has-text-align-center">There are currently no posts tagged with this term. Please try browsing
+                other tags or categories.</p>
+            <!-- /wp:paragraph -->
+        </div>
+        <!-- /wp:group -->
+        <!-- /wp:query-no-results -->
+
+        <!-- wp:group {"layout":{"type":"constrained"},"style":{"spacing":{"margin":{"top":"3rem"}}}} -->
+        <div class="wp-block-group" style="margin-top:3rem">
+            <!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+            <!-- wp:query-pagination-previous {"label":"← Previous Posts"} /-->
+            <!-- wp:query-pagination-numbers /-->
+            <!-- wp:query-pagination-next {"label":"Next Posts →"} /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:group -->
+    </div>
+    <!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

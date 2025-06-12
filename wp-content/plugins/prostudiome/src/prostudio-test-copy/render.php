@@ -64,16 +64,18 @@ if (empty($related_posts)) {
 $wrapper_attributes = get_block_wrapper_attributes();
 ?>
 
-<ul <?php echo $wrapper_attributes; ?> >
-
-      
+<div <?php echo $wrapper_attributes; ?> >
+    <?php if (!empty($title)) : ?>
+        <h3 class=""><?php echo esc_html($title); ?></h3>
+    <?php endif; ?>
+    
    
         <?php foreach ($related_posts as $post) : 
             setup_postdata($post);
             $permalink = get_permalink($post->ID);
             $post_title = get_the_title($post->ID);
         ?>
-        
+            <ul >
                 <!-- <?php if ($display_featured_image && $has_thumbnail) : ?>
                     <a href="<?php echo esc_url($permalink); ?>" class="same-category-post-image">
                         <?php echo $thumbnail; ?>
@@ -89,9 +91,9 @@ $wrapper_attributes = get_block_wrapper_attributes();
                     
                   
                     </li>
-        
+            </ul>
         <?php endforeach; 
         wp_reset_postdata();
         ?>
   
-</ul>
+</div>

@@ -29,6 +29,10 @@
   .afterFull {
     @apply after:z-0 after:inset-0 after:absolute after:left-0 after:widthFull;
   }
+
+  body {
+    @apply overflow-x-hidden;
+  }
 }
 
 .wp-block-navigation
@@ -36,12 +40,22 @@
   .wp-block-navigation__submenu-container
   > .wp-block-navigation-item
   > .wp-block-navigation-item__content {
-  @apply hover:text-primary hover:underline text-sm;
+  @apply hover:text-primary hover:underline;
+}
+.wp-block-navigation-item__content {
+  @apply text-sm font-semibold;
+}
+.wp-block-navigation-item__content span {
+  @apply hover:text-primary leading-relaxed transition-all;
 }
 
 .wp-block-navigation:not(.has-text-color)
   .wp-block-navigation__submenu-container {
   @apply rounded-xl p-5 overflow-hidden border-none shadow-2xl;
+}
+
+.wp-block-navigation__container.is-responsive.wp-block-navigation {
+  @apply flex-nowrap flex gap-3;
 }
 
 /* Banner swiper */
@@ -55,18 +69,18 @@
 }
 
 .banner-swiper-title {
-  @apply text-blue-dark mt-0 mb-4 text-6xl font-bold;
+  @apply text-blue-dark xl:w-7/12 mt-0 mb-4 text-4xl font-bold leading-tight;
 }
 .test-class {
   @apply bg-inherit;
 }
 
 .banner-swiper-subtitle {
-  @apply text-blue-middle mt-4 text-4xl font-semibold;
+  @apply text-blue-middle mt-4 text-2xl font-semibold;
 }
 
 .banner-swiper-text {
-  @apply xl:max-w-[40%] mt-10 text-neutral-800;
+  @apply xl:max-w-[40%] text-xs mt-5 text-neutral-800;
 }
 
 .banner-swiper-link {
@@ -371,14 +385,14 @@
   @apply border-[1px] border-solid border-neutral-400 rounded-xl overflow-hidden;
 }
 .c-table th {
-  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0 text-sm text-neutral-500 font-semibold;
+  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0 text-sm text-blue-dark;
 }
 
 .c-table thead {
   @apply border-b-neutral-400;
 }
 .c-table td {
-  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0;
+  @apply border-r-[1px] border-solid border-neutral-400 last:border-r-0 border-l-0 border-t-0 text-sm text-neutral-700;
 }
 .c-table tfoot {
   @apply border-t-[3px] border-neutral-400;
@@ -386,33 +400,127 @@
 
 /* Aside */
 
+.wp-block-group.alignwide.has-global-padding.is-layout-constrained.wp-block-group-is-layout-constrained {
+  @apply h-full;
+}
+
+.aside-tab-wrapper {
+  @apply top-2 sticky z-10;
+}
+
 .aside-categories,
-.wp-block-prostudiome-same-category-posts {
-  @apply rounded-xl bg-neutral-100 grid gap-2 p-10;
+.wp-block-prostudiome-same-category-posts,
+.prostudio-anchor-links {
+  @apply rounded-xl bg-neutral-100 grid gap-2 p-5 mt-0;
 }
 
 .aside-categories h3,
-.wp-block-prostudiome-same-category-posts h3 {
+.wp-block-prostudiome-same-category-posts h3,
+.prostudio-anchor-links h3 {
   @apply m-0 text-xl font-semibold;
 }
 
 .aside-categories ul,
-.wp-block-prostudiome-same-category-posts ul {
-  @apply p-0 mt-0 list-none;
+.wp-block-prostudiome-same-category-posts ul,
+.prostudio-anchor-links ul {
+  @apply p-0 mt-0 mb-0 list-none;
 }
 
 .aside-categories li,
-.wp-block-prostudiome-same-category-posts li {
-  @apply border-b-neutral-300 marker:!content-[""]  marker:hidden w-full  list-none border-b-[1px] border-solid border-t-0 border-l-0 border-r-0 pr-5;
+.wp-block-prostudiome-same-category-posts li,
+.prostudio-anchor-links li {
+  @apply border-b-neutral-300 marker:!content-[""]  marker:hidden w-full  list-none border-b-[1px] border-solid border-t-0 border-l-0 border-r-0;
 }
 
 .aside-categories a,
-.wp-block-prostudiome-same-category-posts a {
-  @apply text-neutral-700 w-full  py-3 pr-5 font-thin no-underline text-base cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-6 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:bg-no-repeat after:content-[""] block hover:text-primary transition-all hover:after:-mr-2 after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
+.wp-block-prostudiome-same-category-posts a,
+.prostudio-anchor-links a {
+  @apply text-neutral-700 w-full py-1 text-xs   font-thin no-underline  cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-5 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:[background-size:10px]  after:bg-no-repeat after:content-[""] block hover:text-primary transition-all hover:after:-mr-2 after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
 }
 
-.wp-block-prostudiome-same-category-posts h4 {
+.wp-block-prostudiome-same-category-posts h4,
+.prostudio-anchor-links h4 {
   @apply p-0 m-0;
+}
+
+.prostudio-anchor-links {
+  @apply bg-blue-lighter border-blue-light z-20 border border-solid;
+}
+
+/* Custom Tabs Styles */
+
+.custom-tabs {
+  @apply pl-3;
+}
+
+.custom-tabs .tab-headers {
+  @apply border-neutral-300 flex;
+}
+
+.custom-tabs .tab-header {
+  @apply text-neutral-500 hover:text-primary px-4 py-3 !text-xs  transition-all bg-transparent border-b-2 border-transparent border-none cursor-pointer;
+}
+
+.custom-tabs .tab-header.active {
+  @apply bg-blue-middle rounded-t-xl text-white;
+}
+
+.custom-tabs .tab-panel {
+  @apply hidden;
+}
+
+.custom-tabs .tab-panel.active {
+  @apply block;
+}
+
+.aside-button-section,
+.aside-banner-section {
+  @apply border-neutral-300 pt-4 mt-3 border-t;
+}
+
+.aside-button-section p,
+.aside-banner-section p {
+  @apply text-neutral-500 mx-auto text-xs;
+}
+
+.sample-button {
+  @apply grid place-items-center;
+}
+.sample-button .btn {
+  @apply bg-blue-dark hover:bg-primary inline-block px-6 py-3 mx-auto font-medium text-white no-underline transition-colors rounded-full;
+}
+
+.sample-banner {
+  @apply bg-blue-lighter border-blue-light rounded-xl overflow-hidden text-center border;
+}
+
+.sample-banner p {
+  @apply text-blue-dark m-0 text-sm;
+}
+
+.sample-banner a {
+  @apply text-blue-dark hover:text-primary block no-underline transition-colors;
+}
+
+.sample-banner a p {
+  @apply hover:text-primary;
+}
+
+.sample-banner img {
+  @apply w-full h-auto rounded-lg;
+}
+
+.sample-banner a:hover img {
+  @apply transition-transform scale-105;
+}
+
+/* Custom tab content positioning */
+.custom-tab-content {
+  @apply hidden;
+}
+
+.custom-tab-content.active {
+  @apply block;
 }
 
 /* Middle content */
@@ -423,4 +531,79 @@
 
 .wp-block-media-text {
   @apply overflow-hidden shadow-xl;
+}
+
+/* Archive */
+
+.wp-block-post {
+  @apply list-none;
+}
+.wp-block-post .wp-block-post-excerpt__excerpt {
+  @apply line-clamp-2;
+}
+
+.archive-posts li {
+  @apply marker:hidden marker:!content-[""] shadow-xl bg-neutral-50 rounded-xl;
+}
+.archive-posts h2 a {
+  @apply text-blue-dark;
+}
+
+/* Footer */
+
+footer .wp-block-navigation__container {
+  @apply !gap-7;
+}
+
+/* Maps */
+.vaccination-container {
+  @apply mx-auto text-gray-700;
+}
+
+.vaccination-title {
+  @apply text-blue-dark !mt-0 !mb-2 text-center;
+}
+
+.section-heading {
+  @apply pb-1 mt-2 text-xl text-blue-700;
+}
+
+.address-info {
+  @apply mt-5 text-center;
+}
+
+.schedule-list,
+.contact-list {
+  @apply p-0 list-none;
+}
+
+.schedule-list-item,
+.contact-list-item {
+  @apply bg-blue-50 p-3 mb-2 border-l-4 border-blue-700 rounded-md;
+}
+
+.phone-link,
+.email-link {
+  @apply text-blue-700 no-underline;
+}
+
+.phone-link:hover,
+.email-link:hover {
+  @apply underline;
+}
+
+.mapsvg-controller-view-content {
+  @apply p-7 pt-0;
+}
+
+.mapsvg-controller-view-content h5 {
+  @apply bg-blue-dark px-2 py-1 mt-0 mb-1 !text-sm text-white rounded-lg text-center;
+}
+
+.mapsvg-controller-view-content h6 {
+  @apply mb-0;
+}
+
+.mapsvg-controller-view-content .divider {
+  @apply w-full h-[1px] my-5 block border-b border-t-0 border-l-0 border-r-0 border-dotted border-blue-light;
 }
