@@ -483,8 +483,19 @@
   @apply text-neutral-500 mx-auto text-xs;
 }
 
+/* Hide sections when content is empty */
+.aside-button-section .sample-button:empty,
+.aside-banner-section .sample-banner:empty {
+  @apply hidden;
+}
+
+.aside-button-section:has(.sample-button:empty),
+.aside-banner-section:has(.sample-banner:empty) {
+  @apply hidden;
+}
+
 .sample-button {
-  @apply grid place-items-center;
+  @apply place-items-center grid;
 }
 .sample-button .btn {
   @apply bg-blue-dark hover:bg-primary inline-block px-6 py-3 mx-auto font-medium text-white no-underline transition-colors rounded-full;

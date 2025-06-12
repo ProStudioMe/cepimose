@@ -272,7 +272,12 @@ add_action('init', 'cepimo_se_register_blocks');
 function cepimo_se_aside_button_shortcode() {
     $aside_button = get_field('aside_button');
     
-    if ($aside_button && !empty($aside_button['aside_button_text']) && !empty($aside_button['aside_button_link'])) {
+    // Hide button if text is empty
+    if (!$aside_button || empty($aside_button['aside_button_text'])) {
+        return '';
+    }
+    
+    if (!empty($aside_button['aside_button_link'])) {
         return sprintf(
             '<a href="%s" class="btn btn-primary">%s</a>',
             esc_url($aside_button['aside_button_link']),
@@ -280,25 +285,42 @@ function cepimo_se_aside_button_shortcode() {
         );
     }
     
-    return '<a href="#" class="btn btn-primary">Sample Button Text</a>';
+    // If no link but has text, show button without link
+    return sprintf(
+        '<span class="btn btn-primary">%s</span>',
+        esc_html($aside_button['aside_button_text'])
+    );
 }
 add_shortcode('aside_button', 'cepimo_se_aside_button_shortcode');
 
 function cepimo_se_aside_banner_shortcode() {
     $aside_banner = get_field('aside_banner');
     
-    if ($aside_banner && !empty($aside_banner['aside_banner_image']) && !empty($aside_banner['aside_banner_link'])) {
-        $banner_image = $aside_banner['aside_banner_image'];
-        if ($banner_image) {
+    // Hide banner if image is empty
+    if (!$aside_banner || empty($aside_banner['aside_banner_image'])) {
+        return '';
+    }
+    
+    $banner_image = $aside_banner['aside_banner_image'];
+    if ($banner_image) {
+        if (!empty($aside_banner['aside_banner_link'])) {
+            // Image with link
             return sprintf(
                 '<a href="%s"><img src="%s" alt="%s"></a>',
                 esc_url($aside_banner['aside_banner_link']),
                 esc_url($banner_image['url']),
                 esc_attr($banner_image['alt'])
             );
+        } else {
+            // Image without link
+            return sprintf(
+                '<img src="%s" alt="%s">',
+                esc_url($banner_image['url']),
+                esc_attr($banner_image['alt'])
+            );
         }
     }
     
-    return '<p>Banner placeholder - Add aside_banner group with aside_banner_image and aside_banner_link fields</p>';
+    return '';
 }
 add_shortcode('aside_banner', 'cepimo_se_aside_banner_shortcode');
