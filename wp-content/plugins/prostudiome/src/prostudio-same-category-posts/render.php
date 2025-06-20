@@ -15,7 +15,7 @@ if (!is_singular('post')) {
     ?>
     <div <?php echo get_block_wrapper_attributes(); ?>>
         <div style="padding: 20px; background: #f0f0f0; text-align: center;">
-            <?php echo esc_html__('This block displays posts from the same category as the current post. It will only work on single post pages.', 'prostudiome'); ?>
+            <?php echo esc_html__('Ta blok prikazuje objave iz iste kategorije kot trenutna objava. Deluje samo na straneh z eno samo objavo.', 'prostudiome'); ?>
         </div>
     </div>
     <?php
@@ -34,16 +34,15 @@ if (empty($categories)) {
 $category_ids = wp_list_pluck($categories, 'term_id');
 
 // Get block attributes
-$number_of_posts = isset($attributes['numberOfPosts']) ? intval($attributes['numberOfPosts']) : 5; // Default changed to 5
 $display_featured_image = isset($attributes['displayFeaturedImage']) ? $attributes['displayFeaturedImage'] : true;
 $display_excerpt = isset($attributes['displayExcerpt']) ? $attributes['displayExcerpt'] : true;
 $display_date = isset($attributes['displayDate']) ? $attributes['displayDate'] : true;
 $title = isset($attributes['title']) ? $attributes['title'] : __('Related Posts', 'prostudiome');
 
-// Get posts from the same category, excluding the current post
+// Get posts from the same category, excluding the current post (show all posts)
 $related_posts = get_posts([
     'post_type' => 'post',
-    'posts_per_page' => $number_of_posts,
+    'posts_per_page' => -1, // Show all posts
     'post__not_in' => [$current_post_id],
     'category__in' => $category_ids,
     'post_status' => 'publish',

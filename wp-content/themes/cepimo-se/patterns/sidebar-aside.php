@@ -18,8 +18,12 @@
         </div>
         
         <div class="tab-content">
-            <div class="tab-panel active" id="tab1"></div>
-            <div class="tab-panel" id="tab2"></div>
+            <div class="tab-panel active" id="tab1">
+                <!-- Content for anchor links will be populated here -->
+            </div>
+            <div class="tab-panel" id="tab2">
+                <!-- Content for related posts will be populated here -->
+            </div>
         </div>
     </div>
     
@@ -28,6 +32,19 @@
         const tabHeaders = document.querySelectorAll('.custom-tabs .tab-header');
         const tabPanels = document.querySelectorAll('.custom-tabs .tab-panel');
         const tabContents = document.querySelectorAll('.custom-tab-content');
+        
+        // Ensure first tab is active on load
+        setTimeout(() => {
+            if (tabContents.length > 0) {
+                tabContents.forEach((content, index) => {
+                    if (index === 0) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            }
+        }, 100);
         
         tabHeaders.forEach((header, index) => {
             header.addEventListener('click', function() {
