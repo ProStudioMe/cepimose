@@ -1,48 +1,8 @@
 <!-- wp:group {"layout":{"inherit":"true"}} -->
 <div class="wp-block-group shadow-black/10 relative z-40 bg-white shadow-md">
-	<div
-		class=" afterFull after:content-[''] py-1 w-full justify-between after:widthFull [&_*]:z-10 after:bg-neutral-100 wp-block-group alignfull container relative flex items-center gap-3 ">
 
-		<!-- Social -->
-		<div class=" flex items-center gap-3 mt-0">
-			<span class="flex items-center justify-center gap-1 mt-0 text-xs">
-				SL
-				<img class="h-4" src="/wp-content/themes/cepimo-se/assets/icon-language.svg" alt="">
-				<!-- WPML Language Switcher -->
-				<!-- wp:shortcode -->
-				<!-- [wpml_language_switcher] -->
-				<!-- /wp:shortcode -->
-			</span>
-
-
-		</div>
-
-
-
-		<!-- Custom Search Form -->
-		<form role="search" method="get" class="search-form flex items-center mt-0" action="/">
-			<label for="theme-search-input" class="sr-only">Išči</label>
-			<!-- sr-only class hides text visually but keeps it for screen readers -->
-			<input type="search" id="theme-search-input" name="s" value="" placeholder="Išči..."
-				class=" focus:outline-none focus:ring-2 focus:ring-blue-500 h-7 p-1 px-2 xl:focus:w-[30em] xl:w-[20em] transition-all text-sm border border-gray-300 rounded-full">
-			<button type="submit"
-				class="search-submit flex items-center justify-center bg-transparent border-none cursor-pointer">
-				<img src="/wp-content/themes/cepimo-se/assets/icon-search.svg" alt="Submit search" class="w-auto h-6">
-			</button>
-		</form>
-
-		<div>
-			<a href="/" class="h-4">
-				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-facebook.svg" alt="facebook" />
-			</a>
-			<a href="/" class="h-4">
-				<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-youtube.svg" alt="youtube" />
-			</a>
-		</div>
-
-	</div>
 	<!-- wp:group {"align":"full","layout":{"type":"flex","justifyContent":"space-between"}} -->
-	<div class="wp-block-group alignfull container flex items-center justify-between px-6 py-3 !mx-auto">
+	<div class="wp-block-group alignfull container flex items-center justify-between px-4 py-3 !mx-auto">
 		<!-- Logo and Title -->
 
 		<a href="/"><img src="/wp-content/themes/cepimo-se/assets/logo__primary.svg" alt="Cepimo se logotip"
@@ -50,11 +10,38 @@
 
 		<!-- Navigation -->
 		<div class="text-blue-dark xl:ml-10 z-50 flex items-center gap-3 text-sm">
-			<!-- wp:navigation {"ref":784} /-->
+			<!-- wp:navigation {"ref":784} /--><!-- Lang -->
+
+			<!-- Custom Search Form -->
+			<button type="submit"
+				class="search-submit flex items-center justify-center !ml-5 bg-transparent border-none cursor-pointer">
+				<img src="/wp-content/themes/cepimo-se/assets/icon-search.svg" alt="Submit search" class="w-auto h-5">
+			</button>
+			<div class=" flex items-center gap-3 mt-0">
+				<span
+					class=" border-primary rounded-xl relative flex items-center justify-center gap-1 px-2 py-1 mt-0 text-xs border-[1px] border-solid">
+					<img class="h-4" src="/wp-content/themes/cepimo-se/assets/icon-language.svg" alt="">
+					<span class=" text-xs">SL</span>
+					<!-- WPML Language Switcher -->
+					<!-- wp:shortcode -->
+					<!-- [wpml_language_switcher] -->
+					<!-- /wp:shortcode -->
+				</span>
+			</div>
+
 		</div>
 
 
 	</div>
 	<!-- /wp:group -->
+	<div
+		class="top-1/2 place-items-center fixed right-0 z-50 grid gap-2 p-2 -translate-y-1/2 bg-white rounded-l-lg shadow-lg">
+		<a href="/" class="h-4">
+			<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-facebook.svg" alt="facebook" />
+		</a>
+		<a href="/" class="h-4">
+			<img class="h-4 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-youtube.svg" alt="youtube" />
+		</a>
+	</div>
 </div>
 <!-- /wp:group -->

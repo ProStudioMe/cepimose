@@ -1,0 +1,11 @@
+<!-- Custom Search Form -->
+<form role="search" method="get" class="search-form flex items-center mt-0" action="/">
+    <label for="theme-search-input" class="sr-only">Išči</label>
+    <!-- sr-only class hides text visually but keeps it for screen readers -->
+    <input type="search" id="theme-search-input" name="s" value="" placeholder="Išči..."
+        class=" focus:outline-none focus:ring-2 focus:ring-blue-500 h-7 p-1 px-2 xl:focus:w-[30em] xl:w-[20em] transition-all text-sm border border-gray-300 rounded-full">
+    <button type="submit"
+        class="search-submit flex items-center justify-center bg-transparent border-none cursor-pointer">
+        <img src="/wp-content/themes/cepimo-se/assets/icon-search.svg" alt="Submit search" class="w-auto h-6">
+    </button>
+</form>
