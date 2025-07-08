@@ -749,3 +749,55 @@ footer .wp-block-navigation__container {
 .marquee:hover {
   animation-play-state: paused;
 }
+
+/* Search Modal Styles */
+.search-modal-overlay {
+  backdrop-filter: blur(4px);
+}
+
+.search-modal-drawer {
+  @apply p-5 shadow-xl;
+}
+
+.search-modal-drawer h3 {
+  margin-top: 1em;
+}
+
+.search-form-modern .wp-block-search__input {
+  @apply border-blue-dark rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full px-4 py-3 transition-all duration-200 border-2;
+}
+
+.search-form-modern .wp-block-search__button {
+  @apply right-2 top-1/2 bg-blue-dark hover:bg-blue-700 absolute p-2 text-white transition-colors duration-200 -translate-y-1/2 rounded-lg cursor-pointer;
+  background-image: url("/wp-content/themes/cepimo-se/assets/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.search-form-modern .wp-block-search__inside-wrapper {
+  @apply relative;
+}
+
+.search-modal-close {
+  @apply place-items-center grid w-8 h-8 p-0;
+}
+
+/* Search results styling */
+
+.search-results a {
+  @apply no-underline;
+}
+
+.search-results a:hover {
+  @apply no-underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-modal-drawer {
+    @apply max-w-full;
+  }
+}
