@@ -17,7 +17,7 @@
     margin-right: calc(-50vw + 50%);
   }
   .centerTransform {
-    @apply left-1/2 top-1/2 absolute -translate-x-1/2 -translate-y-1/2;
+    @apply top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2;
   }
   .centerTransform--ver {
     @apply top-1/2 absolute -translate-y-1/2;
@@ -43,7 +43,7 @@
   @apply hover:text-primary hover:underline;
 }
 .wp-block-navigation-item__content {
-  @apply w-max text-sm font-[500];
+  @apply w-max text-sm font-[600];
 }
 .wp-block-navigation-item__content span {
   @apply hover:text-primary leading-relaxed transition-all;
@@ -55,7 +55,7 @@
 }
 
 .wp-block-navigation__container.is-responsive.wp-block-navigation {
-  @apply xl:flex-nowrap flex items-baseline gap-4;
+  @apply xl:flex-nowrap gap-7 flex items-baseline;
 }
 
 .wp-block-navigation .wp-block-navigation-item__label {
@@ -106,7 +106,7 @@
 }
 
 #home-swiper .swiper-navigation-position-center {
-  @apply left-1/2 min-w-48 absolute top-0 flex items-center justify-center gap-5 -translate-x-1/2;
+  @apply min-w-48 left-1/2 absolute top-0 flex items-center justify-center gap-5 -translate-x-1/2;
 }
 
 #home-swiper .zolo-post-link-btn {
@@ -340,7 +340,7 @@
 }
 
 .title-bar-title-container p {
-  @apply line-clamp-3 mt-2;
+  @apply line-clamp-3 mt-2 !text-base;
 }
 
 /* Content */
@@ -348,6 +348,7 @@
 .entry-content p {
   text-align: justify;
 }
+
 .wp-block-group a {
   @apply text-primary;
 }
@@ -419,7 +420,7 @@
 .aside-categories,
 .wp-block-prostudiome-same-category-posts,
 .prostudio-anchor-links {
-  @apply rounded-xl bg-neutral-100 grid gap-2 p-5 mt-0;
+  @apply bg-neutral-100 rounded-xl grid gap-2 p-5 mt-0;
 }
 
 .aside-categories h3,
@@ -474,7 +475,7 @@
 }
 
 .custom-tabs .tab-panel {
-  @apply hidden;
+  display: none;
 }
 
 .custom-tabs .tab-panel.active {
@@ -494,12 +495,12 @@
 /* Hide sections when content is empty */
 .aside-button-section .sample-button:empty,
 .aside-banner-section .sample-banner:empty {
-  @apply hidden;
+  display: none;
 }
 
 .aside-button-section:has(.sample-button:empty),
 .aside-banner-section:has(.sample-banner:empty) {
-  @apply hidden;
+  display: none;
 }
 
 .sample-button {
@@ -535,7 +536,7 @@
 
 /* Custom tab content positioning */
 .custom-tab-content {
-  @apply hidden;
+  display: none;
 }
 
 .custom-tab-content.active {
@@ -553,6 +554,21 @@
 }
 
 /* Archive */
+
+.breadcrumb-item {
+  @apply !shadow-none text-xs !bg-none;
+}
+.breadcrumb-item > * {
+  @apply !text-xs;
+}
+
+.breadcrumb-item a {
+  @apply hover:underline;
+}
+
+.breadcrumb-item.current span {
+  @apply text-primary;
+}
 
 .wp-block-post {
   @apply list-none;
@@ -625,4 +641,111 @@ footer .wp-block-navigation__container {
 
 .mapsvg-controller-view-content .divider {
   @apply w-full h-[1px] my-5 block border-b border-t-0 border-l-0 border-r-0 border-dotted border-blue-light;
+}
+
+#mapsvg-map-10 .mapsvg-controller-view-content li {
+  background-color: #e9f7ff;
+  border-radius: 0.25em;
+  padding: 0.5em;
+  padding-left: 2.5em;
+  background-image: url("../assets/icon-syringe.svg");
+  background-repeat: no-repeat;
+  background-position: 0.75em center;
+  background-size: 1.2em;
+  position: relative;
+}
+
+#mapsvg-map-10 .mapsvg-controller-view-content li::marker {
+  content: "" !important;
+}
+
+/* Archive Search Styles */
+
+.archive-search-input {
+  @apply relative;
+}
+
+.archive-search-field {
+  @apply border-neutral-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-max px-4 py-2 border rounded-lg;
+}
+
+.archive-search-clear {
+  @apply h-max right-2 top-1/2 w-max absolute justify-center transform -translate-y-1/2 bg-transparent border-none;
+}
+
+.archive-search-clear img {
+  width: 1.25em;
+  height: 1.25em;
+  display: block;
+  margin: auto;
+  pointer-events: none;
+}
+
+/* Responsive search layout */
+@media (max-width: 768px) {
+  .archive-posts .wp-block-group {
+    @apply flex-col;
+  }
+
+  .archive-search-input {
+    @apply w-full mt-4;
+  }
+
+  .archive-posts .wp-block-group .wp-block-group {
+    @apply ml-0;
+  }
+}
+
+/* Search results styling */
+.post-item {
+  @apply transition-all duration-300;
+}
+
+.post-item.hidden {
+  display: none;
+}
+
+/* No results message styling */
+.wp-block-query-no-results {
+  @apply py-8 text-center;
+}
+
+.wp-block-query-no-results h3 {
+  @apply text-neutral-700 mb-2 text-xl font-semibold;
+}
+
+.wp-block-query-no-results p {
+  @apply text-neutral-500;
+}
+
+/* Ticker Component */
+
+.prostudiome-ticker-bar {
+  @apply bg-primary w-full py-2 mt-0 overflow-hidden text-white;
+}
+.prostudiome-ticker-bar a {
+  @apply hover:underline w-max text-nowrap flex items-center justify-center gap-1 text-sm text-white no-underline;
+}
+
+.prostudiome-ticker-bar img {
+  @apply h-4 opacity-50;
+}
+
+/* Marquee animation for ticker */
+@keyframes prostudiome-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: prostudiome-marquee 30s linear infinite;
+  will-change: transform;
+  display: flex;
+  gap: 2em;
+}
+.marquee:hover {
+  animation-play-state: paused;
 }

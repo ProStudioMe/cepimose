@@ -1,0 +1,82 @@
+<h2>{{#if title}} {{title}} {{else}} {{id}} {{/if}}</h2>
+<span class="separator"></span>
+
+<div class="accordion-container">
+  {{#if post.acf.cepljenje_proti_rumeni_mrzlici}}
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3>I. OBVEZNA ZAŠČITA ZA POTNIKE</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-content">
+        <h4>I.a CEPLJENJE PROTI RUMENI MRZLICI</h4>
+        <ul>
+          {{#each post.acf.cepljenje_proti_rumeni_mrzlici}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if post.acf.hepatitis_meningitis_cepljenje}}
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3>II. PRIPOROČENA ZAŠČITA (CEPLJENJE) ZA POTNIKE</h3>
+        <span class="accordion-icon">+</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          {{#each post.acf.hepatitis_meningitis_cepljenje}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  {{/if}}
+</div>
+
+<span class="separator"></span>
+
+{{#each objects}}
+  <h5>{{title}}</h5>
+  <p>{{{description}}}</p>
+  <p><em>{{location.address.formatted}}</em></p>
+
+  {{#each images}}
+    <img src="{{thumbnail}}" />
+  {{/each}}
+{{/each}}
+
+<style>
+  .accordion-container { margin: 20px 0; } .accordion-item { border: 1px solid
+  #ddd; margin-bottom: 10px; border-radius: 5px; overflow: hidden; }
+  .accordion-header { background-color: #f8f9fa; padding: 15px 20px; cursor:
+  pointer; display: flex; justify-content: space-between; align-items: center;
+  transition: background-color 0.3s ease; } .accordion-header:hover {
+  background-color: #e9ecef; } .accordion-header h3 { margin: 0; font-size:
+  1.1em; font-weight: 600; } .accordion-icon { font-size: 1.5em; font-weight:
+  bold; transition: transform 0.3s ease; } .accordion-header.active
+  .accordion-icon { transform: rotate(45deg); } .accordion-content { max-height:
+  0; overflow: hidden; transition: max-height 0.3s ease; background-color: #fff;
+  } .accordion-content.active { max-height: 1000px; padding: 20px; }
+  .accordion-content h4 { margin-top: 0; margin-bottom: 15px; }
+  .accordion-content ul { margin: 0; padding-left: 20px; } .accordion-content li
+  { margin-bottom: 8px; }
+</style>
+
+<script>
+  function toggleAccordion(header) { const content = header.nextElementSibling;
+  const isActive = header.classList.contains('active'); // Close all accordion
+  items document.querySelectorAll('.accordion-header').forEach(h => {
+  h.classList.remove('active'); });
+  document.querySelectorAll('.accordion-content').forEach(c => {
+  c.classList.remove('active'); }); // Open clicked item if it wasn't active if
+  (!isActive) { header.classList.add('active'); content.classList.add('active');
+  } } // Initialize accordion when DOM is loaded
+  document.addEventListener('DOMContentLoaded', function() { // Add click event
+  listeners to all accordion headers
+  document.querySelectorAll('.accordion-header').forEach(header => {
+  header.addEventListener('click', function() { toggleAccordion(this); }); });
+  });
+</script>

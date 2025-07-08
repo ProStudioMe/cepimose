@@ -243,6 +243,18 @@ function cepimo_se_scripts() {
     array(), // Dependencies
     filemtime( get_stylesheet_directory() . '/style.css' ) // Version - USES FILE MODIFICATION TIME
     );
+
+    // Enqueue archive search JavaScript
+    wp_enqueue_script(
+        'cepimo-se-archive-search',
+        get_template_directory_uri() . '/src/archive-search.js',
+        array(),
+        filemtime( get_stylesheet_directory() . '/src/archive-search.js' ),
+        true
+    );
+    
+    // Debug: Add inline script to confirm enqueuing
+    wp_add_inline_script('cepimo-se-archive-search', 'console.log("Script enqueued successfully!");', 'before');
 }
 add_action('wp_enqueue_scripts', 'cepimo_se_scripts');
 
@@ -324,3 +336,14 @@ function cepimo_se_aside_banner_shortcode() {
     return '';
 }
 add_shortcode('aside_banner', 'cepimo_se_aside_banner_shortcode');
+
+// Enqueue ticker.js for the ticker animation
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_script(
+        'cepimo-se-ticker',
+        get_template_directory_uri() . '/src/ticker.js',
+        [],
+        filemtime(get_template_directory() . '/src/ticker.js'),
+        true
+    );
+});

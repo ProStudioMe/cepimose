@@ -152,6 +152,7 @@ function prostudiome_blocks_init() {
 	$blocks_to_register = [
 		'prostudiome-banner-swiper',
 		'prostudiome-timeline',
+		'prostudiome-ticker',
 		'prostudio-same-category-posts'
 		// Temporarily removed: 'prostudio-anchor-links', 'prostudio-test-copy'
 	];
@@ -270,3 +271,7 @@ function prostudiome_show_blocks_notice() {
 add_action('admin_notices', 'prostudiome_show_blocks_notice');
 
 add_action('wp_enqueue_scripts', 'prostudiome_enqueue_scripts');
+
+add_action('init', function() {
+	register_block_type(__DIR__ . '/build/prostudiome-ticker');
+});

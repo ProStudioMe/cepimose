@@ -1,0 +1,57 @@
+.prostudiome-ticker-bar {
+	position: relative;
+	background: #1976d2;
+	color: #fff;
+	width: 100%;
+	overflow: hidden;
+	min-height: 40px;
+	display: flex;
+	align-items: center;
+	z-index: 30;
+}
+.prostudiome-ticker-track {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+	will-change: transform;
+	position: relative;
+}
+.prostudiome-ticker-bar a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 1.5rem;
+	font-weight: 600;
+	transition: text-decoration 0.2s;
+}
+.prostudiome-ticker-bar a:hover {
+	text-decoration: underline;
+}
+
+/* Ensure proper spacing between swiper slides */
+.ticker-swiper .swiper-slide {
+	margin-right: 2rem; /* Add spacing between slides */
+}
+
+/* Remove margin from last slide to prevent extra space */
+.ticker-swiper .swiper-slide:last-child {
+	margin-right: 0;
+}
+
+/* Ensure smooth infinite loop */
+.ticker-swiper .swiper-wrapper {
+	transition-timing-function: linear;
+}
+
+@keyframes prostudiome-ticker {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* Fallback for no JS */
+.prostudiome-ticker-track.animate-ticker {
+	animation: prostudiome-ticker 30s linear infinite;
+}

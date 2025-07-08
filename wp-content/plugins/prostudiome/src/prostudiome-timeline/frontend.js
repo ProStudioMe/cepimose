@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 						: false,
 			};
 
-			console.log("Swiper options:", swiperOptions); // Debug log
 			const swiper = new Swiper(swiperElement, swiperOptions);
 
 			// Debug breakpoints
