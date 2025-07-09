@@ -456,6 +456,10 @@
   @apply bg-blue-lighter border-blue-light z-20 border border-solid;
 }
 
+.anchor-link {
+  @apply !w-[calc(100%_-_2em)] pr-[2em];
+}
+
 /* Custom Tabs Styles */
 
 .custom-tabs {
@@ -724,7 +728,7 @@ footer .wp-block-navigation__container {
   @apply bg-primary w-full py-2 mt-0 overflow-hidden text-white;
 }
 .prostudiome-ticker-bar a {
-  @apply hover:underline w-max text-nowrap flex items-center justify-center gap-1 text-sm text-white no-underline;
+  @apply hover:underline text-nowrap w-max flex items-center justify-center gap-1 text-sm text-white no-underline;
 }
 
 .prostudiome-ticker-bar img {
@@ -750,54 +754,219 @@ footer .wp-block-navigation__container {
   animation-play-state: paused;
 }
 
-/* Search Modal Styles */
+/* Modern Search Drawer Styles */
 .search-modal-overlay {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  transition: opacity 0.3s ease-out;
+}
+
+.search-modal-overlay.show {
+  opacity: 1;
 }
 
 .search-modal-drawer {
-  @apply p-5 shadow-xl;
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.search-modal-drawer h3 {
-  margin-top: 1em;
+.search-modal-drawer.open {
+  transform: translateX(0);
 }
 
-.search-form-modern .wp-block-search__input {
-  @apply border-blue-dark rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-full px-4 py-3 transition-all duration-200 border-2;
+.search-input {
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.search-form-modern .wp-block-search__button {
-  @apply right-2 top-1/2 bg-blue-dark hover:bg-blue-700 absolute p-2 text-white transition-colors duration-200 -translate-y-1/2 rounded-lg cursor-pointer;
-  background-image: url("/wp-content/themes/cepimo-se/assets/icon-search.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20px;
-  text-indent: -9999px;
-  overflow: hidden;
+.search-input:focus {
+  background: #ffffff;
+  box-shadow:
+    0 0 0 3px rgba(59, 130, 246, 0.1),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.search-form-modern .wp-block-search__inside-wrapper {
-  @apply relative;
+.search-results {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
-.search-modal-close {
-  @apply place-items-center grid w-8 h-8 p-0;
+.search-results::-webkit-scrollbar {
+  width: 6px;
 }
 
-/* Search results styling */
-
-.search-results a {
-  @apply no-underline;
+.search-results::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
 }
 
-.search-results a:hover {
-  @apply no-underline;
+.search-results::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
 }
 
-/* Responsive adjustments */
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Search Result Items */
+.search-result-item {
+  @apply hover:underline hover:bg-blue-lighter rounded-xl block p-4 mb-3 no-underline transition-all duration-200 bg-gray-100 border border-gray-100;
+}
+
+.search-result-item h4 {
+  @apply mt-0;
+}
+
+.search-result-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.search-result-title {
+  @apply line-clamp-2 mb-1 text-base font-semibold text-gray-900;
+}
+
+.search-result-excerpt {
+  @apply line-clamp-2 text-sm text-gray-600;
+}
+
+/* Loading Animation */
+.search-loading {
+  @apply flex items-center justify-center py-12;
+}
+
+.search-loading-spinner {
+  @apply border-t-transparent animate-spin w-8 h-8 border-2 border-blue-500 rounded-full;
+}
+
+.search-loading-text {
+  @apply ml-3 font-medium text-gray-600;
+}
+
+/* No Results State */
+.search-no-results {
+  @apply py-12 text-center;
+}
+
+.search-no-results-icon {
+  @apply w-16 h-16 mx-auto mb-4 text-gray-300;
+}
+
+.search-no-results-title {
+  @apply mb-2 text-lg font-medium text-gray-900;
+}
+
+.search-no-results-subtitle {
+  @apply text-sm text-gray-500;
+}
+
+/* Search Suggestions */
+.search-suggestions {
+  @apply mt-6;
+}
+
+.search-suggestions-title {
+  @apply mb-4 text-sm font-medium text-gray-700;
+}
+
+.search-suggestion-tags {
+  @apply flex flex-wrap gap-2;
+}
+
+.search-suggestion-tag {
+  @apply hover:bg-gray-200 px-3 py-2 text-sm text-gray-700 transition-colors duration-200 bg-gray-100 rounded-full cursor-pointer;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .search-modal-drawer {
     @apply max-w-full;
   }
+
+  .search-input {
+    @apply py-3 text-base;
+  }
+}
+
+/* Keyboard Navigation */
+.search-modal-overlay:focus-within {
+  outline: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+/* Smooth Transitions */
+.search-modal-close {
+  transition: all 0.2s ease-in-out;
+  @apply bg-transparent border-none cursor-pointer;
+}
+
+.search-modal-close:hover {
+  transform: scale(1.1);
+}
+
+/* Custom Focus Styles */
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Animation Keyframes */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Apply animations */
+.search-modal-overlay.show {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.search-modal-drawer.open {
+  animation: slideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.search-modal-overlay.hiding {
+  animation: fadeOut 0.3s ease-out;
+}
+
+.search-modal-drawer.closing {
+  animation: slideOut 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -256,20 +256,17 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 true
                                 );
 
-                                // Enqueue search modal JavaScript - temporarily disabled for debugging
-                                /*
+                                // Enqueue search modal JavaScript
                                 wp_enqueue_script(
-                                'cepimo-se-search-modal',
-                                get_template_directory_uri() . '/src/search-modal.js',
-                                array(),
-                                filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
-                                true
+                                    'cepimo-se-search-modal',
+                                    get_template_directory_uri() . '/src/search-modal.js',
+                                    array(),
+                                    filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
+                                    true
                                 );
-                                */
 
                                 // Debug: Add inline script to confirm enqueuing
-                                wp_add_inline_script('cepimo-se-archive-search', 'console.log("Script enqueued
-                                successfully!");', 'before');
+                                wp_add_inline_script('cepimo-se-archive-search', 'console.log("Script enqueued successfully!");', 'before');
                                 }
                                 add_action('wp_enqueue_scripts', 'cepimo_se_scripts');
 

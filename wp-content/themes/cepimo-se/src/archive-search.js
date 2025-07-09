@@ -1,6 +1,15 @@
 console.log("Archive search script loaded!");
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Skip instant search logic if on a search results page
+  const isSearchPage =
+    window.location.search.includes("?s=") ||
+    window.location.pathname.startsWith("/search");
+  if (isSearchPage) {
+    console.log("On search results page, skipping instant archive search JS");
+    return;
+  }
+
   const searchInput = document.querySelector(".archive-search-field");
   const clearButton = document.querySelector(".archive-search-clear");
   const postItems = document.querySelectorAll(".post-item");
