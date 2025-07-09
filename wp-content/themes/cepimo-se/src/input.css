@@ -787,26 +787,26 @@ footer .wp-block-navigation__container {
     0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.search-results {
+.search-modal-results {
   scrollbar-width: thin;
   scrollbar-color: #cbd5e1 #f1f5f9;
 }
 
-.search-results::-webkit-scrollbar {
+.search-modal-results::-webkit-scrollbar {
   width: 6px;
 }
 
-.search-results::-webkit-scrollbar-track {
+.search-modal-results::-webkit-scrollbar-track {
   background: #f1f5f9;
   border-radius: 3px;
 }
 
-.search-results::-webkit-scrollbar-thumb {
+.search-modal-results::-webkit-scrollbar-thumb {
   background: #cbd5e1;
   border-radius: 3px;
 }
 
-.search-results::-webkit-scrollbar-thumb:hover {
+.search-modal-results::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 

@@ -1,17 +1,12 @@
-console.log("[search-modal.js] loaded");
-
-// Function to perform search via AJAX
 function performSearch(query, resultsElement) {
   console.log("[search-modal.js] performSearch called", query);
   if (!resultsElement) return;
-  // Show loading state
   resultsElement.innerHTML = `
     <div class="search-loading">
       <div class="search-loading-spinner"></div>
       <span class="search-loading-text">Iskanje...</span>
     </div>
   `;
-  // Make AJAX request
   fetch(
     `/wp-json/wp/v2/search?search=${encodeURIComponent(
       query
@@ -36,8 +31,8 @@ function performSearch(query, resultsElement) {
       `;
     });
 }
+window.performSearch = performSearch;
 
-// Function to display search results
 function displaySearchResults(results, query, resultsElement) {
   if (!resultsElement) return;
   if (results.length === 0) {
@@ -84,11 +79,12 @@ function displaySearchResults(results, query, resultsElement) {
     </div>
   `;
 }
+window.displaySearchResults = displaySearchResults;
 
 // Function to attach search input event listeners
 function attachSearchInputListeners(inputElement) {
   if (!inputElement) return;
-  let resultsElement = document.querySelector(".search-results");
+  let resultsElement = document.querySelector(".search-modal-results");
 
   // Prevent form submission on Enter key
   const searchForm = inputElement.closest("form");
@@ -108,6 +104,12 @@ function attachSearchInputListeners(inputElement) {
   });
 
   inputElement.addEventListener("input", function (e) {
+    // Prevent ACF field conflicts
+    if (e.target.hasAttribute("data-prevent-acf-conflict")) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    }
+
     console.log("[search-modal.js] searchInput input event", e.target.value);
     const query = e.target.value.trim();
 
@@ -133,12 +135,23 @@ function attachSearchInputListeners(inputElement) {
 
     // Debounce search
     inputElement._searchTimeout = setTimeout(() => {
-      performSearch(query, resultsElement);
+      console.log(
+        "[search-modal.js] About to call window.performSearch:",
+        typeof window.performSearch,
+        window.performSearch
+      );
+      window.performSearch(query, resultsElement);
     }, 300);
   });
 
   // Handle form submission
   inputElement.addEventListener("keydown", function (e) {
+    // Prevent ACF field conflicts
+    if (e.target.hasAttribute("data-prevent-acf-conflict")) {
+      e.stopPropagation();
+      e.stopImmediatePropagation();
+    }
+
     if (e.key === "Enter") {
       e.preventDefault();
       e.stopPropagation();
@@ -151,20 +164,21 @@ function attachSearchInputListeners(inputElement) {
           window.location.href = `/?s=${encodeURIComponent(query)}`;
         }, 100);
       }
+    } else if (e.key === "Escape") {
+      e.preventDefault();
+      closeSearchModal();
     }
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("[search-modal.js] DOMContentLoaded");
-
+function initSearchModal() {
   // Search modal functionality
   const searchButton = document.querySelector(".search-submit");
   const searchModal = document.querySelector(".search-modal-overlay");
   const searchDrawer = document.querySelector(".search-modal-drawer");
   const closeButton = document.querySelector(".search-modal-close");
   let searchInput = document.querySelector("#modal-search-input");
-  let searchResults = document.querySelector(".search-results");
+  let searchResults = document.querySelector(".search-modal-results");
   const searchSuggestions = document.querySelector(".search-suggestions");
 
   console.log("[search-modal.js] Elements found:", {
@@ -178,21 +192,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Debug: Track modal button clicks
   if (searchButton) {
-    // Remove any existing onclick handlers
     searchButton.onclick = null;
     searchButton.removeAttribute("onclick");
-
-    // Simple click handler
     searchButton.addEventListener("click", function (e) {
       console.log("[search-modal.js] Modal button clicked");
-
-      // Prevent default and stop propagation
       e.preventDefault();
       e.stopPropagation();
-
-      // Call openSearchModal
       openSearchModal();
-
       return false;
     });
   }
@@ -200,130 +206,77 @@ document.addEventListener("DOMContentLoaded", function () {
   // Global prevention of navigation when modal is active
   let modalIsActive = false;
 
-  // Simple beforeunload prevention when modal is active
-  window.addEventListener("beforeunload", function (e) {
-    if (modalIsActive) {
-      console.warn("[search-modal.js] Page unload prevented");
-      e.preventDefault();
-      e.returnValue = "";
-      return "";
-    }
-  });
-
-  // Open search modal
   function openSearchModal() {
     console.log("[search-modal.js] openSearchModal called");
-
-    // Set modal as active to prevent navigation
     modalIsActive = true;
-
-    // Simple body backup for search results page
-    let bodyBackup = null;
-    if (window.location.search.includes("?s=")) {
-      bodyBackup = document.body.innerHTML;
-      console.log("[search-modal.js] Body backup created for search page");
-    }
-
     if (searchModal && searchDrawer) {
-      // Always clear input and results immediately
       if (searchInput) searchInput.value = "";
       if (searchResults) searchResults.innerHTML = "";
-
       searchModal.classList.remove("hidden");
       searchModal.classList.add("show");
-
-      // Trigger reflow
       searchModal.offsetHeight;
-
       searchDrawer.classList.add("open");
 
-      // Focus on search input after animation
-      setTimeout(() => {
-        if (searchInput) {
-          console.log("[search-modal.js] focusing searchInput");
-          searchInput.focus();
-        }
+      // Prevent ACF field conflicts on search pages
+      if (searchInput) {
+        // Temporarily disable ACF field watchers that might interfere
+        const acfFields = document.querySelectorAll(
+          ".acf-field-type-search-results, .select2-search__field, .select2-results:not(.search-modal-results)"
+        );
+        acfFields.forEach((field) => {
+          if (field && typeof field.blur === "function") {
+            field.blur();
+          }
+          // Temporarily disable ACF event listeners
+          field.style.pointerEvents = "none";
+        });
 
-        // Check if body was wiped (only on search results page)
-        if (bodyBackup && document.body.children.length < 5) {
-          console.warn("[search-modal.js] Body was wiped, restoring...");
-          document.body.innerHTML = bodyBackup;
-
-          // Re-initialize modal elements after restoration
-          setTimeout(() => {
-            const restoredModal = document.querySelector(
-              ".search-modal-overlay"
+        setTimeout(() => {
+          if (searchInput) {
+            console.log(
+              "[search-modal.js] focusing searchInput with ACF protection"
             );
-            const restoredDrawer = document.querySelector(
-              ".search-modal-drawer"
-            );
-            const restoredInput = document.querySelector("#modal-search-input");
-            const restoredResults = document.querySelector(".search-results");
+            // Add extra protection against ACF interference
+            searchInput.setAttribute("data-prevent-acf-conflict", "true");
+            searchInput.focus();
 
-            if (restoredModal && restoredDrawer) {
-              restoredModal.classList.remove("hidden");
-              restoredModal.classList.add("show");
-              restoredDrawer.classList.add("open");
-
-              if (restoredInput) {
-                // Re-attach event listeners to the restored input
-                attachSearchInputListeners(restoredInput);
-                restoredInput.focus();
-                console.log(
-                  "[search-modal.js] Event listeners re-attached to restored input"
-                );
-              }
-
-              // Update global references
-              searchInput = restoredInput;
-              searchResults = restoredResults;
-            }
-          }, 50);
-        }
-      }, 500);
-
-      // Prevent body scroll
+            // Re-enable ACF fields after modal is stable
+            setTimeout(() => {
+              acfFields.forEach((field) => {
+                field.style.pointerEvents = "";
+              });
+            }, 1000);
+          }
+        }, 500);
+      }
       document.body.style.overflow = "hidden";
     }
   }
 
-  // Close search modal
   function closeSearchModal() {
-    // Set modal as inactive to allow navigation
     modalIsActive = false;
-
     if (searchModal && searchDrawer) {
       searchModal.classList.add("hiding");
       searchDrawer.classList.add("closing");
-
       setTimeout(() => {
         searchModal.classList.remove("show", "hiding");
         searchDrawer.classList.remove("open", "closing");
         searchModal.classList.add("hidden");
-
-        // Restore body scroll
         document.body.style.overflow = "";
-
-        // Clear search results
         if (searchResults) {
           searchResults.innerHTML = "";
         }
-
-        // Clear search input
         if (searchInput) {
           searchInput.value = "";
         }
       }, 500);
     }
   }
-
-  // Event listeners (searchButton click is handled above in the debug section)
+  window.closeSearchModal = closeSearchModal;
 
   if (closeButton) {
     closeButton.addEventListener("click", closeSearchModal);
   }
-
-  // Close on overlay click
   if (searchModal) {
     searchModal.addEventListener("click", function (e) {
       if (e.target === searchModal) {
@@ -331,8 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  // Close on Escape key
   document.addEventListener("keydown", function (e) {
     if (
       e.key === "Escape" &&
@@ -342,13 +293,9 @@ document.addEventListener("DOMContentLoaded", function () {
       closeSearchModal();
     }
   });
-
-  // Search functionality
   if (searchInput) {
     attachSearchInputListeners(searchInput);
   }
-
-  // Defensive: Prevent all form submissions and Enter key default in modal
   const modalForm = document.querySelector(".search-form-container");
   const modalInput = document.getElementById("modal-search-input");
   if (modalForm) {
@@ -367,19 +314,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+}
 
-  // Add line-clamp utility if not available
-  if (!document.querySelector("style[data-line-clamp]")) {
-    const style = document.createElement("style");
-    style.setAttribute("data-line-clamp", "true");
-    style.textContent = `
-      .line-clamp-2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-    `;
-    document.head.appendChild(style);
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  initSearchModal();
 });
+
+// Add line-clamp utility if not available
+if (!document.querySelector("style[data-line-clamp]")) {
+  const style = document.createElement("style");
+  style.setAttribute("data-line-clamp", "true");
+  style.textContent = `
+    .line-clamp-2 {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  `;
+  document.head.appendChild(style);
+}
