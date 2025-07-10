@@ -247,6 +247,15 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 filemtime( get_stylesheet_directory() . '/style.css' )
                                 );
 
+                                // Enqueue mobile navigation JavaScript
+                                wp_enqueue_script(
+                                    'cepimo-se-mobile-nav',
+                                    get_template_directory_uri() . '/src/mobile-nav.js',
+                                    array(),
+                                    filemtime( get_stylesheet_directory() . '/src/mobile-nav.js' ),
+                                    true
+                                );
+
                                 // Enqueue archive search JavaScript
                                 wp_enqueue_script(
                                 'cepimo-se-archive-search',
@@ -262,6 +271,15 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                     get_template_directory_uri() . '/src/search-modal.js',
                                     array(),
                                     filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
+                                    true
+                                );
+
+                                // Enqueue navigation JavaScript
+                                wp_enqueue_script(
+                                    'cepimo-se-navigation',
+                                    get_template_directory_uri() . '/src/navigation.js',
+                                    array(),
+                                    filemtime( get_stylesheet_directory() . '/src/navigation.js' ),
                                     true
                                 );
 

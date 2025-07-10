@@ -9,7 +9,7 @@
 				class="w-auto h-12"></a>
 
 		<!-- Navigation -->
-		<div class="text-blue-dark xl:ml-10 flex z-50 gap-3 items-center text-sm">
+		<div class="text-blue-dark xl:ml-10 z-50 flex items-center gap-3 text-sm">
 			<!-- wp:navigation {"ref":784} /--><!-- Lang -->
 
 			<!-- Custom Search Form -->
@@ -17,7 +17,7 @@
 				class="search-submit flex items-center justify-center !ml-5 bg-transparent border-none cursor-pointer hover:opacity-80 transition-opacity duration-200">
 				<img src="/wp-content/themes/cepimo-se/assets/icon-search.svg" alt="Submit search" class="w-auto h-5">
 			</button>
-			<div class="flex gap-3 items-center mt-0">
+			<div class="flex items-center gap-3 mt-0">
 				<spana
 					class=" border-primary rounded-xl relative flex items-center justify-center gap-1 px-2 py-1 mt-0 text-xs border-[1px] border-solid">
 					<img class="h-4" src="/wp-content/themes/cepimo-se/assets/icon-language.svg" alt="">
@@ -35,30 +35,30 @@
 	</div>
 	<!-- /wp:group -->
 	<div
-		class="grid fixed right-0 top-1/2 z-50 gap-2 place-items-center p-2 bg-white rounded-l-lg shadow-lg -translate-y-1/2">
+		class="top-1/2 place-items-center fixed right-0 z-50 grid gap-2 p-2 -translate-y-1/2 bg-white rounded-l-lg shadow-lg">
 		<a href="https://www.instagram.com/_nijz_/" class="h-6" target="_blank">
-			<img class="mb-0 h-6" src="/wp-content/themes/cepimo-se/assets/icon-instagram.svg" alt="instagram" />
+			<img class="h-6 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-instagram.svg" alt="instagram" />
 		</a>
 		<a href="https://www.facebook.com/CepimoSe" class="h-6" target="_blank">
-			<img class="mb-0 h-6" src="/wp-content/themes/cepimo-se/assets/icon-facebook.svg" alt="facebook" />
+			<img class="h-6 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-facebook.svg" alt="facebook" />
 		</a>
 		<a href="https://www.youtube.com/channel/UCkuKNL3WzPcClY01ubOTlOQ" class="h-6" target="_blank">
-			<img class="mb-0 h-6" src="/wp-content/themes/cepimo-se/assets/icon-youtube.svg" alt="youtube" />
+			<img class="h-6 mb-0" src="/wp-content/themes/cepimo-se/assets/icon-youtube.svg" alt="youtube" />
 		</a>
 	</div>
 </div>
 <!-- /wp:group -->
 
 <!-- Search Modal -->
-<div class="search-modal-overlay fixed inset-0 bg-black/30 backdrop-blur-sm z-[9999] hidden">
+<div class="search-modal-overlay fixed inset-0 bg-black/30 backdrop-blur-sm z-[9999] hidden max-w-[100vw]">
 	<div
-		class="search-modal-drawer fixed top-0 right-0 w-full max-w-lg h-full bg-white shadow-2xl transition-all duration-500 ease-out transform translate-x-full">
+		class="search-modal-drawer fixed top-0 right-0 w-full h-full max-w-lg transition-all duration-500 ease-out transform translate-x-full bg-white shadow-2xl">
 		<div class="flex flex-col h-full">
 			<!-- Header -->
-			<div class="flex justify-between items-center p-6 pb-0 border-b border-gray-100">
+			<div class="flex items-center justify-between p-6 pb-0 border-b border-gray-100">
 				<h3 class="m-0 text-2xl font-bold text-gray-900">Iskanje</h3>
 				<button
-					class="search-modal-close hover:text-gray-600 hover:bg-gray-100 p-2 text-gray-400 rounded-full transition-colors duration-200">
+					class="search-modal-close hover:text-gray-600 hover:bg-gray-100 p-2 text-gray-400 transition-colors duration-200 rounded-full">
 					<img src="/wp-content/themes/cepimo-se/assets/icon-close.svg" alt="Close" class="w-6 h-6">
 				</button>
 			</div>
@@ -67,17 +67,17 @@
 			<div class="p-6">
 				<form class="search-form-container relative" onsubmit="event.preventDefault(); return false;">
 					<input type="search" id="modal-search-input" autocomplete="off"
-						class="search-input focus:outline-none focus:border-blue-middle focus:ring-4 focus:ring-blue-light px-4 py-4 pl-12 w-full text-lg rounded-xl border transition-all duration-200"
+						class="search-input focus:outline-none focus:border-blue-middle focus:ring-4 focus:ring-blue-light rounded-xl w-full px-4 py-4 pl-12 text-lg transition-all duration-200 border"
 						placeholder="Iskanje po spletni strani...">
-					<div class="absolute left-4 top-1/2 transform -translate-y-1/2">
+					<div class="left-4 top-1/2 absolute transform -translate-y-1/2">
 						<img src="/wp-content/themes/cepimo-se/assets/icon-search.svg" alt="Search"
-							class="w-5 h-5 opacity-60">
+							class="opacity-60 w-5 h-5">
 					</div>
 				</form>
 			</div>
 
 			<!-- Results Container -->
-			<div class="search-modal-results overflow-y-auto flex-1 px-6 pb-6">
+			<div class="search-modal-results flex-1 px-6 pb-6 overflow-y-auto">
 				<!-- Results will be populated by JavaScript -->
 			</div>
 
