@@ -68,8 +68,7 @@ console.log('Current Post ID:', <?php echo json_encode($current_post_id); ?>);
 console.log('Categories found:', <?php echo json_encode(count($categories)); ?>);
 console.log('Category IDs:', <?php echo json_encode($category_ids); ?>);
 console.log('Related posts found:', <?php echo json_encode(count($related_posts)); ?>);
-console.log('Related post IDs:',
-    <?php echo json_encode(array_map(function($post) { return $post->ID; }, $related_posts)); ?>);
+console.log('Related post IDs:', <?php echo json_encode(array_map(function($post) { return $post->ID; }, $related_posts)); ?>);
 </script>
 
 <?php if (empty($related_posts)) : ?>

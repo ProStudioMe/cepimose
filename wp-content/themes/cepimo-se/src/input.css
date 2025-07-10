@@ -154,7 +154,7 @@
 }
 
 .wp-block-navigation-item__content {
-  @apply w-max text-sm font-[600];
+  @apply w-max text-sm font-semibold;
 }
 
 .wp-block-navigation-item__content span {
@@ -267,7 +267,7 @@
 }
 
 .home-info-text h3 {
-  @apply font-[500] text-lg leading-snug;
+  @apply text-lg font-medium leading-snug;
 }
 
 .home-info-text ul {
@@ -524,6 +524,57 @@
   @apply top-2 sticky z-10;
 }
 
+.aside-mobile-toggle {
+  @apply xl:hidden;
+}
+
+/* Mobile drawer styles */
+@media (max-width: 768px) {
+  .aside-tab-wrapper {
+    @apply top-[calc(100vh_-_7em)]  fixed w-[95vw] left-1/2  -translate-x-1/2 overflow-hidden z-50  duration-500 ease-in-out bg-white/40 backdrop-blur-lg !shadow-2xl h-[100vh] max-h-[100vh] overflow-y-auto p-5 rounded-xl transition-all;
+  }
+
+  .aside-tab-wrapper.mobile-expanded {
+    @apply top-0 bottom-0 transition-all;
+  }
+
+  .aside-mobile-toggle {
+    @apply left-1/2 xl:hidden absolute top-0 w-full py-3 transition-all duration-300 ease-in-out transform -translate-x-1/2 bg-transparent border-none cursor-pointer;
+    z-index: 51;
+  }
+
+  .aside-mobile-toggle:hover {
+    transform: translate(-50%, -100%) scale(1.05);
+  }
+
+  .aside-mobile-toggle .toggle-icon {
+    @apply w-7 h-7 transition-transform ease-in-out;
+    transform-origin: center;
+  }
+
+  .aside-tab-wrapper.mobile-expanded .aside-mobile-toggle .toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  .aside-tab-wrapper.mobile-expanded .aside-mobile-toggle:hover {
+    transform: translate(-50%, -100%) scale(1.05);
+  }
+
+  .custom-tabs {
+    @apply h-max pt-4 overflow-y-auto;
+    max-height: calc(90vh - 4rem);
+  }
+
+  .custom-tabs .tab-headers {
+    @apply xl:bg-white sticky top-0 z-10 shadow-sm;
+  }
+
+  /* Ensure content is scrollable */
+  .custom-tab-content {
+    @apply pb-6;
+  }
+}
+
 .aside-categories,
 .wp-block-prostudiome-same-category-posts,
 .prostudio-anchor-links {
@@ -583,14 +634,6 @@
 
 .custom-tabs .tab-header.active {
   @apply bg-blue-middle rounded-t-xl text-white;
-}
-
-.custom-tabs .tab-panel {
-  display: none;
-}
-
-.custom-tabs .tab-panel.active {
-  @apply block;
 }
 
 .aside-button-section,
@@ -662,6 +705,11 @@
 
 .wp-block-media-text {
   @apply overflow-hidden shadow-xl;
+}
+
+.zolo-block-wrapper em,
+.zolo-button-content {
+  @apply whitespace-break-spaces;
 }
 
 /* Archive */

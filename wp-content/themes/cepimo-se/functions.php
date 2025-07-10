@@ -265,23 +265,25 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 true
                                 );
 
-                                // Enqueue search modal JavaScript
-                                wp_enqueue_script(
-                                    'cepimo-se-search-modal',
-                                    get_template_directory_uri() . '/src/search-modal.js',
-                                    array(),
-                                    filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
-                                    true
-                                );
+                                                // Enqueue search modal JavaScript
+                wp_enqueue_script(
+                    'cepimo-se-search-modal',
+                    get_template_directory_uri() . '/src/search-modal.js',
+                    array(),
+                    filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
+                    true
+                );
 
-                                // Enqueue navigation JavaScript
-                                wp_enqueue_script(
-                                    'cepimo-se-navigation',
-                                    get_template_directory_uri() . '/src/navigation.js',
-                                    array(),
-                                    filemtime( get_stylesheet_directory() . '/src/navigation.js' ),
-                                    true
-                                );
+                // Enqueue sidebar tabs JavaScript (conflict-resistant)
+                wp_enqueue_script(
+                    'cepimo-se-sidebar-tabs',
+                    get_template_directory_uri() . '/src/sidebar-tabs.js',
+                    array(), // No dependencies to avoid conflicts
+                    filemtime( get_stylesheet_directory() . '/src/sidebar-tabs.js' ),
+                    true // Load in footer after other scripts
+                );
+
+                                                
 
                                 // Debug: Add inline script to confirm enqueuing
                                 wp_add_inline_script('cepimo-se-archive-search', 'console.log("Script enqueued successfully!");', 'before');
@@ -367,13 +369,4 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 }
                                 add_shortcode('aside_banner', 'cepimo_se_aside_banner_shortcode');
 
-                                // Enqueue ticker.js for the ticker animation
-                                add_action('wp_enqueue_scripts', function() {
-                                wp_enqueue_script(
-                                'cepimo-se-ticker',
-                                get_template_directory_uri() . '/src/ticker.js',
-                                [],
-                                filemtime(get_template_directory() . '/src/ticker.js'),
-                                true
-                                );
-                                });
+                                
