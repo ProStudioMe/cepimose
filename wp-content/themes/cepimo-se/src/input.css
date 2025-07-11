@@ -33,6 +33,9 @@
   body {
     @apply overflow-x-hidden;
   }
+  main {
+    @apply !px-5;
+  }
 }
 
 .container-blu1wa8y {
