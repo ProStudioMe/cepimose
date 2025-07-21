@@ -169,7 +169,7 @@
 }
 
 .wp-block-navigation .wp-block-navigation-item__label {
-  @apply w-max xl:text-lg text-blue-dark block text-2xl;
+  @apply xl:text-lg text-blue-dark w-max block text-2xl;
 }
 
 /* Banner swiper */
@@ -183,14 +183,14 @@
 }
 
 .banner-swiper-title {
-  @apply text-blue-dark xl:w-7/12 mt-0 mb-4 text-4xl font-bold leading-tight;
+  @apply text-blue-dark xl:w-7/12 mt-0 mb-4 text-6xl font-bold leading-tight;
 }
 .test-class {
   @apply bg-inherit;
 }
 
 .banner-swiper-subtitle {
-  @apply text-blue-middle mt-4 text-2xl font-semibold;
+  @apply text-blue-middle mt-6 text-3xl font-semibold;
 }
 
 .banner-swiper-text {
@@ -313,7 +313,7 @@
 }
 
 .wp-block-prostudiome-timeline .timeline-content {
-  @apply rounded-3xl xl:mx-4 relative p-5 mx-10 mb-8 text-sm bg-gray-100 shadow-lg;
+  @apply xl:mx-4 rounded-3xl relative p-5 mx-10 mb-8 text-sm bg-gray-100 shadow-lg;
 }
 
 .wp-block-prostudiome-timeline .timeline-image {
@@ -431,7 +431,7 @@
   @apply -z-0 absolute inset-0 object-contain max-w-full max-h-full;
 }
 .title-bar h1 {
-  @apply text-blue-dark;
+  @apply text-blue-dark !text-6xl  xl:!ml-0;
 }
 .title-bar-deco img {
   @apply block ml-auto;
@@ -446,11 +446,11 @@
 }
 
 .title-bar-title-container {
-  @apply h-max xl:w-8/12 !ml-0 my-auto z-10;
+  @apply h-max !ml-0 my-auto z-10;
 }
 
 .title-bar-title-container p {
-  @apply line-clamp-3 mt-2 !text-base;
+  @apply line-clamp-3 mt-5 !text-base xl:w-7/12 xl:!ml-0;
 }
 
 /* Content */
@@ -542,7 +542,7 @@
   }
 
   .aside-mobile-toggle {
-    @apply left-1/2 xl:hidden absolute top-0 w-full py-3 transition-all duration-300 ease-in-out transform -translate-x-1/2 bg-transparent border-none cursor-pointer;
+    @apply xl:hidden left-1/2 absolute top-0 w-full py-3 transition-all duration-300 ease-in-out transform -translate-x-1/2 bg-transparent border-none cursor-pointer;
     z-index: 51;
   }
 
@@ -744,6 +744,40 @@
 }
 .archive-posts h2 a {
   @apply text-blue-dark;
+}
+
+/* NEWS Archive */
+
+#archive-query-first {
+  @apply after:absolute after:inset-0 after:bg-primary/10 after:widthFull after:content-[""] after:-z-10 relative;
+}
+
+#archive-query-first li:first-child {
+  @apply !bg-transparent !shadow-none;
+}
+
+#archive-query-first li:first-child figure {
+  @apply my-0;
+}
+
+#archive-query-first li:first-child h2 a {
+  @apply xl:text-5xl text-3xl font-bold leading-tight;
+}
+
+#archive-query-first li:first-child p {
+  @apply xl:text-xl text-base;
+}
+
+#archive-query-first li:not(:first-child) {
+  @apply !hidden;
+}
+
+#archive-query {
+  @apply !mt-10;
+}
+
+#archive-query li:first-child {
+  @apply !hidden;
 }
 
 /* Footer */
