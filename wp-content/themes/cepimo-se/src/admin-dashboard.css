@@ -1,0 +1,110 @@
+:root {
+  --color-cepljenje_light: #d9d9fc;
+  --color-cepljenje_middle: #a6a6f9;
+  --color-cepljenje_dark: #8080f7;
+
+  /* Highest Risk / Mandatory Vaccination - Use darker oranges */
+  --color-rumeni_ce_b: #ff4500; /* Cepljenje je obvezno za vstop v ciljno državo za vse potnike, ne glede od kod prihajajo */
+  --color-rumeni_yellow: #ffa500; /* Označuje državo, ki ima povsod tveganje za rumeno mrzlico, zato je za slovenske potnike cepljenje obvezno */
+
+  /* Moderate Risk / Conditional Mandatory Vaccination - Use ambers/goldenrods */
+  --color-rumeni_ce: #ffbf00; /* Cepljenje je obvezno za vstop v ciljno državo za potnika, ki potuje iz države, kjer imajo rumeno mrlico (ali je v tranzitu na letališču države, kjer imajo rumeno mrzlico) */
+  --color-yellow_light: #daa520; /* Označuje državo, ki ima na nekaterih področjih tveganje za rumeno mrzlico in z vstopom na ta področja je za slovenske potnike cepljenje obvezno */
+
+  /* General Requirements / Guidelines - Use golds/lemon chiffon */
+  --color-rumeni_-: #ffd700; /* Zahteve ciljne države potovanja */
+  --color-rumeni_--: #fff8c0; /* Zahteva Slovenije na podlagi veljavnega programa cepljenja in zaščite z zdravili za slovenske potnike v mednarodnem prometu */
+
+  /* Specific Conditions / Exceptions - Use lightest yellow */
+  --color-rumeni_---: #ffffe0; /* Dodatne zahteve/izjeme ciljne države potovanja (izvzete države z rumeno mrzlico ali dodane države brez rumene mrzlice) */
+}
+
+/* PRIPORUČENA ZAŠTITA */
+
+[id*="cepljenje_light"]::after {
+  background: var(--color-cepljenje_light);
+}
+[id*="cepljenje_middle"]::after {
+  background: var(--color-cepljenje_middle);
+  color: white;
+}
+[id*="cepljenje_dark"]::after {
+  background: var(--color-cepljenje_dark);
+  color: white;
+}
+
+[id*="cepljenje_light"],
+[id*="cepljenje_middle"],
+[id*="cepljenje_dark"] {
+  position: relative;
+  padding-left: 1.5em !important;
+}
+[id*="cepljenje_light"]::after,
+[id*="cepljenje_middle"]::after,
+[id*="cepljenje_dark"]::after {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 20px;
+  border-radius: 2px;
+  content: "";
+}
+
+/* PRIPORUČENA RUMENI */
+
+[id*="rumeni_ce_b"]::after {
+  background: var(--color-rumeni_ce_b);
+}
+[id*="rumeni_yellow"]::after {
+  background: var(--color-rumeni_yellow);
+  color: white;
+}
+[id*="rumeni_ce"]::after {
+  background: var(--color-rumeni_ce);
+  color: white;
+}
+[id*="yellow_light"]::after {
+  background: var(--color-yellow_light);
+  color: white;
+}
+[id*="rumeni_-"]::after {
+  background: var(--color-rumeni_-);
+  color: white;
+}
+[id*="rumeni_--"]::after {
+  background: var(--color-rumeni_--);
+  color: white;
+}
+[id*="rumeni_---"]::after {
+  background: var(--color-rumeni_---);
+  color: white;
+}
+
+[id*="rumeni_ce_b"],
+[id*="rumeni_yellow"],
+[id*="rumeni_ce"],
+[id*="yellow_light"],
+[id*="rumeni_-"],
+[id*="rumeni_--"],
+[id*="rumeni_---"] {
+  position: relative;
+  padding-left: 1.5em !important;
+}
+[id*="rumeni_ce_b"]::after,
+[id*="rumeni_yellow"]::after,
+[id*="rumeni_ce"]::after,
+[id*="yellow_light"]::after,
+[id*="rumeni_-"]::after,
+[id*="rumeni_--"]::after,
+[id*="rumeni_---"]::after {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 20px;
+  border-radius: 2px;
+  content: "";
+}

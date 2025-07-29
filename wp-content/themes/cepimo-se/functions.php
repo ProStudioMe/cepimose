@@ -290,6 +290,19 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 }
                                 add_action('wp_enqueue_scripts', 'cepimo_se_scripts');
 
+                                /**
+                                * Enqueue admin dashboard styles
+                                */
+                                function cepimo_se_admin_styles() {
+                                    wp_enqueue_style(
+                                        'cepimo-se-admin-dashboard',
+                                        get_template_directory_uri() . '/src/admin-dashboard.css',
+                                        array(),
+                                        filemtime( get_stylesheet_directory() . '/src/admin-dashboard.css' )
+                                    );
+                                }
+                                add_action('admin_enqueue_scripts', 'cepimo_se_admin_styles');
+
                                 // Add support for custom logo
                                 add_theme_support('custom-logo', array(
                                 'height' => 48,

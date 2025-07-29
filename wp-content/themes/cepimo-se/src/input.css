@@ -53,7 +53,7 @@
 
 .wp-block-navigation:not(.has-text-color)
   .wp-block-navigation__submenu-container {
-  @apply rounded-xl p-5 overflow-hidden border-none shadow-2xl;
+  @apply rounded-xl p-3 overflow-hidden border-none shadow-2xl;
 }
 
 .wp-block-navigation__submenu-container {
@@ -61,7 +61,7 @@
 }
 
 .wp-block-navigation__submenu-container .wp-block-navigation-item__label {
-  @apply !text-blue-middle !text-xl xl:!text-base xl:!text-neutral-600;
+  @apply !text-blue-middle !text-xl xl:!text-sm xl:!text-neutral-600;
 }
 
 /* Desktop Navigation */
@@ -169,7 +169,7 @@
 }
 
 .wp-block-navigation .wp-block-navigation-item__label {
-  @apply xl:text-lg text-blue-dark w-max block text-2xl;
+  @apply xl:text-sm text-blue-dark w-max block text-2xl;
 }
 
 /* Banner swiper */
@@ -190,7 +190,7 @@
 }
 
 .banner-swiper-subtitle {
-  @apply text-blue-middle mt-6 text-3xl font-semibold;
+  @apply text-blue-middle mt-8 text-4xl font-semibold;
 }
 
 .banner-swiper-text {
@@ -605,7 +605,7 @@
 .aside-categories a,
 .wp-block-prostudiome-same-category-posts a,
 .prostudio-anchor-links a {
-  @apply text-neutral-700 w-full py-1 text-xs   font-thin no-underline  cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-5 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:[background-size:10px]  after:bg-no-repeat after:content-[""] block hover:text-primary transition-all hover:after:-mr-2 after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
+  @apply text-neutral-700 w-full py-1 text-xs   font-thin no-underline  cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-5 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:[background-size:10px] hover:after:-right-1 after:bg-no-repeat after:content-[""] block hover:text-primary transition-all  after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
 }
 
 .wp-block-prostudiome-same-category-posts h4,
@@ -619,6 +619,46 @@
 
 .anchor-link {
   @apply !w-[calc(100%_-_2em)] pr-[2em];
+}
+
+.anchor-link-level-2 .anchor-link {
+  @apply text-blue-dark text-sm font-semibold;
+}
+
+.anchor-link-level-3 .anchor-link {
+  @apply after:mr-3 pl-3 font-semibold;
+}
+
+/* .anchor-link-level-3 .anchor-link::before {
+  content: "";
+  position: absolute;
+  left: 0.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 99em;
+  background-color: #0099ff;
+  margin-right: 8px;
+} */
+
+.anchor-link-level-4 .anchor-link {
+  @apply after:mr-6 pl-6;
+  position: relative;
+}
+
+.anchor-link-level-4 .anchor-link::before {
+  content: "";
+  position: absolute;
+  left: 1.2em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid #19ace4;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  margin-right: 8px;
 }
 
 /* Custom Tabs Styles */
@@ -821,6 +861,10 @@ footer .wp-block-navigation__container {
 .phone-link:hover,
 .email-link:hover {
   @apply underline;
+}
+
+.mapsvg-details-container {
+  @apply !max-w-[95%] !h-[95%] !shadow-none  !border-white !border-2;
 }
 
 .mapsvg-controller-view-content {
@@ -1161,4 +1205,9 @@ footer .wp-block-navigation__container {
 
 .search-modal-drawer.closing {
   animation: slideOut 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SELECT ON CEPLJENJE PO DRŽAVAMAH */
+#select2-acf-field_684d7627af4e2-result-4szo-middle {
+  background: #0a76bd !important;
 }
