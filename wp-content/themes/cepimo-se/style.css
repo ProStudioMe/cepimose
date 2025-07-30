@@ -1154,8 +1154,8 @@ main {
 
 .banner-swiper-subtitle {
   margin-top: 2rem;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 3rem;
+  line-height: 1;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(25 172 228 / var(--tw-text-opacity, 1));
@@ -2743,7 +2743,6 @@ footer .wp-block-navigation__container {
 }
 
 .mapsvg-details-container {
-  height: 95% !important;
   max-width: 95% !important;
   border-width: 2px !important;
   --tw-border-opacity: 1 !important;
@@ -2751,6 +2750,13 @@ footer .wp-block-navigation__container {
   --tw-shadow: 0 0 #0000 !important;
   --tw-shadow-colored: 0 0 #0000 !important;
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+@media (min-width: 1280px) {
+  .mapsvg-details-container {
+    height: 75% !important;
+    max-width: 45% !important;
+  }
 }
 
 .mapsvg-controller-view-content {

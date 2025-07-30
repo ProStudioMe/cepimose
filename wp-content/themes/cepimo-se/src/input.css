@@ -190,7 +190,7 @@
 }
 
 .banner-swiper-subtitle {
-  @apply text-blue-middle mt-8 text-4xl font-semibold;
+  @apply text-blue-middle mt-8 text-5xl font-semibold;
 }
 
 .banner-swiper-text {
@@ -864,7 +864,7 @@ footer .wp-block-navigation__container {
 }
 
 .mapsvg-details-container {
-  @apply !max-w-[95%] !h-[95%] !shadow-none  !border-white !border-2;
+  @apply xl:!max-w-[45%] !max-w-[95%] !shadow-none xl:!h-[75%] !border-white !border-2;
 }
 
 .mapsvg-controller-view-content {
