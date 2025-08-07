@@ -64,7 +64,7 @@
       // Query all other posts from 'news' category, excluding the featured one
       $args = array(
         'category_name' => 'news',
-        'posts_per_page' => 9,
+        'posts_per_page' => -1, // Show all remaining posts
         'post__not_in' => isset($featured_id) ? array($featured_id) : array(),
       );
       $query = new WP_Query($args);

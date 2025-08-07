@@ -431,7 +431,7 @@
   @apply -z-0 absolute inset-0 object-contain max-w-full max-h-full;
 }
 .title-bar h1 {
-  @apply text-blue-dark !text-6xl  xl:!ml-0;
+  @apply text-blue-dark !text-5xl  xl:!ml-0;
 }
 .title-bar-deco img {
   @apply block ml-auto;
@@ -450,7 +450,7 @@
 }
 
 .title-bar-title-container p {
-  @apply line-clamp-3 mt-5 !text-base xl:w-7/12 xl:!ml-0;
+  @apply line-clamp-5 mt-5 !text-sm xl:w-7/12 xl:!ml-0;
 }
 
 /* Content */

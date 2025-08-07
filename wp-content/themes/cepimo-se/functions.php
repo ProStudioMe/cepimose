@@ -249,11 +249,11 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
 
                                 // Enqueue mobile navigation JavaScript
                                 wp_enqueue_script(
-                                    'cepimo-se-mobile-nav',
-                                    get_template_directory_uri() . '/src/mobile-nav.js',
-                                    array(),
-                                    filemtime( get_stylesheet_directory() . '/src/mobile-nav.js' ),
-                                    true
+                                'cepimo-se-mobile-nav',
+                                get_template_directory_uri() . '/src/mobile-nav.js',
+                                array(),
+                                filemtime( get_stylesheet_directory() . '/src/mobile-nav.js' ),
+                                true
                                 );
 
                                 // Enqueue archive search JavaScript
@@ -265,28 +265,29 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 true
                                 );
 
-                                                // Enqueue search modal JavaScript
-                wp_enqueue_script(
-                    'cepimo-se-search-modal',
-                    get_template_directory_uri() . '/src/search-modal.js',
-                    array(),
-                    filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
-                    true
-                );
+                                // Enqueue search modal JavaScript
+                                wp_enqueue_script(
+                                'cepimo-se-search-modal',
+                                get_template_directory_uri() . '/src/search-modal.js',
+                                array(),
+                                filemtime( get_stylesheet_directory() . '/src/search-modal.js' ),
+                                true
+                                );
 
-                // Enqueue sidebar tabs JavaScript (conflict-resistant)
-                wp_enqueue_script(
-                    'cepimo-se-sidebar-tabs',
-                    get_template_directory_uri() . '/src/sidebar-tabs.js',
-                    array(), // No dependencies to avoid conflicts
-                    filemtime( get_stylesheet_directory() . '/src/sidebar-tabs.js' ),
-                    true // Load in footer after other scripts
-                );
+                                // Enqueue sidebar tabs JavaScript (conflict-resistant)
+                                wp_enqueue_script(
+                                'cepimo-se-sidebar-tabs',
+                                get_template_directory_uri() . '/src/sidebar-tabs.js',
+                                array(), // No dependencies to avoid conflicts
+                                filemtime( get_stylesheet_directory() . '/src/sidebar-tabs.js' ),
+                                true // Load in footer after other scripts
+                                );
 
-                                                
+
 
                                 // Debug: Add inline script to confirm enqueuing
-                                wp_add_inline_script('cepimo-se-archive-search', 'console.log("Script enqueued successfully!");', 'before');
+                                wp_add_inline_script('cepimo-se-archive-search', 'console.log("Script enqueued
+                                successfully!");', 'before');
                                 }
                                 add_action('wp_enqueue_scripts', 'cepimo_se_scripts');
 
@@ -294,12 +295,12 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 * Enqueue admin dashboard styles
                                 */
                                 function cepimo_se_admin_styles() {
-                                    wp_enqueue_style(
-                                        'cepimo-se-admin-dashboard',
-                                        get_template_directory_uri() . '/src/admin-dashboard.css',
-                                        array(),
-                                        filemtime( get_stylesheet_directory() . '/src/admin-dashboard.css' )
-                                    );
+                                wp_enqueue_style(
+                                'cepimo-se-admin-dashboard',
+                                get_template_directory_uri() . '/src/admin-dashboard.css',
+                                array(),
+                                filemtime( get_stylesheet_directory() . '/src/admin-dashboard.css' )
+                                );
                                 }
                                 add_action('admin_enqueue_scripts', 'cepimo_se_admin_styles');
 
@@ -382,4 +383,49 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 }
                                 add_shortcode('aside_banner', 'cepimo_se_aside_banner_shortcode');
 
-                                
+                                /**
+ * Fix category archives to show all posts
+ */
+function cepimo_se_category_posts_per_page($query) {
+    if (!is_admin() && $query->is_main_query() && is_category()) {
+        $query->set('posts_per_page', -1); // Show ALL posts without pagination
+        $query->set('ignore_sticky_posts', 1); // Ignore sticky posts
+        $query->set('post_status', array('publish', 'private')); // Include private posts too
+        
+        // Clear any post exclusions that might have been set by other plugins
+        $query->set('post__not_in', array());
+        $query->set('post__in', array());
+        
+        // Force a clean query
+        $query->set('suppress_filters', false);
+    }
+}
+add_action('pre_get_posts', 'cepimo_se_category_posts_per_page', 999); // High priority
+
+                                /**
+                                * Debug function to understand what's happening with category queries
+                                */
+                                function cepimo_se_debug_category_query($query) {
+                                if (!is_admin() && $query->is_main_query() && is_category()) {
+                                // Get the category
+                                $category = get_queried_object();
+
+                                // Get all posts in this category manually
+                                $all_posts = get_posts(array(
+                                'category' => $category->term_id,
+                                'posts_per_page' => -1,
+                                'post_status' => 'publish'
+                                ));
+
+                                // Log debug information
+                                error_log('=== CATEGORY DEBUG ===');
+                                error_log('Category: ' . $category->name . ' (ID: ' . $category->term_id . ')');
+                                error_log('Total posts in category: ' . count($all_posts));
+                                error_log('Post IDs: ' . implode(', ', wp_list_pluck($all_posts, 'ID')));
+                                error_log('Query posts_per_page: ' . $query->get('posts_per_page'));
+                                error_log('Query post__not_in: ' . print_r($query->get('post__not_in'), true));
+                                error_log('Query post_status: ' . print_r($query->get('post_status'), true));
+                                error_log('=====================');
+                                }
+                                }
+                                add_action('pre_get_posts', 'cepimo_se_debug_category_query', 1);
