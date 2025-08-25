@@ -28,15 +28,7 @@
 
     <!-- wp:prostudiome/anchor-links {"className":"custom-tab-content tab-content-1 active"} /-->
 
-    <?php if (is_singular('post') && !is_archive() && !is_category() && !is_tag() && !is_tax() && !is_home() && !is_front_page()) : ?>
     <!-- wp:prostudiome/same-category-posts {"className":"custom-tab-content tab-content-2"} /-->
-    <?php else : ?>
-    <!-- wp:html -->
-    <div class="custom-tab-content tab-content-2">
-        <p>Povezane objave so na voljo samo na straneh z eno objavo.</p>
-    </div>
-    <!-- /wp:html -->
-    <?php endif; ?>
 
     <!-- wp:shortcode -->
     <div class="aside-button-section">
@@ -47,11 +39,11 @@
     <!-- /wp:shortcode -->
 
     <!-- wp:shortcode -->
-    <!-- <div class="aside-banner-section">
+    <div class="aside-banner-section">
         <div class="sample-banner">
             [aside_banner]
         </div>
-    </div> -->
+    </div>
     <!-- /wp:shortcode -->
 </aside>
 <!-- /wp:group -->

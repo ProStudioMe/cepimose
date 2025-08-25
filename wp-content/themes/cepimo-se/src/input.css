@@ -212,7 +212,7 @@
 /* Card swiper */
 
 #home-swiper .zolo-post-content {
-  @apply bg-blue-lighter rounded-b-[20px] p-8 pt-10 -mt-[15px];
+  @apply bg-blue-lighter rounded-b-[20px] p-8 pt-10 -mt-[15px] xl:min-h-44;
 }
 
 #home-swiper .swiper-navigation-position-center {
@@ -425,7 +425,7 @@
 /* Title archive */
 
 .title-bar {
-  @apply xl:aspect-[1/0.22] aspect-[1/0.6] overflow-hidden relative mb-16;
+  @apply xl:aspect-[1/0.22] aspect-[1/0.6] overflow-hidden relative mb-16 bg-blue-lighter;
 }
 .title-bar-deco {
   @apply -z-0 absolute inset-0 object-contain max-w-full max-h-full;
@@ -438,7 +438,7 @@
 }
 
 .title-bar-breadcrumb {
-  @apply absolute left-0 z-10;
+  @apply z-10 mx-auto -mb-6;
 }
 
 .title-bar-title-container-parent {
@@ -446,11 +446,11 @@
 }
 
 .title-bar-title-container {
-  @apply h-max !ml-0 my-auto z-10;
+  @apply h-max z-10 mx-auto;
 }
 
 .title-bar-title-container p {
-  @apply line-clamp-5 mt-5 !text-sm xl:w-7/12 xl:!ml-0;
+  @apply line-clamp-5 mt-5 !text-base xl:w-7/12 xl:!ml-0 text-neutral-700;
 }
 
 /* Content */
@@ -793,7 +793,7 @@
   @apply text-blue-dark;
 }
 
-/* NEWS Archive */
+/* NOVICE Archive */
 
 #archive-query-first {
   @apply after:absolute after:inset-0 after:bg-primary/10 after:widthFull after:content-[""] after:-z-10 relative;
