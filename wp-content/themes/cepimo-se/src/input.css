@@ -458,6 +458,9 @@
 .entry-content p {
   text-align: justify;
 }
+.entry-content img {
+  @apply mt-6 mb-3;
+}
 
 .wp-block-group a {
   @apply text-primary;
@@ -605,7 +608,7 @@
 .aside-categories a,
 .wp-block-prostudiome-same-category-posts a,
 .prostudio-anchor-links a {
-  @apply text-neutral-700 w-full py-1 text-xs   font-thin no-underline  cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-5 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:[background-size:10px] hover:after:-right-1 after:bg-no-repeat after:content-[""] block hover:text-primary transition-all  after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
+  @apply text-neutral-700 w-full py-2 text-xs   font-thin no-underline  cursor-pointer after:absolute relative after:right-0 after:top-1/2 after:-translate-y-1/2 after:w-5 after:h-4 after:bg-[url('/wp-content/themes/cepimo-se/assets/icon-arrow-right.svg')] after:[background-size:10px] hover:after:-right-1 after:bg-no-repeat after:content-[""] block hover:text-primary transition-all  after:pr-0 after:transition-all after:opacity-50 hover:after:opacity-100;
 }
 
 .wp-block-prostudiome-same-category-posts h4,
@@ -622,11 +625,11 @@
 }
 
 .anchor-link-level-2 .anchor-link {
-  @apply text-blue-dark text-sm font-semibold;
+  @apply text-blue-dark text-sm;
 }
 
 .anchor-link-level-3 .anchor-link {
-  @apply after:mr-3 pl-3 font-semibold;
+  @apply after:mr-3 pl-3;
 }
 
 /* .anchor-link-level-3 .anchor-link::before {
@@ -753,6 +756,10 @@
 .zolo-block-wrapper em,
 .zolo-button-content {
   @apply whitespace-break-spaces;
+}
+
+.wp-block-media-text__media img {
+  @apply !mt-0;
 }
 
 /* Archive */
