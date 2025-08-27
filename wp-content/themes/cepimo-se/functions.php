@@ -303,6 +303,15 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 true // Load in footer after other scripts
                                 );
 
+                                // Enqueue blog features JavaScript
+                                wp_enqueue_script(
+                                'cepimo-se-blog-features',
+                                get_template_directory_uri() . '/src/blog-post-features.js',
+                                array(), // No dependencies to avoid conflicts
+                                filemtime( get_stylesheet_directory() . '/src/blog-post-features.js' ),
+                                true // Load in footer after other scripts
+                                );
+
 
 
                                 // Debug: Add inline script to confirm enqueuing
