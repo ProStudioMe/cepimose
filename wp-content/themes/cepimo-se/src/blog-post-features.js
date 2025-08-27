@@ -74,8 +74,20 @@
       const anchorContainer = document.querySelector('.anchor-links-container');
       if (!anchorContainer) return;
 
+      // Find the parent section to hide/show
+      const anchorSection = anchorContainer.closest('.anchor-links-section');
+      if (!anchorSection) return;
+
       const headings = document.querySelectorAll('.wp-block-post-content h2, .wp-block-post-content h3, .wp-block-post-content h4');
-      if (headings.length === 0) return;
+      
+      // If no headings found, hide the entire section
+      if (headings.length === 0) {
+        anchorSection.style.display = 'none';
+        return;
+      }
+
+      // Show the section if it was previously hidden
+      anchorSection.style.display = 'block';
 
       const anchorLinks = [];
       
@@ -123,7 +135,7 @@
         return;
       }
 
-      console.log('Initializing latest posts...');
+      console.log('Initializing latest posts from "novice" category...');
 
       // Show sample posts immediately for testing
       console.log('Showing sample posts for testing...');
@@ -131,21 +143,18 @@
       latestPostsContainer.innerHTML = samplePosts;
 
       try {
-        // Get current post categories
-        const categories = this.getCurrentPostCategories();
-        console.log('Current post categories:', categories);
+        // Get the "novice" category ID
+        const noviceCategoryId = await this.getNoviceCategoryId();
+        console.log('Novice category ID:', noviceCategoryId);
 
-        // If no categories found, show all recent posts
-        if (!categories.length) {
-          console.log('No categories found, fetching all recent posts');
-          const posts = await this.fetchLatestPosts([], 5);
-          this.renderLatestPosts(latestPostsContainer, posts);
+        if (!noviceCategoryId) {
+          console.log('Novice category not found, showing sample posts');
           return;
         }
 
-        // Fetch latest posts from the same category
-        const posts = await this.fetchLatestPosts(categories, 5);
-        console.log('Fetched posts:', posts);
+        // Fetch latest posts from the "novice" category
+        const posts = await this.fetchLatestPosts([noviceCategoryId], 5);
+        console.log('Fetched posts from novice category:', posts);
         this.renderLatestPosts(latestPostsContainer, posts);
       } catch (error) {
         console.error('Error loading latest posts:', error);
@@ -187,6 +196,21 @@
         console.error('Error fetching post categories:', error);
       }
       return [];
+    }
+
+    async getNoviceCategoryId() {
+      try {
+        const response = await fetch(`${window.location.origin}/wp-json/wp/v2/categories?slug=novice`);
+        if (response.ok) {
+          const categories = await response.json();
+          if (categories && categories.length > 0) {
+            return categories[0].id;
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching novice category:', error);
+      }
+      return null;
     }
 
     async fetchLatestPosts(categories, limit = 5) {
@@ -256,27 +280,27 @@
     getSamplePosts() {
       const samplePosts = [
         {
-          title: 'Pomembne informacije o cepljenju',
+          title: 'Nove smernice za cepljenje v letu 2024',
           date: '15. jun 2024',
           image: '/wp-content/themes/cepimo-se/assets/default-post-image.svg'
         },
         {
-          title: 'Varnost cepiv proti COVID-19',
+          title: 'Aktualne novice o cepivih proti sezonskim boleznim',
           date: '12. jun 2024',
           image: '/wp-content/themes/cepimo-se/assets/default-post-image.svg'
         },
         {
-          title: 'Kdaj se cepiti proti gripi',
+          title: 'Pomembne spremembe v ceplilnem programu',
           date: '10. jun 2024',
           image: '/wp-content/themes/cepimo-se/assets/default-post-image.svg'
         },
         {
-          title: 'Cepivo za otroke - vse kar morate vedeti',
+          title: 'Najnovejše informacije o varnosti cepiv',
           date: '8. jun 2024',
           image: '/wp-content/themes/cepimo-se/assets/default-post-image.svg'
         },
         {
-          title: 'Pogosto zastavljena vprašanja o cepljenju',
+          title: 'Aktualizacija priporočil za cepljenje otrok',
           date: '5. jun 2024',
           image: '/wp-content/themes/cepimo-se/assets/default-post-image.svg'
         }
