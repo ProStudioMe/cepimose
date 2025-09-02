@@ -466,6 +466,10 @@
   @apply text-primary;
 }
 
+.wp-block-heading.has-xl-font-size {
+  margin-top: 0 !important;
+}
+
 .block-4-elements {
   @apply bg-extra-dark p-14 rounded-2xl text-white;
 }
