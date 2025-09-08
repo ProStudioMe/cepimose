@@ -120,7 +120,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 >
                 <div class="banner-swiper-content">
                     <?php if ($main_heading) : ?>
-                    <h2 class="banner-swiper-title"><?php echo esc_html($main_heading); ?></h2>
+                    <h1 class="banner-swiper-title"><?php echo esc_html($main_heading); ?></h1>
                     <?php endif; ?>
 
                     <?php if ($subheading) : ?>

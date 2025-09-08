@@ -5,6 +5,8 @@
  * @param array $attributes The block attributes.
  * @param string $content The block default content.
  * @param WP_Block $block The block instance.
+ * 
+ * Last updated: <?php echo date('Y-m-d H:i:s'); ?> - Fixed WP_Post object handling
  */
 
 // Get timeline posts from the vaccination-timeline category
@@ -42,7 +44,7 @@ if (empty($timeline_items)) {
 }
 
 // Get block options
-$options = isset($attributes['swiperOptions']) ? $attributes['swiperOptions'] : [];
+$options = $attributes['swiperOptions'] ?? [];
 $default_options = [
     'speed' => 800,
     'autoplay' => false,
@@ -97,22 +99,86 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 $age = get_field('vaccination_age', $item->ID);
                 $image = get_field('vaccination_image', $item->ID);
                 $text = get_field('vaccination_text', $item->ID);
+                $link = get_field('vaccination_link', $item->ID);
                 $permalink = get_permalink($item->ID);
+                
+                // Handle ACF link field - it can be an array, string, post object, or other types
+                $link_url = '';
+                
+                // Debug logging to identify the exact type and value
+                error_log('Timeline block: link field type: ' . gettype($link) . ', value: ' . print_r($link, true));
+                
+                if (is_array($link)) {
+                    $link_url = isset($link['url']) && !empty($link['url']) ? $link['url'] : '';
+                } elseif (is_string($link)) {
+                    $link_url = $link;
+                } elseif (is_numeric($link)) {
+                    $link_url = (string) $link;
+                } elseif (is_object($link) && method_exists($link, 'get_permalink')) {
+                    // Handle WP_Post objects and other objects with get_permalink method
+                    $link_url = $link->get_permalink();
+                } elseif (is_object($link) && isset($link->ID)) {
+                    // Handle objects with ID property (like WP_Post)
+                    $link_url = get_permalink($link->ID);
+                } else {
+                    $link_url = '';
+                }
+                
+                // Force string conversion and sanitization
+                $link_url = trim((string) $link_url);
+                
+                // Additional safety - if still not a string, force empty string
+                if (!is_string($link_url) || $link_url === null) {
+                    $link_url = '';
+                }
+                
+                // Final debug check
+                error_log('Timeline block: final link_url type: ' . gettype($link_url) . ', value: ' . $link_url);
             ?>
             <div class="swiper-slide">
-                <a href="<?php echo esc_url($permalink); ?>" class="timeline-link">
+                <!-- Debug output on frontend -->
+                <div style="background: #f0f0f0; padding: 5px; margin: 5px; font-size: 12px; border: 1px solid #ccc;">
+                    Debug: link_url = "<?php echo esc_html($link_url); ?>" (Type: <?php echo esc_html(gettype($link_url)); ?>)
+                </div>
+                <a href="<?php echo esc_url($link_url); ?>" class="timeline-link">
                     <?php if ($age) : ?>
                     <div class="timeline-age"><?php echo esc_html($age); ?></div>
                     <?php endif; ?>
                     <div class="timeline-content">
                         <?php if ($image) : 
                             // If image is returned as array (ACF image field)
-                            $image_url = is_array($image) ? $image['url'] : $image;
-                            $image_alt = is_array($image) ? $image['alt'] : '';
+                            $image_url = '';
+                            $image_alt = '';
+                            if (is_array($image)) {
+                                $image_url = isset($image['url']) && !empty($image['url']) ? $image['url'] : '';
+                                $image_alt = isset($image['alt']) ? $image['alt'] : '';
+                            } elseif (is_string($image)) {
+                                $image_url = $image;
+                            } elseif (is_numeric($image)) {
+                                $image_url = (string) $image;
+                            } elseif (is_object($image) && method_exists($image, 'get_permalink')) {
+                                // Handle WP_Post objects and other objects with get_permalink method
+                                $image_url = $image->get_permalink();
+                            } elseif (is_object($image) && isset($image->ID)) {
+                                // Handle objects with ID property (like WP_Post)
+                                $image_url = get_permalink($image->ID);
+                            } else {
+                                $image_url = '';
+                            }
+                            
+                            // Force string conversion and sanitization
+                            $image_url = trim((string) $image_url);
+                            
+                            // Additional safety - if still not a string, force empty string
+                            if (!is_string($image_url) || $image_url === null) {
+                                $image_url = '';
+                            }
+                            
+                            if (!empty($image_url)) :
                         ?>
                         <img class="timeline-image" src="<?php echo esc_url($image_url); ?>"
                             alt="<?php echo esc_attr($image_alt); ?>">
-                        <?php endif; ?>
+                        <?php endif; endif; ?>
                         <?php if ($text) : ?>
                         <div class="timeline-description"><?php echo wp_kses_post($text); ?></div>
                         <?php endif; ?>

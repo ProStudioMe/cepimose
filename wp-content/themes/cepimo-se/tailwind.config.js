@@ -17,7 +17,7 @@ module.exports = {
     "../../plugins/prostudiome/blocks/**/*.{php,js,jsx}",
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  safelist: ["aspect-[1920/640]"],
+  safelist: ["aspect-[1920/640]", "text-red-500"],
   theme: {
     extend: {
       colors: {

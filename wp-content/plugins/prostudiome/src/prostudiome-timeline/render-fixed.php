@@ -1,6 +1,6 @@
 <?php
 /**
- * Timeline Block Template.
+ * Timeline Block Template - FIXED VERSION.
  *
  * @param array $attributes The block attributes.
  * @param string $content The block default content.
@@ -44,7 +44,7 @@ if (empty($timeline_items)) {
 }
 
 // Get block options
-$options = $attributes['swiperOptions'] ?? [];
+$options = isset($attributes['swiperOptions']) ? $attributes['swiperOptions'] : [];
 $default_options = [
     'speed' => 800,
     'autoplay' => false,
@@ -136,10 +136,6 @@ $wrapper_attributes = get_block_wrapper_attributes([
                 error_log('Timeline block: final link_url type: ' . gettype($link_url) . ', value: ' . $link_url);
             ?>
             <div class="swiper-slide">
-                <!-- Debug output on frontend -->
-                <div style="background: #f0f0f0; padding: 5px; margin: 5px; font-size: 12px; border: 1px solid #ccc;">
-                    Debug: link_url = "<?php echo esc_html($link_url); ?>" (Type: <?php echo esc_html(gettype($link_url)); ?>)
-                </div>
                 <a href="<?php echo esc_url($link_url); ?>" class="timeline-link">
                     <?php if ($age) : ?>
                     <div class="timeline-age"><?php echo esc_html($age); ?></div>
@@ -192,8 +188,8 @@ $wrapper_attributes = get_block_wrapper_attributes([
         </div>
 
         <?php if ($options['navigation'] && count($timeline_items) > 1) : ?>
-        <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
         <?php endif; ?>
 
         <?php if ($options['pagination'] && count($timeline_items) > 1) : ?>

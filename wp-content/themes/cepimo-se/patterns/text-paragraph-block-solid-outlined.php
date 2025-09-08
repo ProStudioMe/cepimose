@@ -11,8 +11,8 @@
 <!-- wp:group {"metadata":{"name":"Text + paragraph block - solid, outlined"},"style":{"spacing":{"margin":{"top":"56px","bottom":"56px"}}}} -->
 <div class="wp-block-group xl:max-w-[70%] max-w-[95%]" style="margin-top:56px;margin-bottom:56px">
     <!-- wp:group  -->
-    <div class="wp-block-group has-border-color has-blue-middle-border-color has-blue-lighter-background-color has-background [&>*]:text-left"
-        style="border-width:1px;border-radius:16px;padding-top:48px;padding-right:48px;padding-bottom:48px;padding-left:48px">
+    <div class="wp-block-group has-border-color has-blue-middle-border-color has-blue-lighter-background-color has-background [&>*]:text-left border rounded-2xl py-5 xl:p-12"
+        >
         <!-- wp:heading {"level":4} -->
         <h4 class="wp-block-heading">H4 Trust unicorn poke artisan flexitarian banh v vegan. Jomo cardigan jean vice
             bread jianbing meditation master twee.</h4>

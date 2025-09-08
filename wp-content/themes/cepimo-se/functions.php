@@ -259,12 +259,12 @@ $link_pattern_content = preg_replace('/^<\?php.*?\?>\s*/s', '', $link_pattern_co
                                 wp_dequeue_style('wp-block-library');
                                 wp_dequeue_style('wp-block-library-theme');
 
-                                // Enqueue Tailwind styles
+                                // Enqueue Tailwind styles with aggressive cache busting
                                 wp_enqueue_style(
                                 'cepimo-se-style',
-                                get_template_directory_uri() . '/style.css',
+                                get_template_directory_uri() . '/style.css?v=' . time(),
                                 array(),
-                                filemtime( get_stylesheet_directory() . '/style.css' )
+                                time() // Use current timestamp for aggressive cache busting
                                 );
 
                                 // Enqueue mobile navigation JavaScript
