@@ -233,6 +233,8 @@ function prostudiome_enqueue_scripts() {
 		wp_enqueue_style('swiper');
 		wp_enqueue_script('swiper');
 		wp_enqueue_style('prostudiome-timeline-style');
+		// Enqueue Dashicons for frontend use
+		wp_enqueue_style('dashicons');
 	}
 
 	// Always enqueue home-info styles to ensure they're available
