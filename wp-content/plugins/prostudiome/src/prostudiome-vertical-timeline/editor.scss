@@ -1,0 +1,58 @@
+/**
+ * Editor-specific styles for Vertical Timeline Block
+ */
+
+.wp-block-prostudiome-vertical-timeline {
+	.vertical-timeline-preview {
+		padding: 30px;
+		background: #f9f9f9;
+		border: 2px dashed #ddd;
+		border-radius: 8px;
+
+		h3 {
+			margin-top: 0;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+
+		.timeline-items-preview {
+			margin-top: 20px;
+		}
+
+		.timeline-item-preview {
+			transition: all 0.2s ease;
+
+			&:hover {
+				background: rgba(0, 115, 170, 0.05);
+				border-radius: 4px;
+				padding-left: 35px !important;
+			}
+
+			h4 {
+				font-size: 1.1rem;
+				font-weight: 600;
+			}
+
+			p {
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+		}
+	}
+}
+
+// Inspector Controls styling
+.components-panel__body {
+	.timeline-item-controls {
+		.components-text-control__input {
+			width: 100%;
+		}
+
+		.components-textarea-control__input {
+			min-height: 100px;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+				Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+		}
+	}
+}
+

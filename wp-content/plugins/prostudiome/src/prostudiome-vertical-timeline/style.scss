@@ -1,0 +1,182 @@
+/**
+ * Vertical Timeline Block Styles
+ * These styles are loaded on both the frontend and in the editor.
+ */
+
+.prostudiome-vertical-timeline {
+	padding: 40px 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	.vertical-timeline {
+		position: relative;
+		padding: 0;
+
+		// Timeline vertical line
+		&::before {
+			content: "";
+			position: absolute;
+			left: 20px;
+			top: 0;
+			bottom: 0;
+			width: 3px;
+			background: linear-gradient(
+				to bottom,
+				#0073aa 0%,
+				#005177 50%,
+				#0073aa 100%
+			);
+
+			@media (min-width: 768px) {
+				left: 50%;
+				margin-left: -1.5px;
+			}
+		}
+	}
+
+	.timeline-item {
+		position: relative;
+		margin-bottom: 50px;
+		opacity: 0;
+		animation: fadeInUp 0.6s ease forwards;
+
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				animation-delay: #{$i * 0.1}s;
+			}
+		}
+
+		@media (min-width: 768px) {
+			display: flex;
+			justify-content: flex-start;
+			width: 100%;
+
+			&:nth-child(even) {
+				justify-content: flex-end;
+
+				.timeline-content {
+					text-align: right;
+				}
+
+				.timeline-marker {
+					order: 2;
+				}
+			}
+		}
+	}
+
+	.timeline-marker {
+		position: relative;
+		z-index: 2;
+		width: 40px;
+		flex-shrink: 0;
+		margin-left: 0;
+
+		@media (min-width: 768px) {
+			margin-left: 0;
+		}
+
+		.timeline-dot {
+			position: absolute;
+			left: 0;
+			top: 8px;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			background: #0073aa;
+			border: 4px solid #fff;
+			box-shadow: 0 0 0 3px #0073aa, 0 4px 8px rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease;
+
+			@media (min-width: 768px) {
+				left: 50%;
+				margin-left: -10px;
+			}
+		}
+
+		&:hover .timeline-dot {
+			transform: scale(1.2);
+			background: #005177;
+			box-shadow: 0 0 0 3px #005177, 0 6px 12px rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	.timeline-content {
+		flex: 1;
+		padding-left: 20px;
+		padding-right: 0;
+		max-width: 100%;
+
+		@media (min-width: 768px) {
+			max-width: calc(50% - 40px);
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+
+		.timeline-title {
+			margin: 0 0 15px 0;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: #0073aa;
+			line-height: 1.3;
+
+			@media (min-width: 768px) {
+				font-size: 1.75rem;
+			}
+		}
+
+		.timeline-text {
+			margin: 0;
+			font-size: 1rem;
+			line-height: 1.6;
+			color: #333;
+
+			p {
+				margin: 0 0 10px 0;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	// Responsive adjustments for mobile
+	@media (max-width: 767px) {
+		.vertical-timeline::before {
+			left: 10px;
+		}
+
+		.timeline-marker .timeline-dot {
+			left: 0;
+		}
+
+		.timeline-content {
+			padding-left: 40px;
+		}
+	}
+}
+
+// Keyframe animations
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// Alignment classes
+.prostudiome-vertical-timeline.alignwide {
+	max-width: 1400px;
+}
+
+.prostudiome-vertical-timeline.alignfull {
+	max-width: 100%;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+

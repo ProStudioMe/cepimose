@@ -152,6 +152,7 @@ function prostudiome_blocks_init() {
 	$blocks_to_register = [
 		'prostudiome-banner-swiper',
 		'prostudiome-timeline',
+		'prostudiome-vertical-timeline',
 		'prostudiome-ticker',
 		'prostudio-same-category-posts'
 		// Temporarily removed: 'prostudio-anchor-links', 'prostudio-test-copy'
