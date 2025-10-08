@@ -16,7 +16,7 @@
 		&::before {
 			content: "";
 			position: absolute;
-			left: 20px;
+			left: 13px;
 			top: 0;
 			bottom: 0;
 			width: 3px;
@@ -108,7 +108,7 @@
 	// Responsive adjustments for mobile
 	@media (max-width: 767px) {
 		.vertical-timeline::before {
-			left: 10px;
+			left: 13px;
 		}
 
 		.timeline-content {
