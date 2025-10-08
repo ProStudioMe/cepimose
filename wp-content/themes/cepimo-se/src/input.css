@@ -342,7 +342,7 @@
 }
 
 .wp-block-prostudiome-timeline .timeline-description {
-  @apply xl:mx-6 xl:mt-6 mx-3 mt-3 text-sm leading-relaxed text-gray-600;
+  @apply xl:mx-3 xl:mt-6 mx-3 mt-3 text-xs leading-relaxed text-gray-600;
 }
 
 .wp-block-prostudiome-timeline .timeline-description ul {
