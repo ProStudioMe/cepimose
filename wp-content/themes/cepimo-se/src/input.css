@@ -1412,7 +1412,7 @@ footer .wp-block-navigation__container {
 }
 
 .share-button {
-  @apply flex items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-all duration-200 bg-transparent border-2 border-gray-200 rounded-full;
+  @apply xl:flex-row flex flex-col items-center justify-center gap-2 px-3 py-2 text-sm font-medium transition-all duration-200 bg-transparent border-2 border-gray-200 rounded-full;
 }
 
 .share-button.facebook {
