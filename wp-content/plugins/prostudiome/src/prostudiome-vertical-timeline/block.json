@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "prostudiome/vertical-timeline",
+	"version": "1.0.0",
+	"title": "Vertical Timeline",
+	"category": "widgets",
+	"icon": "list-view",
+	"description": "A vertical timeline with editable items.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"textdomain": "prostudiome",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "wide"
+		},
+		"timelineItems": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"title": "1796 – prvo cepivo v zgodovini",
+					"text": "Živo oslabljeno cepivo, v katerem se kužnina iz izpuščajev govejih koz uporabi za zaščito ljudi pred nevarnejšimi črnimi kozami."
+				},
+				{
+					"id": 2,
+					"title": "1896 – prvo inaktivirano cepivo",
+					"text": "Znanstveniki razvijejo prva inaktivirana cepiva za zaščito ljudi pred tifusom in kolero."
+				},
+				{
+					"id": 3,
+					"title": "1932 – prvo cepivo z adjuvansi",
+					"text": "Na voljo je cepivo proti oslovskemu kašlju. Po odkritju adjuvansov v 20. letih prejšnjega stoletja je to prvo cepivo, ki vsebuje aluminijeve soli za povečanje imunskega odziva telesa."
+				}
+			]
+		}
+	}
+}
+
