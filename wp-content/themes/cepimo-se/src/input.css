@@ -338,7 +338,7 @@
 }
 
 .wp-block-prostudiome-timeline .timeline-image {
-  @apply block object-cover w-48 h-48 mx-auto mb-3 rounded-full;
+  @apply block object-cover w-48 h-48 mx-auto my-3 rounded-full;
 }
 
 .wp-block-prostudiome-timeline .timeline-description {
