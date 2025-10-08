@@ -181,8 +181,8 @@ $wrapper_attributes = get_block_wrapper_attributes([
                         <div class="timeline-description"><?php echo wp_kses_post($text); ?></div>
                         <?php endif; ?>
                         <div class="timeline-button">
-                            <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                            <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2 12h16m-7-7l7 7-7 7"/>
                             </svg>
                         </div>
                     </div>
