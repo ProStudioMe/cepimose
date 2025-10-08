@@ -594,3 +594,6 @@ function cepimo_se_bulk_template_page() {
 }
 
                                 
+
+
+add_filter( 'big_image_size_threshold', '__return_false' );
