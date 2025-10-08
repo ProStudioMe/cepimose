@@ -7,6 +7,11 @@
       "defaultPalette": false,
       "palette": [
         {
+          "color": "#0099ff",
+          "name": "blue-primary",
+          "slug": "blue-primary"
+        },
+        {
           "color": "#0a76bd",
           "name": "blue-dark",
           "slug": "blue-dark"
