@@ -424,7 +424,7 @@
 
 /* Timeline Button */
 .timeline-button {
-  @apply left-1/2 -bottom-4 absolute flex items-center justify-center w-10 h-10 mt-4 text-blue-500 transition-colors duration-300 -rotate-45 -translate-x-1/2 bg-white rounded-full;
+  @apply left-1/2 -bottom-5 absolute flex items-center justify-center w-10 h-10 mt-4 text-blue-500 transition-colors duration-300 -rotate-45 -translate-x-1/2 bg-white rounded-full;
 }
 
 .timeline-button .button-text {
