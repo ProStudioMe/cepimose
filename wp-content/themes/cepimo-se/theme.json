@@ -233,7 +233,7 @@
   },
   "styles": {
     "color": {
-      "text": "var(--wp--preset--color--text-color)"
+      "text": "var(--wp--preset--color--extra-dark)"
     },
     "css": "body { --wp--preset--font-size--5xl: 3rem; --wp--preset--font-size--4xl: 2.25rem; --wp--preset--font-size--3xl: 1.875rem; --wp--preset--font-size--2xl: 1.5rem; --wp--preset--font-size--xl: 1.25rem; --wp--preset--font-size--lg: 1.125rem; }::marker { color: var(--wp--preset--color--blue-dark) !important; content: '•' !important; }",
     "blocks": {
