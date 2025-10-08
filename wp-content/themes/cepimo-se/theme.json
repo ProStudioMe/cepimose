@@ -323,7 +323,7 @@
           "fontWeight": "300"
         },
         "color": {
-          "text": "var(--wp--preset--color--blue-middle)"
+          "text": "var(--wp--preset--color--blue-dark)"
         }
       },
       "h4": {
