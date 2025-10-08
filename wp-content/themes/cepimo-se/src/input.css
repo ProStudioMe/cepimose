@@ -334,7 +334,7 @@
 }
 
 .wp-block-prostudiome-timeline .timeline-content {
-  @apply xl:mx-4 rounded-3xl relative p-5 mx-10 mb-8 text-sm bg-gray-100 shadow-lg;
+  @apply xl:mx-2 rounded-3xl relative p-3 mx-10 mb-8 text-sm bg-gray-100 shadow-lg;
 }
 
 .wp-block-prostudiome-timeline .timeline-image {
