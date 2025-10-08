@@ -1462,3 +1462,6 @@ footer .wp-block-navigation__container {
 .share-article-section {
   @apply mt-14;
 }
+.share-buttons {
+  @apply flex;
+}
