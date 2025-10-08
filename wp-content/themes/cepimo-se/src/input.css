@@ -1456,3 +1456,9 @@ footer .wp-block-navigation__container {
     @apply p-3;
   }
 }
+
+/* SHARE article */
+
+.share-article-section {
+  @apply mt-14;
+}
