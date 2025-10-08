@@ -238,8 +238,7 @@
 		font-weight: 500;
 	}
 
-	.dashicons {
-		font-size: 18px;
+	.arrow-icon {
 		width: 18px;
 		height: 18px;
 		transition: transform 0.3s ease;
@@ -249,7 +248,7 @@
 		background-color: #006ba1;
 		color: white;
 
-		.dashicons {
+		.arrow-icon {
 			transform: translateX(4px);
 		}
 	}
