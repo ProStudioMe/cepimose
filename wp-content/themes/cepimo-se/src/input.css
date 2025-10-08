@@ -556,7 +556,7 @@ h1.wp-block-query-title {
 }
 
 h2.wp-block-heading {
-  @apply text-3xl !font-bold xl:text-4xl !leading-tight !text-neutral-500 !mt-[1.5em];
+  @apply text-3xl !font-bold xl:text-4xl !leading-tight  !mt-[1.5em];
 }
 h3.wp-block-heading {
   @apply xl:text-3xl text-2xl font-normal leading-snug text-neutral-800 mt-[1.5em];
