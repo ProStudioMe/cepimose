@@ -1402,8 +1402,13 @@ footer .wp-block-navigation__container {
 }
 
 /* Share Buttons */
+
+.share-article-section {
+  @apply mt-14;
+}
+
 .share-buttons {
-  @apply grid grid-cols-2 gap-2;
+  @apply grid grid-cols-4 gap-2;
 }
 
 .share-button {
@@ -1455,13 +1460,4 @@ footer .wp-block-navigation__container {
   .sidebar-section {
     @apply p-3;
   }
-}
-
-/* SHARE article */
-
-.share-article-section {
-  @apply mt-14;
-}
-.share-buttons {
-  @apply flex;
 }
