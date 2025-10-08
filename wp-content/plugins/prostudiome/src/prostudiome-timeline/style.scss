@@ -141,6 +141,20 @@
 				}
 			}
 		}
+		
+		// Adjust button for 5 slides per view
+		.timeline-button {
+			width: 32px;
+			height: 32px;
+			right: 0.25em;
+			bottom: 0.25em;
+			
+			.dashicons {
+				font-size: 14px;
+				width: 14px;
+				height: 14px;
+			}
+		}
 	}
 
 	@media (max-width: 1280px) {
@@ -160,6 +174,22 @@
 		.swiper-slide {
 			.timeline-age {
 				font-size: 1rem;
+			}
+		}
+	}
+	
+	// Specific styles for 5 slides per view (1024px and up)
+	@media (min-width: 1024px) {
+		.timeline-button {
+			width: 28px;
+			height: 28px;
+			right: 0.2em;
+			bottom: 0.2em;
+			
+			.dashicons {
+				font-size: 12px;
+				width: 12px;
+				height: 12px;
 			}
 		}
 	}
@@ -199,8 +229,8 @@
 	margin-top: 15px;
 	transition: background-color 0.3s ease;
 	position: absolute;
-	right: 1em;
-	bottom: 1em;
+	right: 0.5em;
+	bottom: 0.5em;
 
 	.button-text {
 		margin-right: 8px;
