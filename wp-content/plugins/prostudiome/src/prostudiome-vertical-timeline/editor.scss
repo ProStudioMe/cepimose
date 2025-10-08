@@ -23,7 +23,7 @@
 			transition: all 0.2s ease;
 
 			&:hover {
-				background: rgba(0, 115, 170, 0.05);
+				background: rgba(10, 118, 189, 0.05);
 				border-radius: 4px;
 				padding-left: 35px !important;
 			}
@@ -31,6 +31,7 @@
 			h4 {
 				font-size: 1.1rem;
 				font-weight: 600;
+				color: #0a76bd;
 			}
 
 			p {
