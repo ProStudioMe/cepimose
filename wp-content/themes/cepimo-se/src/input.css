@@ -1408,7 +1408,7 @@ footer .wp-block-navigation__container {
 }
 
 .share-buttons {
-  @apply grid grid-cols-4 gap-2;
+  @apply flex gap-2;
 }
 
 .share-button {
