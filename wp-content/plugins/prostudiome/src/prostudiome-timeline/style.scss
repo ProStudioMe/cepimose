@@ -144,14 +144,14 @@
 		
 		// Adjust button for 5 slides per view
 		.timeline-button {
-			width: 32px;
-			height: 32px;
+			width: 36px;
+			height: 36px;
 			right: 0.25em;
 			bottom: 0.25em;
 			
 			.arrow-icon {
-				width: 14px;
-				height: 14px;
+				width: 18px;
+				height: 18px;
 			}
 		}
 	}
@@ -237,8 +237,8 @@
 	}
 
 	.arrow-icon {
-		width: 18px;
-		height: 18px;
+		width: 24px;
+		height: 24px;
 		transition: transform 0.3s ease;
 	}
 
