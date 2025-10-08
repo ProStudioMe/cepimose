@@ -33,13 +33,19 @@
 		position: relative;
 		margin-bottom: 50px;
 		opacity: 0;
-		animation: fadeInUp 0.6s ease forwards;
+		transform: translateY(30px);
+		transition: all 0.6s ease;
 		display: flex;
 		align-items: flex-start;
 
+		&.animate {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
 		@for $i from 1 through 20 {
 			&:nth-child(#{$i}) {
-				animation-delay: #{$i * 0.1}s;
+				transition-delay: #{$i * 0.1}s;
 			}
 		}
 	}
@@ -117,13 +123,9 @@
 	}
 }
 
-// Keyframe animations
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(30px);
-	}
-	to {
+// Scroll-triggered animations
+.timeline-item {
+	&.animate {
 		opacity: 1;
 		transform: translateY(0);
 	}
